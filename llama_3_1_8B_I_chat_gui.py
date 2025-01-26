@@ -23,18 +23,27 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 
+system_prompt = """
+You are a large language model, trained to be informative and concise.
+Do not provide explanations or elaborations unless explicitly requested.
+Focus on delivering the most direct and accurate answer to the user's query.
+"""
+
 # Gemma
 # base_model = "google/gemma-2-9b-it"
 
 # 1B
-# base_model = "meta-llama/Llama-3.2-1B-Instruct"
+base_model = "meta-llama/Llama-3.2-1B-Instruct"
 
 # 3B
-base_model = "meta-llama/Llama-3.2-3B-Instruct"
+# base_model = "meta-llama/Llama-3.2-3B-Instruct"
 
 # 8B
 # base_model = "meta-llama/Llama-3.1-8B-Instruct"
 
+
+# LLaMA 3.2 3B SDG 5 epochs
+# base_model = "/home/bruno/Documents/GitHub/social-media-nlp/training/outputs/llama-3-2-3B-SDG-5e"
 
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -56,12 +65,12 @@ except Exception as e:
 
 # System prompt used as 0-time message in the chat-template.
 messages = [
-    # {"role": "system", "content": "You are a generative AI assistant. Be formal, brief and concise."},
+    {"role": "system", "content": system_prompt},
 ]
 
 # --- GUI Implementation using Tkinter ---
 root = tk.Tk()
-root.title("Formal-LLaMAntino-3 Chatbot")
+root.title("LLaMA 3.2 Chatbot")
 
 # --- Parameter Input Boxes ---
 temp_label = Label(root, text="Temperature:")
@@ -154,7 +163,7 @@ send_button.pack(side=tk.BOTTOM)
 def reset_chat_history():
     global messages
     messages = [
-        # {"role": "system", "content": "You are a generative AI assistant. Be formal, brief and concise."},
+        {"role": "system", "content": system_prompt},
     ]
     chat_log.config(state=tk.NORMAL)  # Make the chat log editable
     chat_log.delete("1.0", tk.END)  # Clear the chat log

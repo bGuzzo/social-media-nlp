@@ -1,0 +1,442 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "Sustainable production"
+        },
+        {
+            "id": 1,
+            "label": "20th Century Studios"
+        },
+        {
+            "id": 2,
+            "label": "Amazon Studios"
+        },
+        {
+            "id": 3,
+            "label": "Amblin Partners"
+        },
+        {
+            "id": 4,
+            "label": "Biodegradable plastic"
+        },
+        {
+            "id": 5,
+            "label": "British Heart Foundation"
+        },
+        {
+            "id": 6,
+            "label": "CBS"
+        },
+        {
+            "id": 7,
+            "label": "Cannes Film Festival"
+        },
+        {
+            "id": 8,
+            "label": "Carbon footprint"
+        },
+        {
+            "id": 9,
+            "label": "Carnival Films"
+        },
+        {
+            "id": 10,
+            "label": "Casting (performing arts)"
+        },
+        {
+            "id": 11,
+            "label": "City Harvest (United Kingdom)"
+        },
+        {
+            "id": 12,
+            "label": "Columbia Pictures"
+        },
+        {
+            "id": 13,
+            "label": "Costume designer"
+        },
+        {
+            "id": 14,
+            "label": "Cultural diversity"
+        },
+        {
+            "id": 15,
+            "label": "Doi (identifier)"
+        },
+        {
+            "id": 16,
+            "label": "Downton Abbey"
+        },
+        {
+            "id": 17,
+            "label": "Dress For Success (organization)"
+        },
+        {
+            "id": 18,
+            "label": "Environmental Media Association"
+        },
+        {
+            "id": 19,
+            "label": "Fifty Shades (film series)"
+        },
+        {
+            "id": 20,
+            "label": "Fifty Shades Darker (film)"
+        },
+        {
+            "id": 21,
+            "label": "Fifty Shades Freed (film)"
+        },
+        {
+            "id": 22,
+            "label": "Film crew"
+        },
+        {
+            "id": 23,
+            "label": "Film director"
+        },
+        {
+            "id": 24,
+            "label": "Film producer"
+        },
+        {
+            "id": 25,
+            "label": "Filmmaking"
+        },
+        {
+            "id": 26,
+            "label": "Fleet management"
+        },
+        {
+            "id": 27,
+            "label": "Green marketing"
+        },
+        {
+            "id": 28,
+            "label": "Greenhouse gas emissions"
+        },
+        {
+            "id": 29,
+            "label": "HBO"
+        },
+        {
+            "id": 30,
+            "label": "Habitat for Humanity"
+        },
+        {
+            "id": 31,
+            "label": "Hdl (identifier)"
+        },
+        {
+            "id": 32,
+            "label": "ISSN (identifier)"
+        },
+        {
+            "id": 33,
+            "label": "Major film studio"
+        },
+        {
+            "id": 34,
+            "label": "NBCUniversal"
+        },
+        {
+            "id": 35,
+            "label": "Netflix"
+        },
+        {
+            "id": 36,
+            "label": "Paramount Global"
+        },
+        {
+            "id": 37,
+            "label": "Paramount Pictures"
+        },
+        {
+            "id": 38,
+            "label": "Producers Guild of America"
+        },
+        {
+            "id": 39,
+            "label": "Production designer"
+        },
+        {
+            "id": 40,
+            "label": "Social enterprise"
+        },
+        {
+            "id": 41,
+            "label": "Sony Pictures"
+        },
+        {
+            "id": 42,
+            "label": "Supply-chain sustainability"
+        },
+        {
+            "id": 43,
+            "label": "Sustainability"
+        },
+        {
+            "id": 44,
+            "label": "Sustainable energy"
+        },
+        {
+            "id": 45,
+            "label": "Tent-pole (entertainment)"
+        },
+        {
+            "id": 46,
+            "label": "The Call of the Wild (2020 film)"
+        },
+        {
+            "id": 47,
+            "label": "The Walt Disney Company"
+        },
+        {
+            "id": 48,
+            "label": "The X-Files (season 10)"
+        },
+        {
+            "id": 49,
+            "label": "Universal Pictures"
+        },
+        {
+            "id": 50,
+            "label": "Walt Disney Pictures"
+        },
+        {
+            "id": 51,
+            "label": "Warner Bros."
+        },
+        {
+            "id": 52,
+            "label": "Warner Bros. Discovery"
+        },
+        {
+            "id": 53,
+            "label": "Wimbledon College of Arts"
+        },
+        {
+            "id": 54,
+            "label": "Yesterday (2019 film)"
+        }
+    ],
+    "edges": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 0,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 4
+        },
+        {
+            "source": 0,
+            "target": 5
+        },
+        {
+            "source": 0,
+            "target": 6
+        },
+        {
+            "source": 0,
+            "target": 7
+        },
+        {
+            "source": 0,
+            "target": 8
+        },
+        {
+            "source": 0,
+            "target": 9
+        },
+        {
+            "source": 0,
+            "target": 10
+        },
+        {
+            "source": 0,
+            "target": 11
+        },
+        {
+            "source": 0,
+            "target": 12
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 0,
+            "target": 14
+        },
+        {
+            "source": 0,
+            "target": 15
+        },
+        {
+            "source": 0,
+            "target": 16
+        },
+        {
+            "source": 0,
+            "target": 17
+        },
+        {
+            "source": 0,
+            "target": 18
+        },
+        {
+            "source": 0,
+            "target": 19
+        },
+        {
+            "source": 0,
+            "target": 20
+        },
+        {
+            "source": 0,
+            "target": 21
+        },
+        {
+            "source": 0,
+            "target": 22
+        },
+        {
+            "source": 0,
+            "target": 23
+        },
+        {
+            "source": 0,
+            "target": 24
+        },
+        {
+            "source": 0,
+            "target": 25
+        },
+        {
+            "source": 0,
+            "target": 26
+        },
+        {
+            "source": 0,
+            "target": 27
+        },
+        {
+            "source": 0,
+            "target": 28
+        },
+        {
+            "source": 0,
+            "target": 29
+        },
+        {
+            "source": 0,
+            "target": 30
+        },
+        {
+            "source": 0,
+            "target": 31
+        },
+        {
+            "source": 0,
+            "target": 32
+        },
+        {
+            "source": 0,
+            "target": 33
+        },
+        {
+            "source": 0,
+            "target": 34
+        },
+        {
+            "source": 0,
+            "target": 35
+        },
+        {
+            "source": 0,
+            "target": 36
+        },
+        {
+            "source": 0,
+            "target": 37
+        },
+        {
+            "source": 0,
+            "target": 38
+        },
+        {
+            "source": 0,
+            "target": 39
+        },
+        {
+            "source": 0,
+            "target": 40
+        },
+        {
+            "source": 0,
+            "target": 41
+        },
+        {
+            "source": 0,
+            "target": 42
+        },
+        {
+            "source": 0,
+            "target": 43
+        },
+        {
+            "source": 0,
+            "target": 44
+        },
+        {
+            "source": 0,
+            "target": 45
+        },
+        {
+            "source": 0,
+            "target": 46
+        },
+        {
+            "source": 0,
+            "target": 47
+        },
+        {
+            "source": 0,
+            "target": 48
+        },
+        {
+            "source": 0,
+            "target": 49
+        },
+        {
+            "source": 0,
+            "target": 50
+        },
+        {
+            "source": 0,
+            "target": 51
+        },
+        {
+            "source": 0,
+            "target": 52
+        },
+        {
+            "source": 0,
+            "target": 53
+        },
+        {
+            "source": 0,
+            "target": 54
+        }
+    ]
+}

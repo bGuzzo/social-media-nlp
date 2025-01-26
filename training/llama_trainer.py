@@ -28,7 +28,7 @@ torch.cuda.empty_cache()
     If an input sequence exceeds max_seq_length, it will be truncated to that length. 
     This means the model will only see the first max_seq_length tokens of the input.
 """
-max_seq_length = 2048  # Sets the maximum sequence length for the model
+max_seq_length = 1024  # Sets the maximum sequence length for the model
 dtype = (
     None  # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
 )
@@ -85,8 +85,8 @@ logger.info("Loading dataset for training")
 
 dataset = load_text_folder_dataset(
     data_dir="/home/bruno/Documents/GitHub/social-media-nlp/training/dataset_txt",
-    chunk_size=512,
-    overlap=128,
+    chunk_size=256,
+    overlap=64,
     field_name="text",
     split_name="train",
     tokenizer=tokenizer,
@@ -104,7 +104,7 @@ trainer = SFTTrainer(
     dataset_num_proc=10,  # Uses 10 processes (thread) for dataset processing, potentially speeding up data loading.
     packing=False,  # Can make training 5x faster for short sequences.
     args=TrainingArguments(
-        num_train_epochs=10,
+        num_train_epochs=5,
         per_device_train_batch_size=8,
         gradient_accumulation_steps=4,
         warmup_steps=1,

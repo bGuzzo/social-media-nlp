@@ -174,11 +174,6 @@ cython_debug/
 # Dataset ignore
 /training/dataset_pdf
 /training/dataset_txt
-
-
-/training/dataset_txt_2
-/training/dataset_pdf_2
-
 /training/old_dataset_pdf
 /training/old_dataset_txt
 /training/outputs
