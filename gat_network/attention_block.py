@@ -19,13 +19,13 @@ class DeepAttnBlock(torch.nn.Module):
         if num_levels < 1:
             raise ValueError(f"At least one attention layers is required, got {num_levels}")
         
-        self.attention_levels: list[GATConv] = []
-        self.dropout_levels: list[Dropout] = []
-        # self.lin_layer: list[Linear] = []
-        self.norm_levels: list[LayerNorm] = []
+        if hidden_channels <= 0:
+            raise ValueError(f"Hidden channels must be greater than 0, got {hidden_channels}") 
         
         self.num_levels = num_levels
-        
+        self.attention_levels: list[GATConv] = []
+        self.dropout_levels: list[Dropout] = []
+        self.norm_levels: list[LayerNorm] = []
         self.activation_func = torch.nn.ReLU()
         
         # Create layers
