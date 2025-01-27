@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "Sustainable energy"
+        },
+        {
+            "id": 1,
+            "label": "2019 in climate change"
+        },
+        {
+            "id": 2,
+            "label": "2020 in climate change"
+        },
+        {
+            "id": 3,
+            "label": "2021 in climate change"
+        },
+        {
+            "id": 4,
+            "label": "2022 in climate change"
+        },
+        {
+            "id": 5,
+            "label": "2023 in climate change"
+        },
+        {
+            "id": 6,
+            "label": "2024 in climate change"
+        },
+        {
+            "id": 7,
+            "label": "Abrupt climate change"
+        },
+        {
+            "id": 8,
+            "label": "Academic Press"
+        },
+        {
+            "id": 9,
+            "label": "Access to electricity"
+        },
+        {
+            "id": 10,
+            "label": "Acid rain"
+        },
+        {
+            "id": 11,
+            "label": "Adaptive capacity"
+        },
+        {
+            "id": 12,
+            "label": "Afforestation"
+        },
+        {
+            "id": 13,
+            "label": "Agenda 21"
+        },
+        {
+            "id": 14,
+            "label": "Agricultural wastewater treatment"
+        },
+        {
+            "id": 15,
+            "label": "Air conditioning"
+        },
+        {
+            "id": 16,
+            "label": "Air pollution"
+        },
+        {
+            "id": 17,
+            "label": "Air well (condenser)"
+        },
+        {
+            "id": 18,
+            "label": "Airborne wind energy"
+        },
+        {
+            "id": 19,
+            "label": "Albedo"
+        },
+        {
+            "id": 20,
+            "label": "Algae fuel"
+        }
+    ],
+    "edges": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 0,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 4
+        },
+        {
+            "source": 0,
+            "target": 5
+        },
+        {
+            "source": 0,
+            "target": 6
+        },
+        {
+            "source": 0,
+            "target": 7
+        },
+        {
+            "source": 0,
+            "target": 8
+        },
+        {
+            "source": 0,
+            "target": 9
+        },
+        {
+            "source": 0,
+            "target": 10
+        },
+        {
+            "source": 0,
+            "target": 11
+        },
+        {
+            "source": 0,
+            "target": 12
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 0,
+            "target": 14
+        },
+        {
+            "source": 0,
+            "target": 15
+        },
+        {
+            "source": 0,
+            "target": 16
+        },
+        {
+            "source": 0,
+            "target": 17
+        },
+        {
+            "source": 0,
+            "target": 18
+        },
+        {
+            "source": 0,
+            "target": 19
+        },
+        {
+            "source": 0,
+            "target": 20
+        }
+    ]
+}

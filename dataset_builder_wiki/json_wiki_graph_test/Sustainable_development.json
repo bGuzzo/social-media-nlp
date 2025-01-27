@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "Sustainable development"
+        },
+        {
+            "id": 1,
+            "label": "7 Billion Actions"
+        },
+        {
+            "id": 2,
+            "label": "A Blueprint for Survival"
+        },
+        {
+            "id": 3,
+            "label": "Agenda 21"
+        },
+        {
+            "id": 4,
+            "label": "Agribusiness"
+        },
+        {
+            "id": 5,
+            "label": "Air well (condenser)"
+        },
+        {
+            "id": 6,
+            "label": "Aldo Leopold"
+        },
+        {
+            "id": 7,
+            "label": "Alexander von Humboldt"
+        },
+        {
+            "id": 8,
+            "label": "Alternative fuel vehicle"
+        },
+        {
+            "id": 9,
+            "label": "Annual Review of Environment and Resources"
+        },
+        {
+            "id": 10,
+            "label": "Anthropization"
+        },
+        {
+            "id": 11,
+            "label": "Anthropocene"
+        },
+        {
+            "id": 12,
+            "label": "Anti-consumerism"
+        },
+        {
+            "id": 13,
+            "label": "Antinatalism"
+        },
+        {
+            "id": 14,
+            "label": "Appropriate technology"
+        },
+        {
+            "id": 15,
+            "label": "Augustus II the Strong"
+        },
+        {
+            "id": 16,
+            "label": "Bennett's law"
+        },
+        {
+            "id": 17,
+            "label": "Bibcode (identifier)"
+        },
+        {
+            "id": 18,
+            "label": "BioScience"
+        },
+        {
+            "id": 19,
+            "label": "Biocapacity"
+        },
+        {
+            "id": 20,
+            "label": "Biodiversity"
+        }
+    ],
+    "edges": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 0,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 4
+        },
+        {
+            "source": 0,
+            "target": 5
+        },
+        {
+            "source": 0,
+            "target": 6
+        },
+        {
+            "source": 0,
+            "target": 7
+        },
+        {
+            "source": 0,
+            "target": 8
+        },
+        {
+            "source": 0,
+            "target": 9
+        },
+        {
+            "source": 0,
+            "target": 10
+        },
+        {
+            "source": 0,
+            "target": 11
+        },
+        {
+            "source": 0,
+            "target": 12
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 0,
+            "target": 14
+        },
+        {
+            "source": 0,
+            "target": 15
+        },
+        {
+            "source": 0,
+            "target": 16
+        },
+        {
+            "source": 0,
+            "target": 17
+        },
+        {
+            "source": 0,
+            "target": 18
+        },
+        {
+            "source": 0,
+            "target": 19
+        },
+        {
+            "source": 0,
+            "target": 20
+        }
+    ]
+}

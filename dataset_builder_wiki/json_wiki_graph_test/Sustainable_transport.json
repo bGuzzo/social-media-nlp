@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "Sustainable transport"
+        },
+        {
+            "id": 1,
+            "label": "15-minute city"
+        },
+        {
+            "id": 2,
+            "label": "1973 oil crisis"
+        },
+        {
+            "id": 3,
+            "label": "1979 energy crisis"
+        },
+        {
+            "id": 4,
+            "label": "2000s energy crisis"
+        },
+        {
+            "id": 5,
+            "label": "7 Billion Actions"
+        },
+        {
+            "id": 6,
+            "label": "Accessibility (transport)"
+        },
+        {
+            "id": 7,
+            "label": "Action Plan on urban mobility"
+        },
+        {
+            "id": 8,
+            "label": "Active mobility"
+        },
+        {
+            "id": 9,
+            "label": "Agenda 21"
+        },
+        {
+            "id": 10,
+            "label": "Agricultural wastewater treatment"
+        },
+        {
+            "id": 11,
+            "label": "Air pollution"
+        },
+        {
+            "id": 12,
+            "label": "Air quality"
+        },
+        {
+            "id": 13,
+            "label": "Air well (condenser)"
+        },
+        {
+            "id": 14,
+            "label": "Airway (aviation)"
+        },
+        {
+            "id": 15,
+            "label": "Alternative fuel"
+        },
+        {
+            "id": 16,
+            "label": "Alternatives to car use"
+        },
+        {
+            "id": 17,
+            "label": "Animal-powered transport"
+        },
+        {
+            "id": 18,
+            "label": "Animal powered transport"
+        },
+        {
+            "id": 19,
+            "label": "Anna Nagurney"
+        },
+        {
+            "id": 20,
+            "label": "Anthropization"
+        }
+    ],
+    "edges": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 0,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 4
+        },
+        {
+            "source": 0,
+            "target": 5
+        },
+        {
+            "source": 0,
+            "target": 6
+        },
+        {
+            "source": 0,
+            "target": 7
+        },
+        {
+            "source": 0,
+            "target": 8
+        },
+        {
+            "source": 0,
+            "target": 9
+        },
+        {
+            "source": 0,
+            "target": 10
+        },
+        {
+            "source": 0,
+            "target": 11
+        },
+        {
+            "source": 0,
+            "target": 12
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 0,
+            "target": 14
+        },
+        {
+            "source": 0,
+            "target": 15
+        },
+        {
+            "source": 0,
+            "target": 16
+        },
+        {
+            "source": 0,
+            "target": 17
+        },
+        {
+            "source": 0,
+            "target": 18
+        },
+        {
+            "source": 0,
+            "target": 19
+        },
+        {
+            "source": 0,
+            "target": 20
+        }
+    ]
+}

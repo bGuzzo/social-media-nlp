@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "Green building"
+        },
+        {
+            "id": 1,
+            "label": "3D printed house"
+        },
+        {
+            "id": 2,
+            "label": "Active solar"
+        },
+        {
+            "id": 3,
+            "label": "Agenda 21"
+        },
+        {
+            "id": 4,
+            "label": "Agricultural wastewater treatment"
+        },
+        {
+            "id": 5,
+            "label": "Air pollution"
+        },
+        {
+            "id": 6,
+            "label": "Alabama"
+        },
+        {
+            "id": 7,
+            "label": "Alternative fuel"
+        },
+        {
+            "id": 8,
+            "label": "Alternative natural materials"
+        },
+        {
+            "id": 9,
+            "label": "Appropriate technology"
+        },
+        {
+            "id": 10,
+            "label": "Arcology"
+        },
+        {
+            "id": 11,
+            "label": "Asthma and Allergy Foundation of America"
+        },
+        {
+            "id": 12,
+            "label": "Atmospheric dispersion modeling"
+        },
+        {
+            "id": 13,
+            "label": "Austria"
+        },
+        {
+            "id": 14,
+            "label": "Autonomous building"
+        },
+        {
+            "id": 15,
+            "label": "BREEAM"
+        },
+        {
+            "id": 16,
+            "label": "Bibcode (identifier)"
+        },
+        {
+            "id": 17,
+            "label": "Bicycle"
+        },
+        {
+            "id": 18,
+            "label": "Biofuel"
+        },
+        {
+            "id": 19,
+            "label": "Biogas"
+        },
+        {
+            "id": 20,
+            "label": "Biomass"
+        }
+    ],
+    "edges": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 0,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 4
+        },
+        {
+            "source": 0,
+            "target": 5
+        },
+        {
+            "source": 0,
+            "target": 6
+        },
+        {
+            "source": 0,
+            "target": 7
+        },
+        {
+            "source": 0,
+            "target": 8
+        },
+        {
+            "source": 0,
+            "target": 9
+        },
+        {
+            "source": 0,
+            "target": 10
+        },
+        {
+            "source": 0,
+            "target": 11
+        },
+        {
+            "source": 0,
+            "target": 12
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 0,
+            "target": 14
+        },
+        {
+            "source": 0,
+            "target": 15
+        },
+        {
+            "source": 0,
+            "target": 16
+        },
+        {
+            "source": 0,
+            "target": 17
+        },
+        {
+            "source": 0,
+            "target": 18
+        },
+        {
+            "source": 0,
+            "target": 19
+        },
+        {
+            "source": 0,
+            "target": 20
+        }
+    ]
+}

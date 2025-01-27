@@ -1,9 +1,7 @@
 
 
 import torch
-# import torch_geometric
 from torch_geometric.nn import GATConv
-from torch.nn import Linear
 from torch.nn import Dropout
 from torch.nn import LayerNorm
 
@@ -12,8 +10,8 @@ class DeepAttnBlock(torch.nn.Module):
     def __init__(
         self, 
         num_levels: int, 
-        num_heads: int, 
         hidden_channels: int, 
+        num_heads: int = 1, 
         dropout_prob: float = 0.5
     ):
         super().__init__()
@@ -27,6 +25,8 @@ class DeepAttnBlock(torch.nn.Module):
         self.norm_levels: list[LayerNorm] = []
         
         self.num_levels = num_levels
+        
+        self.activation_func = torch.nn.ReLU()
         
         # Create layers
         for _ in range(num_levels):
@@ -43,7 +43,7 @@ class DeepAttnBlock(torch.nn.Module):
         
     def forward(self, x, edge_index):
         for i in range(self.num_levels):
-            # Apply GAT layer
+            # Apply GAT message passing layer
             x_att = self.attention_levels[i](x, edge_index)
             
             # Add & Norm
@@ -51,5 +51,8 @@ class DeepAttnBlock(torch.nn.Module):
             
             # Dropout
             x = self.dropout_levels[i](x_norm)
-        
+            
+            # Use activation function for non-linearity
+            x = self.activation_func(x)
+            
         return x

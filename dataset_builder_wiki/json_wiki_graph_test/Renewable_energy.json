@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "Renewable energy"
+        },
+        {
+            "id": 1,
+            "label": "100% renewable energy"
+        },
+        {
+            "id": 2,
+            "label": "2021 global energy crisis"
+        },
+        {
+            "id": 3,
+            "label": "2023 United Nations Climate Change Conference"
+        },
+        {
+            "id": 4,
+            "label": "ARCO"
+        },
+        {
+            "id": 5,
+            "label": "About.com"
+        },
+        {
+            "id": 6,
+            "label": "Agenda 21"
+        },
+        {
+            "id": 7,
+            "label": "Agflation"
+        },
+        {
+            "id": 8,
+            "label": "Agricultural wastewater treatment"
+        },
+        {
+            "id": 9,
+            "label": "Agriculture"
+        },
+        {
+            "id": 10,
+            "label": "Agrivoltaics"
+        },
+        {
+            "id": 11,
+            "label": "Air pollution"
+        },
+        {
+            "id": 12,
+            "label": "Air well (condenser)"
+        },
+        {
+            "id": 13,
+            "label": "Airborne wind energy"
+        },
+        {
+            "id": 14,
+            "label": "Airborne wind turbine"
+        },
+        {
+            "id": 15,
+            "label": "Alcohol fuel"
+        },
+        {
+            "id": 16,
+            "label": "Algae fuel"
+        },
+        {
+            "id": 17,
+            "label": "Algae fuels"
+        },
+        {
+            "id": 18,
+            "label": "Algal fuel"
+        },
+        {
+            "id": 19,
+            "label": "Alternative fuel"
+        },
+        {
+            "id": 20,
+            "label": "American Petroleum Institute"
+        }
+    ],
+    "edges": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 0,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 4
+        },
+        {
+            "source": 0,
+            "target": 5
+        },
+        {
+            "source": 0,
+            "target": 6
+        },
+        {
+            "source": 0,
+            "target": 7
+        },
+        {
+            "source": 0,
+            "target": 8
+        },
+        {
+            "source": 0,
+            "target": 9
+        },
+        {
+            "source": 0,
+            "target": 10
+        },
+        {
+            "source": 0,
+            "target": 11
+        },
+        {
+            "source": 0,
+            "target": 12
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 0,
+            "target": 14
+        },
+        {
+            "source": 0,
+            "target": 15
+        },
+        {
+            "source": 0,
+            "target": 16
+        },
+        {
+            "source": 0,
+            "target": 17
+        },
+        {
+            "source": 0,
+            "target": 18
+        },
+        {
+            "source": 0,
+            "target": 19
+        },
+        {
+            "source": 0,
+            "target": 20
+        }
+    ]
+}

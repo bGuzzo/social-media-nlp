@@ -2,11 +2,10 @@ import torch
 from torch.nn import Linear
 from attention_block import DeepAttnBlock
 
-
 # Default model values
-NUM_HIDDEN_CHANNELS = 32
-NUM_OUTPUT_CHANNELS = 16
-NUM_ATTENTION_LAYER = 2
+NUM_HIDDEN_CHANNELS = 64
+NUM_OUTPUT_CHANNELS = 32
+NUM_ATTENTION_LAYER = 1
 DROPOUT_PROB = 0.5
 
 
@@ -47,6 +46,9 @@ class GatModule(torch.nn.Module):
         self.out_lin_level = Linear(hidden_channels, out_channels)
         
     
+    def forward(self, x, pos_edge_index, neg_edge_index):
+        z = self.encode(x, pos_edge_index)
+        return self.decode(z, pos_edge_index, neg_edge_index)
 
     def encode(self, x, edge_index):
         x = self.in_lin_layer(x)
@@ -60,11 +62,6 @@ class GatModule(torch.nn.Module):
         return logits
 
     def decode_all(self, z):
-        prob_adj = z @ z.t()
-        return (prob_adj > 0).nonzero(as_tuple=False).t()
-
-    def decode_prob(self, z):
-        prob_adj = z @ z.t()
-        norm_prob_adj = torch.sigmoid(prob_adj)
-        print(f"Normalized adjacence matrix \n{norm_prob_adj}")
-        return (prob_adj > 0).nonzero(as_tuple=False).t()
+        adj_score = z @ z.t()
+        print(f"Link prediction score matrix \n{torch.sigmoid(adj_score)}")
+        return (adj_score > 0).nonzero(as_tuple=False).t()

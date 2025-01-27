@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "Sustainable production"
+        },
+        {
+            "id": 1,
+            "label": "20th Century Studios"
+        },
+        {
+            "id": 2,
+            "label": "Amazon Studios"
+        },
+        {
+            "id": 3,
+            "label": "Amblin Partners"
+        },
+        {
+            "id": 4,
+            "label": "Biodegradable plastic"
+        },
+        {
+            "id": 5,
+            "label": "British Heart Foundation"
+        },
+        {
+            "id": 6,
+            "label": "CBS"
+        },
+        {
+            "id": 7,
+            "label": "Cannes Film Festival"
+        },
+        {
+            "id": 8,
+            "label": "Carbon footprint"
+        },
+        {
+            "id": 9,
+            "label": "Carnival Films"
+        },
+        {
+            "id": 10,
+            "label": "Casting (performing arts)"
+        },
+        {
+            "id": 11,
+            "label": "City Harvest (United Kingdom)"
+        },
+        {
+            "id": 12,
+            "label": "Columbia Pictures"
+        },
+        {
+            "id": 13,
+            "label": "Costume designer"
+        },
+        {
+            "id": 14,
+            "label": "Cultural diversity"
+        },
+        {
+            "id": 15,
+            "label": "Doi (identifier)"
+        },
+        {
+            "id": 16,
+            "label": "Downton Abbey"
+        },
+        {
+            "id": 17,
+            "label": "Dress For Success (organization)"
+        },
+        {
+            "id": 18,
+            "label": "Environmental Media Association"
+        },
+        {
+            "id": 19,
+            "label": "Fifty Shades (film series)"
+        },
+        {
+            "id": 20,
+            "label": "Fifty Shades Darker (film)"
+        }
+    ],
+    "edges": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 0,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 4
+        },
+        {
+            "source": 0,
+            "target": 5
+        },
+        {
+            "source": 0,
+            "target": 6
+        },
+        {
+            "source": 0,
+            "target": 7
+        },
+        {
+            "source": 0,
+            "target": 8
+        },
+        {
+            "source": 0,
+            "target": 9
+        },
+        {
+            "source": 0,
+            "target": 10
+        },
+        {
+            "source": 0,
+            "target": 11
+        },
+        {
+            "source": 0,
+            "target": 12
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 0,
+            "target": 14
+        },
+        {
+            "source": 0,
+            "target": 15
+        },
+        {
+            "source": 0,
+            "target": 16
+        },
+        {
+            "source": 0,
+            "target": 17
+        },
+        {
+            "source": 0,
+            "target": 18
+        },
+        {
+            "source": 0,
+            "target": 19
+        },
+        {
+            "source": 0,
+            "target": 20
+        }
+    ]
+}

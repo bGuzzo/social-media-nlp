@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "Sustainable development goals"
+        },
+        {
+            "id": 1,
+            "label": "2011 International Court of Justice judges election"
+        },
+        {
+            "id": 2,
+            "label": "2014 International Court of Justice judges election"
+        },
+        {
+            "id": 3,
+            "label": "2016 United Nations General Assembly presidential election"
+        },
+        {
+            "id": 4,
+            "label": "2016 United Nations Secretary-General selection"
+        },
+        {
+            "id": 5,
+            "label": "2016 United Nations Security Council election"
+        },
+        {
+            "id": 6,
+            "label": "2017 International Court of Justice judges election"
+        },
+        {
+            "id": 7,
+            "label": "2020 International Court of Justice judges election"
+        },
+        {
+            "id": 8,
+            "label": "2021 International Court of Justice judges election"
+        },
+        {
+            "id": 9,
+            "label": "2021 United Nations Secretary-General selection"
+        },
+        {
+            "id": 10,
+            "label": "2022 International Court of Justice judges election"
+        },
+        {
+            "id": 11,
+            "label": "2023 International Court of Justice judges election"
+        },
+        {
+            "id": 12,
+            "label": "2030 Agenda"
+        },
+        {
+            "id": 13,
+            "label": "Aarhus Convention"
+        },
+        {
+            "id": 14,
+            "label": "Adaptive capacity"
+        },
+        {
+            "id": 15,
+            "label": "Addis Ababa Action Agenda"
+        },
+        {
+            "id": 16,
+            "label": "African Development Bank"
+        },
+        {
+            "id": 17,
+            "label": "African trypanosomiasis"
+        },
+        {
+            "id": 18,
+            "label": "Agenda 21"
+        },
+        {
+            "id": 19,
+            "label": "Agricultural productivity"
+        },
+        {
+            "id": 20,
+            "label": "Aid for Trade"
+        }
+    ],
+    "edges": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 0,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 4
+        },
+        {
+            "source": 0,
+            "target": 5
+        },
+        {
+            "source": 0,
+            "target": 6
+        },
+        {
+            "source": 0,
+            "target": 7
+        },
+        {
+            "source": 0,
+            "target": 8
+        },
+        {
+            "source": 0,
+            "target": 9
+        },
+        {
+            "source": 0,
+            "target": 10
+        },
+        {
+            "source": 0,
+            "target": 11
+        },
+        {
+            "source": 0,
+            "target": 12
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 0,
+            "target": 14
+        },
+        {
+            "source": 0,
+            "target": 15
+        },
+        {
+            "source": 0,
+            "target": 16
+        },
+        {
+            "source": 0,
+            "target": 17
+        },
+        {
+            "source": 0,
+            "target": 18
+        },
+        {
+            "source": 0,
+            "target": 19
+        },
+        {
+            "source": 0,
+            "target": 20
+        }
+    ]
+}

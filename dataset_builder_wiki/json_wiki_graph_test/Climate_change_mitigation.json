@@ -1,0 +1,170 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "label": "Climate change mitigation"
+        },
+        {
+            "id": 1,
+            "label": "2015 United Nations Climate Change Conference"
+        },
+        {
+            "id": 2,
+            "label": "2019 in climate change"
+        },
+        {
+            "id": 3,
+            "label": "2020 in climate change"
+        },
+        {
+            "id": 4,
+            "label": "2021 United Nations Climate Change Conference"
+        },
+        {
+            "id": 5,
+            "label": "2021 in climate change"
+        },
+        {
+            "id": 6,
+            "label": "2022 in climate change"
+        },
+        {
+            "id": 7,
+            "label": "2023 in climate change"
+        },
+        {
+            "id": 8,
+            "label": "2024 in climate change"
+        },
+        {
+            "id": 9,
+            "label": "7 Billion Actions"
+        },
+        {
+            "id": 10,
+            "label": "Abrupt climate change"
+        },
+        {
+            "id": 11,
+            "label": "Acidic soil"
+        },
+        {
+            "id": 12,
+            "label": "Adaptive capacity"
+        },
+        {
+            "id": 13,
+            "label": "Afforestation"
+        },
+        {
+            "id": 14,
+            "label": "Agenda 21"
+        },
+        {
+            "id": 15,
+            "label": "Agricultural productivity"
+        },
+        {
+            "id": 16,
+            "label": "Agricultural soil science"
+        },
+        {
+            "id": 17,
+            "label": "Air conditioning"
+        },
+        {
+            "id": 18,
+            "label": "Air pollution"
+        },
+        {
+            "id": 19,
+            "label": "Air well (condenser)"
+        },
+        {
+            "id": 20,
+            "label": "Albedo"
+        }
+    ],
+    "edges": [
+        {
+            "source": 0,
+            "target": 1
+        },
+        {
+            "source": 0,
+            "target": 2
+        },
+        {
+            "source": 0,
+            "target": 3
+        },
+        {
+            "source": 0,
+            "target": 4
+        },
+        {
+            "source": 0,
+            "target": 5
+        },
+        {
+            "source": 0,
+            "target": 6
+        },
+        {
+            "source": 0,
+            "target": 7
+        },
+        {
+            "source": 0,
+            "target": 8
+        },
+        {
+            "source": 0,
+            "target": 9
+        },
+        {
+            "source": 0,
+            "target": 10
+        },
+        {
+            "source": 0,
+            "target": 11
+        },
+        {
+            "source": 0,
+            "target": 12
+        },
+        {
+            "source": 0,
+            "target": 13
+        },
+        {
+            "source": 0,
+            "target": 14
+        },
+        {
+            "source": 0,
+            "target": 15
+        },
+        {
+            "source": 0,
+            "target": 16
+        },
+        {
+            "source": 0,
+            "target": 17
+        },
+        {
+            "source": 0,
+            "target": 18
+        },
+        {
+            "source": 0,
+            "target": 19
+        },
+        {
+            "source": 0,
+            "target": 20
+        }
+    ]
+}
