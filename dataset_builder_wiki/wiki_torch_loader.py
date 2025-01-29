@@ -17,7 +17,7 @@ log: logging.Logger = get_logger(name=__name__)
 device = torch.device('cpu')
 log.info(f"Using torch device: {device}")
 
-DATA_FOLDER = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/json_wiki_graph_dataset"
+TENSOR_FOLDER = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/tensor_wiki_dataset"
 
 class WikiDataset(torch.utils.data.Dataset):
     

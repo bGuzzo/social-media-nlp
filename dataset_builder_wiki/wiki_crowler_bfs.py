@@ -13,7 +13,7 @@ from custom_logger.logger_config import get_logger
 log: logging.Logger = get_logger(name=__name__)
 
 # Default  graph size
-DEF_MAX_NODES = 50
+DEF_MAX_NODES = 1000
 
 def json_dump(graph: nx.Graph):
     node_ids_counter = 0
@@ -49,10 +49,10 @@ def check_title(page_title: str) -> WikipediaPage:
     try:
         page = wikipedia.page(page_title)
     except wikipedia.exceptions.PageError as e:
-        log.error(f"Error: Page '{page_title}' not found.", e)
+        log.error(f"Error: Page '{page_title}' not found.")
         raise e
     except wikipedia.exceptions.DisambiguationError as e:
-        log.error(f"Disambiguation Error for '{page_title}': {e.options}", e)
+        log.error(f"Disambiguation Error for '{page_title}': {e.options}")
         raise e
     
     # Page found
@@ -70,7 +70,7 @@ def crawl(
         log.info("Found empty queue")
         return
     
-    if len(graph.nodes) > max_nodes:
+    if len(graph.nodes) >= max_nodes:
         log.info(f"Reached graph size limit {len(graph.nodes)}")
         return
     
@@ -78,9 +78,17 @@ def crawl(
     
     try:
         page = check_title(page_title)
-    except Exception as e:
-        log.error(f"Error: Page '{page_title}' not found. Branch skipped.", e)
-        return
+    except Exception:
+        log.error(f"Error: Page '{page_title}' not found. Branch skipped. Actual queue size {len(queue)}")
+        if (len(queue) > 0):
+            # Not an exit condition!
+            crawl(
+                graph=graph, 
+                queue=queue, 
+                visited=visited, 
+                max_nodes=max_nodes
+            )
+            return
 
     # Enqueue node child
     for link_title in page.links:
@@ -89,7 +97,7 @@ def crawl(
             log.info(f"Already visited {link_title}")
             continue
         
-        if len(graph.nodes) > max_nodes:
+        if len(graph.nodes) >= max_nodes:
             log.info(f"Reached graph size limit {len(graph.nodes)}")
             return
         
@@ -141,5 +149,5 @@ if __name__ == "__main__":
     # Draw the graph (adjust layout as needed)
     plt.figure(figsize=(12, 12))
     nx.draw(graph, with_labels=True, node_size=300, font_size=8, node_color="skyblue")
-    plt.title("Wikipedia Article Link Graph")
+    plt.title("Environmental sustainability")
     plt.show()

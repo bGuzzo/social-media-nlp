@@ -4,7 +4,7 @@ import time
 import torch
 import torch.version
 from torch_geometric.utils import negative_sampling
-from gat_network.test.data_loader_test import get_data
+from gat_network.data_loader_test import get_data
 from gat_net_module import GatModule
 from sklearn.metrics import roc_auc_score
 import sys
