@@ -181,3 +181,5 @@ cython_debug/
 # Avoid pytorch dump files
 .pt
 .pth
+
+dataset_builder_wiki/final_dataset/tensor
