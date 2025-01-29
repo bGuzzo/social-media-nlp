@@ -143,8 +143,8 @@ def __build_wiki_json_graph(
     try:
         graph = extract_graph(root_article_title=title, max_nodes=max_nodes)
         json_graph = json_dump(graph)
-    except Exception as e:
-        log.error(f"Error: Article '{title}' not found. Skipped.", e)
+    except Exception:
+        log.error(f"Error creating graph for '{title}'. Skipped.")
         return
     
     with open(f"{folder_path}/{file_name}.json", "w") as file:    
