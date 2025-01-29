@@ -13,7 +13,7 @@ from custom_logger.logger_config import get_logger
 log: logging.Logger = get_logger(name=__name__)
 
 # Default  graph size
-DEF_MAX_NODES = 1000
+DEF_MAX_NODES = 20
 
 def json_dump(graph: nx.Graph):
     node_ids_counter = 0
@@ -44,7 +44,20 @@ def json_dump(graph: nx.Graph):
     return json.dumps(json_graph, indent=4)
 
 
-def check_title(page_title: str) -> WikipediaPage:
+def __add_edge(graph: nx.Graph, page_src: str, page_dst: str) -> None:
+    # No node self-link allowed
+    if page_src == page_dst:
+        log.warning(f"Avoided adding self-node link ({page_src} -> {page_dst})")
+        return
+    
+    # Edge present, we consider non-directional graph
+    if graph.has_edge(page_src, page_dst) or graph.has_edge(page_dst, page_src): 
+        log.info(f"Edge ({page_src} -> {page_dst}) already present, not adding it")
+        return
+    
+    graph.add_edge(page_src, page_dst)
+
+def __check_title(page_title: str) -> WikipediaPage:
     # Check if the page exists
     try:
         page = wikipedia.page(page_title)
@@ -60,7 +73,7 @@ def check_title(page_title: str) -> WikipediaPage:
 
 
 # Breadth first wikipedia crowler
-def crawl(
+def __crawl(
     graph: nx.Graph, 
     queue: list, 
     visited: set, 
@@ -77,12 +90,12 @@ def crawl(
     page_title = queue.pop(0)
     
     try:
-        page = check_title(page_title)
+        page = __check_title(page_title)
     except Exception:
         log.error(f"Error: Page '{page_title}' not found. Branch skipped. Actual queue size {len(queue)}")
         if (len(queue) > 0):
             # Not an exit condition!
-            crawl(
+            __crawl(
                 graph=graph, 
                 queue=queue, 
                 visited=visited, 
@@ -93,20 +106,21 @@ def crawl(
     # Enqueue node child
     for link_title in page.links:
         
-        if link_title in visited:
-            log.info(f"Already visited {link_title}")
-            continue
-        
         if len(graph.nodes) >= max_nodes:
             log.info(f"Reached graph size limit {len(graph.nodes)}")
             return
         
-        graph.add_node(link_title)
-        graph.add_edge(page_title, link_title)
-        visited.add(link_title)
-        queue.append(link_title)
+        
+        if link_title in visited:
+            log.info(f"Already visited {link_title}, just adding edge ({page_title} -> {link_title})")
+            __add_edge(graph, page_title, link_title)
+        else:
+            visited.add(link_title)
+            queue.append(link_title)
+            graph.add_node(link_title)
+            __add_edge(graph, page_title, link_title)
     
-    crawl(
+    __crawl(
         graph=graph, 
         queue=queue, 
         visited=visited, 
@@ -118,7 +132,7 @@ def extract_graph(
     root_article_title: str, 
     max_nodes: int = DEF_MAX_NODES, 
 ) -> nx.Graph:
-    check_title(root_article_title)
+    __check_title(root_article_title)
     
     # Inizialize graph
     graph = nx.Graph()
@@ -127,7 +141,7 @@ def extract_graph(
     queue = [root_article_title]
     
 
-    crawl(
+    __crawl(
         graph=graph, 
         queue=queue, 
         visited=visited, 
