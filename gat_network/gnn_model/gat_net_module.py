@@ -1,6 +1,7 @@
 import torch
 from torch.nn import Linear
-from attention_block import DeepAttnBlock
+from gnn_model.attention_block import DeepAttnBlock
+
 
 # Default model values
 NUM_HIDDEN_CHANNELS = 64
@@ -63,5 +64,6 @@ class GatModule(torch.nn.Module):
 
     def decode_all(self, z):
         adj_score = z @ z.t()
-        print(f"Link prediction score matrix \n{torch.sigmoid(adj_score)}")
+        # Only for debug
+        # print(f"Link prediction score matrix \n{torch.sigmoid(adj_score)}")
         return (adj_score > 0).nonzero(as_tuple=False).t()

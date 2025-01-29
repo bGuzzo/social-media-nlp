@@ -177,3 +177,7 @@ cython_debug/
 /training/old_dataset_pdf
 /training/old_dataset_txt
 /training/outputs
+
+# Avoid pytorch dump files
+.pt
+.pth

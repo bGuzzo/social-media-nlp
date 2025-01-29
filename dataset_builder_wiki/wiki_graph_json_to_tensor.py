@@ -44,7 +44,7 @@ def __to_data_tensor(
     
     for node_idx in sorted(nodes_idx_map.keys()):
         node_label = nodes_idx_map[node_idx]
-        log.debug(f"[{json_file_name}] - Parsing node, id: {node_idx}, label: {node_label}")
+        log.info(f"[{json_file_name}] - Parsing node, id: {node_idx}, label: {node_label}")
         
         if (node_label.find("\\") != -1):
             log.error(f"Found \\ in node label {node_label}")
@@ -60,7 +60,7 @@ def __to_data_tensor(
     
     # Load non-oriented graph
     for edge in json_graph["edges"]:
-        log.debug(f"[{json_file_name}] - Parsing edge {edge}")
+        log.info(f"[{json_file_name}] - Parsing edge {edge}")
         
         # Forward edge
         edge_src.append(int(edge["source"]))
