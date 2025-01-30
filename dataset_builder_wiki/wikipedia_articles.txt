@@ -1,3 +1,4 @@
+#################### Sustainability ####################
 Sustainability
 Sustainable development
 Sustainable Development Goals
@@ -14,8 +15,9 @@ Sustainable architecture
 Sustainable transport
 Sustainable gardening
 Sustainable management
+##################################################
 
-
+#################### Green economy ####################
 Green economy
 Economy
 Blue economy
@@ -48,8 +50,9 @@ Atom economy
 Eco-capitalism
 Economy of Milan
 Economy of India
+##################################################
 
-
+#################### Renewable energy ####################
 Renewable energy
 Renewable energy in India
 Renewable energy commercialization
@@ -66,8 +69,45 @@ Renewable energy in Russia
 Renewable resource
 Renewable fuels
 Nuclear power
+##################################################
 
+#################### Energy/Electricity ####################
+Energy
+Ministry of energy
+Energy efficiency
+United States Department of Energy
+United States Department of Energy
+Energy consumption
+Energy balance
+Free energy
+Energy conservation
+Energy supply
+Electrical energy
+Sources of electrical energy
+Electricity
+Electrical grid
+Energy transformation
+Electric power
+Electric power transmission
+Electric power distribution
+Electric bicycle
+Hydroelectricity
+Electric vehicle
+Three-phase electric power
+Electric aircraft
+Electric power system
+American Electric Power
+Electric power industry
+Power station
+Thermal power station
+Tokyo Electric Power Company
+Electricity generation 
+Electric utility
+Electric power conversion
+Power outage
+##################################################
 
+#################### Poverty ####################
 Poverty
 Poverty threshold
 Poverty in the United States
@@ -98,9 +138,9 @@ Cost of poverty
 Poverty in Canada
 Poverty Island
 Poverty in Italy
+##################################################
 
-
-
+#################### Climate change ####################
 Climate change
 Climate change denial
 Effects of climate change
@@ -123,89 +163,356 @@ Climate change in Australia
 Effects of climate change on agriculture
 Copernicus Climate Change Service
 Deforestation and climate change
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##################################################
+
+#################### Education ####################
+Education
+Postgraduate education
+Undergraduate education
+Tertiary education
+Montessori education
+Education Index
+Free education
+Education in India
+Education in China
+Mathematics education
+UNESCO
+Female education
+Education policy
+Teacher education
+Science education
+Gifted education
+Primary education
+Re-education
+Health education
+Values education
+Progressive education
+IDP Education
+##################################################
+
+#################### Word Peace ####################
+World peace
+World Peace Council
+Global Peace Index
+Global Country of World Peace
+Peace
+David Lynch Foundation
+Peace movement
+World War I
+World Day of Peace
+##################################################
+
+#################### Gender Equality ####################
+Gender equality
+Gender-equality paradox
+Gender inequality
+Gender equality in Rwanda
+UN Women
+Minister for Gender Equality
+Gender equality in Morocco
+Ministry of Gender Equality and Family
+Anti-gender movement
+Measures of gender equality
+Gender and development
+Gender inequality in South Korea
+Gender equality in Lebanon
+Gender equality in Nicaragua
+Social equality
+Gender Equality Bureau
+Minister for Women and Gender Equality and Youth
+Gender
+Women's empowerment
+Gender sensitization
+Gender budgeting
+Participation of women in the Olympics
+Culture of Finland
+Gender inequality in China
+Gender sensitivity
+Women and Gender Equality Canada
+2024 Irish constitutional referendums
+Minister for Women and Equalities
+Gender Inequality Index
+Development aid 
+##################################################
+
+#################### Clean Water ####################
+Water pollution
+Clean Water Act
+List of countries by access to clean water
+Clean Water Rule
+Drinking water
+Fiji Water
+Environmental policy of the first Donald Trump administration
+Water
+Pressure washing
+Phos-Chek
+Water treatment
+Clean Water Action
+National Association of Clean Water Agencies
+Water scarcity
+Clean Water Services
+Rainwater harvesting
+Clean Water Network
+Dry cleaning
+Pollution of the Ganges
+Flint water crisis
+Deepwater Horizon
+Thermax
+Sustainable Development Goal 6
+Diarrhea
+Florida Right to Clean Water
+Hell or Clean Water
+United States Environmental Protection Agency
+Clean Water Act (Ontario)
+Waterborne disease
+Clean Water State Revolving Fund
+Cholera
+##################################################
+
+#################### Industry ####################
+Industry
+Automotive industry
+Film industry
+Arms industry
+Gaming industry
+Outline of industry
+Industry classification
+Drink industry
+Semiconductor industry
+Light industry
+Industry standard
+Smokestack industry
+Sex industry
+Petrochemical industry
+Food industry
+Electronics industry
+Chemical industry
+Industry (archaeology)
+Heavy industry
+Minister of industry
+Hospitality industry
+Culture industry
+Industrial Revolution
+Wood industry
+Trade industry
+Pharmaceutical industry
+Petroleum industry
+Healthcare industry
+Plastics industry
+Footloose industry
+Sugar industry
+##################################################
+
+#################### Infrastructure ####################
+Infrastructure
+IT infrastructure
+Internet infrastructure
+Critical infrastructure
+Reliance Industrial Infrastructure
+Capstone Infrastructure
+Infrastructure fund
+Green infrastructure
+Department of Infrastructure and Investment (Andhra Pradesh)
+Transport
+Information infrastructure
+Infrastructure and economics
+Afcons Infrastructure
+Public key infrastructure
+##################################################
+
+#################### Innovation ####################
+Innovation
+Disruptive innovation
+Innovation management
+Diffusion of innovations
+American Innovation dollars
+Open innovation
+Onto Innovation
+Global Innovation Index
+Innovation system
+Innovation method
+International Innovation Index
+United Nations Development Programme
+Frugal innovation
+Innovation Nation
+Directorate-General for Research and Innovation
+Department of the Environment, Tourism, Science and Innovation
+Chief innovation officer
+Technological innovation
+Ministry of Higher Education and Science (Denmark)
+Innovation district
+Eco-innovation
+##################################################
+
+#################### Sustainable/Smart City ####################
+Sustainable city
+Sharjah Sustainable City
+Smart city
+15-minute city
+Sustainable urbanism
+City
+Sustainable transport
+Sustainable City Awards
+Sustainable architecture
+Sustainable urban infrastructure
+List of smart cities
+Smart Cities Mission
+Chennai Smart City
+##################################################
+
+#################### Climate action ####################
+Climate action
+Climate Action Tracker
+Individual action on climate change
+Climate change
+Climate Action Network
+Climate justice
+Climate change mitigation
+Action for Climate Empowerment
+Fridays for Future
+Climate movement
+Paris Agreement
+Camp for Climate Action
+Climate Action Africa
+C40 Cities Climate Leadership Group
+Business action on climate change
+Carbon pricing in Canada
+2024 United Nations Climate Change Conference
+Climate Clock
+Federal Ministry for Economic Affairs and Climate Action
+Politics of climate change
+United Nations Climate Change Conference
+European Commissioner for Climate Action
+National Action Plan for Climate Change
+United Nations Framework Convention on Climate Change
+List of climate change initiatives
+Climate change denial
+2019 UN Climate Action Summit
+German Climate Action Plan 2050
+Presidential Climate Action Plan
+Ministry of Climate Action and Energy (Austria)
+Department of Energy, Environment and Climate Action
+2024 in climate change
+##################################################
+
+#################### Agriculture ####################
+Agriculture
+List of agriculture ministries
+Sustainable agriculture
+History of agriculture
+Agriculture commissioner
+Agricultural revolution
+Minister for Agriculture, Food and the Marine
+Agriculture in India
+United States Department of Agriculture
+Subsistence agriculture
+Food and Agriculture Organization
+Agricultural science
+Regenerative agriculture
+Agricultural engineering
+Modern agriculture
+United States Senate Committee on Agriculture, Nutrition, and Forestry
+Climate change and agriculture
+United States Secretary of Agriculture
+Digital agriculture
+Organic farming
+United States Senate Agriculture Subcommittee on Commodities, Risk Management, and Trade
+Neolithic Revolution
+United States House Agriculture Subcommittee on Livestock, Dairy, and Poultry
+Agriculture in Brazil
+Agricultural technology
+Outline of agriculture
+Mechanised agriculture
+Agricultural machinery
+Ministry of Agriculture, Forestry and Fisheries
+Minister of Agriculture and Agri-Food
+Agricultural economics
+Precision agriculture
+Agriculture in Russia
+United States House Committee on Agriculture
+Green Revolution
+Irrigation
+Agriculture in China
+Agriculture in California
+##################################################
+
+#################### Justice ####################
+Justice
+Justice (organisation)
+Justice of the peace
+In Justice
+Supreme Court of the United States
+Ministry of justice
+United States Department of Justice
+International Court of Justice
+Chief Justice of the United States
+Social justice
+Environmental justice
+Associate Justice of the Supreme Court of the United States
+Scales of Justice
+Lady Justice
+Criminal justice
+American Justice
+##################################################
+
+#################### [Generalization] TOP 50 Articoles 2024 ####################
+Deaths in 2024
+2024 United States presidential election
+Kamala Harris
+Donald Trump
+Lyle and Erik Menendez
+JD Vance
+Deadpool & Wolverine
+Project 2025
+ChatGPT
+Elon Musk
+2024 Indian general election
+Taylor Swift
+2020 United States presidential election
+United States
+2024 Summer Olympics
+UEFA Euro 2024
+Joe Biden
+Kalki 2898 AD
+Cristiano Ronaldo
+Sean Combs
+Pushpa 2: The Rule
+Griselda Blanco
+Robert F. Kennedy Jr.
+Dune: Part Two
+Liam Payne
+Sabrina Carpenter
+List of highest-grossing Indian films
+Shōgun (2024 TV series)
+World War II
+Jimmy Carter
+Tim Walz
+Israel–Hamas war
+India
+J. Robert Oppenheimer
+House of the Dragon
+Poor Things (film)
+Sydney Sweeney
+Saltburn (film)
+Gladiator II
+Mike Tyson
+Chappell Roan
+Simone Biles
+Dune (2021 film)
+Civil War (film)
+2016 United States presidential election
+Oppenheimer (film)
+Wicked (2024 film)
+Lionel Messi
+Premier League
+Fallout (American TV series)
+##################################################
+
+#################### [Generalization] Other topics ####################
+COVID-19 pandemic
+Coronavirus
+Coronavirus disease 2019
+COVID-19 pandemic in the United States
+COVID-19 pandemic in India
+COVID-19 pandemic in Italy
+##################################################

@@ -14,119 +14,23 @@ log.info(f"CPU cores available {multiprocessing.cpu_count()}")
 
 DEF_MAX_NODES = 5000
 
-DEF_WIKIPEDIA_ARTICLES = [
-    
-    # Sustinability
-    "Sustainable development",
-    "Environmental sustainability",
-    "Social sustainability",
-    "Economic sustainability",
-    "Sustainable agriculture",
-    "Sustainable energy",
-    "Sustainable transport",
-    "Sustainable cities",
-    "Sustainable consumption",
-    "Sustainable production",
-    "Circular economy",
-    "Green building",
-    "Renewable energy",
-    "Climate change mitigation",
-    "Biodiversity conservation",
-    "Water conservation",
-    "Waste management",
-    "Environmental ethics",
-    "Corporate social responsibility",
-    "Sustainable development goals",
-    
-    # Poverty
-    "Poverty",
-    "Poverty threshold",
-    "Poverty in the United States",
-    "Cycle of poverty",
-    "Feminization of poverty",
-    "Extreme poverty",
-    "Child poverty",
-    "Poverty reduction",
-    "List of countries by percentage of population living in poverty",
-    "Causes of poverty",
-    "Effects of poverty",
-    "Poverty and health",
-    "Poverty and education",
-    "Poverty and crime",
-    "Social safety net",
-    "Welfare",
-    "Food security",
-    "Homelessness",
-    "Millennium Development Goals",
-    
-    # Global warming
-    "Climate change",
-    "Global warming",
-    "Effects of climate change",
-    "Climate change mitigation",
-    "Climate change adaptation",
-    "Causes of climate change",
-    "Greenhouse gas",
-    "Carbon dioxide in Earth's atmosphere",
-    "Methane",
-    "Nitrous oxide",
-    "Deforestation",
-    "Fossil fuel",
-    "Renewable energy",
-    "Solar energy",
-    "Wind power",
-    "Hydropower",
-    "Geothermal energy",
-    "Biomass",
-    "Nuclear power",
-    "Climate change denial",
-    
-    # Food secutity
-    "Food security",
-    "Food sovereignty",
-    "Global hunger",
-    "Malnutrition",
-    "Famine",
-    "Right to food",
-    "Food systems",
-    "Sustainable agriculture",
-    "Food waste",
-    "Food desert",
-    "Food bank",
-    "World Food Programme",
-    "Food and Agriculture Organization",
-    "International Fund for Agricultural Development",
-    "Global Food Security Index",
-    "Food crisis",
-    "Urban agriculture",
-    "Community garden",
-    "Vertical farming",
-    "Genetically modified food controversies",
-    
-    # Health
-    "Health",
-    "Public health",
-    "Global health",
-    "Mental health",
-    "Physical health",
-    "Nutrition",
-    "Disease",
-    "Infectious disease",
-    "Non-communicable disease",
-    "Health care",
-    "Universal health care",
-    "Health economics",
-    "Environmental health",
-    "Occupational safety and health",
-    "Epidemiology",
-    "Biostatistics",
-    "Health promotion",
-    "Preventive healthcare",
-    "Traditional medicine",
-    "Telehealth"
-]
-
 FOLDER_PATH = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/json_wiki_graph_dataset"
+WIKI_ARTICLES_FILE = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/wikipedia_articles.txt" 
+
+def __get_wiki_articles(file_name:str = WIKI_ARTICLES_FILE) -> list[str]:
+    wiki_articles_title = []
+    
+    with open(file_name, "r") as file:
+        for file_line in file:
+            if not file_line.startswith("#"):
+                title_str:str = file_line.strip()
+                log.info(f"Reading file {file_name}, line: {title_str}")
+                if title_str:
+                    wiki_articles_title.append(title_str)
+            
+    log.info(f"Loaded {len(wiki_articles_title)} Wikipedia articles titles")
+    return wiki_articles_title
+
 
 def __build_wiki_json_graph(
     title:str, 
@@ -154,10 +58,13 @@ def __build_wiki_json_graph(
 
 
 def create_dataset(
-    wiki_articles: list[str] = DEF_WIKIPEDIA_ARTICLES, 
+    # wiki_articles: list[str] = DEF_WIKIPEDIA_ARTICLES, 
     max_nodes: int = DEF_MAX_NODES, 
     folder_path:str = FOLDER_PATH
 ) -> None:
+    # Load wikipedia articles title
+    wiki_articles: list[str] = __get_wiki_articles()
+    
     # Thread list
     future_list: list[futures.Future] = []
     

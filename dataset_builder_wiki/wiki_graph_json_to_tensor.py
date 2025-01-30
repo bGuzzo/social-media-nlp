@@ -113,7 +113,7 @@ def convert_jsons_to_tensors(
                         tensor_file_name = filename.replace(".json", ".pt")
                         tensor_file_path = os.path.join(tensor_folder, tensor_file_name)
                         if os.path.exists(tensor_file_path):
-                            log.warning(f"File {filename} already present as tensor file {tensor_file_name}")
+                            log.warning(f"File {filename} already present as tensor file {tensor_file_name}. Skipped")
                             continue
                         
                         log.info(f"Start concurrent parsing JSON file {filename} to tensor")

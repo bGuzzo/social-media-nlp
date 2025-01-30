@@ -182,4 +182,5 @@ cython_debug/
 .pt
 .pth
 
+dataset_builder_wiki/final_dataset/**
 dataset_builder_wiki/final_dataset/tensor

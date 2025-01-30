@@ -32,8 +32,8 @@ SAVE_MODEL_EPOCH_INTERVAL = 5
 
 # Model parameters
 INPUT_SIZE = 384 # Embedding model output size
-HIDDEN_SIZE = 64
-OUTPUT_SIZE = 32
+HIDDEN_SIZE = 1024
+OUTPUT_SIZE = 256
 NUM_ATTENTION_LAYER = 1
 
 @torch.no_grad()
@@ -107,11 +107,11 @@ def train_and_dump(
     # Training loop
     model.train()
     start_time = time.time()
-    for epoch in tqdm(range(num_epoch), desc="Training"):
+    for epoch in tqdm(range(num_epoch), desc="Epoch loop"):
         loss_list = []
         auc_list = []
     
-        for idx, obj in enumerate(dataset):
+        for idx, obj in tqdm(enumerate(dataset), desc=f"Epoch {epoch + 1}, data loop"):
             data: Data = obj
             data = data.to(device)
             
