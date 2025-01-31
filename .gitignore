@@ -183,4 +183,5 @@ cython_debug/
 .pth
 
 dataset_builder_wiki/final_dataset/**
-dataset_builder_wiki/final_dataset/tensor
+dataset_builder_wiki/final_dataset/tensor/**
+gat_network/model_dumps/**

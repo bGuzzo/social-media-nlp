@@ -33,10 +33,10 @@ Focus on delivering the most direct and accurate answer to the user's query.
 # base_model = "google/gemma-2-9b-it"
 
 # 1B
-base_model = "meta-llama/Llama-3.2-1B-Instruct"
+# base_model = "meta-llama/Llama-3.2-1B-Instruct"
 
 # 3B
-# base_model = "meta-llama/Llama-3.2-3B-Instruct"
+base_model = "meta-llama/Llama-3.2-3B-Instruct"
 
 # 8B
 # base_model = "meta-llama/Llama-3.1-8B-Instruct"

@@ -1,0 +1,14 @@
+-------------- LLAMA 3.2B OK v1 -------------------
+Generate a JSON list of 30 arguments related to Sustainable Development Goals 1: End poverty in all its forms everywhere.
+
+Example of response structure: ["apple", "banana", "cherry"].
+Avoid creating nested JSON object, the generated JSON object list must have only one level.
+--------------------------------------------------
+
+
+-------------- LLAMA 3.2B OK v1 -------------------
+Generate a JSON list of 30 arguments related to Sustainable Development Goals 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
+
+Example of response structure: ["apple", "banana", "cherry"].
+Avoid creating nested JSON object, the generated JSON object list must have only one level.
+--------------------------------------------------

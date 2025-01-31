@@ -34,7 +34,7 @@ INPUT_SIZE = 384 # Embedding model output size
 HIDDEN_SIZE = 512
 OUTPUT_SIZE = 256
 NUM_ATTENTION_LAYER = 1
-NUM_ATTENTION_HEAD = 8
+NUM_ATTENTION_HEAD = 4
 
 @torch.no_grad()
 def __get_auc(model: GatModule, data: Data, training: bool = False):

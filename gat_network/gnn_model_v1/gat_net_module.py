@@ -69,4 +69,6 @@ class GatModule(torch.nn.Module):
         adj_score = z @ z.t()
         # Only for debug
         # print(f"Link prediction score matrix \n{torch.sigmoid(adj_score)}")
-        return (adj_score > 0).nonzero(as_tuple=False).t()
+        # return (adj_score > 0).nonzero(as_tuple=False).t()
+        return adj_score
+
