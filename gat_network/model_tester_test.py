@@ -158,14 +158,14 @@ def main(node_label_list: list[str] = NODE_SAMPLE):
     
     row_indices, col_indices = extract_edges(adj_prob_matrix, 0.9)
     if row_indices.numel() > 0:  # Check if any edges were found
-        print("Edges above threshold:")
+        # print("Edges above threshold:")
         
         for i in range(row_indices.size(0)):
             row = row_indices[i].item()
             col = col_indices[i].item()
             if row != col:
                 prob = adj_prob_matrix[row, col].item()
-                print(f"Edge: {row} -> {col}, Probability: {prob}")
+                # print(f"Edge: {row} -> {col}, Probability: {prob}")
                 graph.add_edge(node_label_list[row], node_label_list[col])
     else:
         print("No edges found above the threshold.")

@@ -56,6 +56,7 @@ class GatModule(torch.nn.Module):
 
     def encode(self, x, edge_index):
         x = self.in_lin_layer(x)
+        print(f"X shape {x.shape}")
         x = self.deep_layers(x, edge_index)
         x = self.out_lin_level(x)
         return x

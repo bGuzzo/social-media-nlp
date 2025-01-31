@@ -51,10 +51,6 @@ def __to_data_tensor(
         node_label = nodes_idx_map[node_idx]
         log.info(f"[{json_file_name}] - Parsing node, id: {node_idx}, label: {node_label}")
         
-        if (node_label.find("\\") != -1):
-            log.error(f"Found \\ in node label {node_label}")
-            raise Exception(f"Found \\ in node label {node_label}")
-        
         # Compute node embeddings using NLP
         node_embed = embedding_model.encode(node_label)
         node_embed_tensor = torch.tensor(node_embed, dtype=torch.float, device=device)
