@@ -6,6 +6,8 @@ import sys
 import logging
 import os
 
+from tqdm import tqdm
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from custom_logger.logger_config import get_logger
 
@@ -19,12 +21,28 @@ TENSOR_FOLDER = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_w
 
 class WikiDataset(torch.utils.data.Dataset):
     
-    def __init__(self, tensor_folder: str = TENSOR_FOLDER, shuffle: bool = False):
+    def __init__(self, tensor_folder: str = TENSOR_FOLDER, shuffle: bool = False, size_limit: int = -1) -> None:
         
         self.__obj_list: list[Tuple[Data, dict[int, str]]] = []
         
         log.info(f"Loading tensor data from {tensor_folder}")
-        for filename in os.listdir(tensor_folder):
+        
+        tensor_files: list[str] = os.listdir(tensor_folder)
+        if len(tensor_files) == 0:
+            raise ValueError(f"No tensor files found in {tensor_folder}")
+        
+        if size_limit > 0 and size_limit > len(tensor_files):
+            raise ValueError(f"Size limit {size_limit} is greater than the number of tensor files {len(tensor_files)}")
+        
+        if shuffle:
+            log.info("Shuffling data")
+            random.shuffle(tensor_files)
+        
+        if size_limit > 0:
+            log.info(f"Dataset size limited to {size_limit}")
+            tensor_files = tensor_files[:size_limit]
+        
+        for filename in tqdm(tensor_files, desc="Loading tensor files"):
             if filename.endswith(".pt"):
                 tensor_file_path = os.path.join(tensor_folder, filename)
                 log.info(f"Loading tensor file {tensor_file_path}")
@@ -41,9 +59,13 @@ class WikiDataset(torch.utils.data.Dataset):
                     log.error(f"Error loading tensor file {tensor_file_path}")
                     raise e
         
-        if shuffle:
-            log.info("Shuffling data")
-            random.shuffle(self.__obj_list)
+        # if shuffle:
+        #     log.info("Shuffling data")
+        #     random.shuffle(self.__obj_list)
+        
+        # if size_limit > 0:
+        #     log.info("Dataset size limited to {size_limit}")
+        #     self.__obj_list = self.__obj_list[:size_limit]
         
         log.info(f"Loaded {len(self.__obj_list)} data objects")
     

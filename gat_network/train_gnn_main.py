@@ -1,11 +1,10 @@
 import time
 import torch
 import torch.version
-from torch.utils.data import DataLoader
 from torch_geometric.utils import negative_sampling
 from torch_geometric.data import Data
 from tqdm import tqdm
-from gnn_model.gat_net_module import GatModule
+from gnn_model_v1.gat_net_module import GatModule
 from sklearn.metrics import roc_auc_score
 import sys
 import logging
@@ -32,9 +31,10 @@ SAVE_MODEL_EPOCH_INTERVAL = 5
 
 # Model parameters
 INPUT_SIZE = 384 # Embedding model output size
-HIDDEN_SIZE = 1024
+HIDDEN_SIZE = 512
 OUTPUT_SIZE = 256
 NUM_ATTENTION_LAYER = 1
+NUM_ATTENTION_HEAD = 8
 
 @torch.no_grad()
 def __get_auc(model: GatModule, data: Data, training: bool = False):
@@ -75,6 +75,7 @@ def train_and_dump(
     hidden_size: int = HIDDEN_SIZE,
     output_size: int = OUTPUT_SIZE,
     num_attention_layer: int = NUM_ATTENTION_LAYER,
+    num_attention_head: int = NUM_ATTENTION_HEAD,
     save_model_epoch_interval: int = SAVE_MODEL_EPOCH_INTERVAL,
 ) -> None:
     
@@ -84,13 +85,14 @@ def train_and_dump(
     if save_model_epoch_interval > num_epoch:
         raise ValueError(f"Save model epoch interval must be less than or equal to number of epochs, got {save_model_epoch_interval}")
     
-    dataset: WikiDataset = WikiDataset(tensor_folder=tensor_folder_path, shuffle=True)
+    dataset: WikiDataset = WikiDataset(tensor_folder=tensor_folder_path, shuffle=True, size_limit=20)
     
     model: GatModule = GatModule(
         in_channels=input_size,
         hidden_channels=hidden_size,
         out_channels=output_size,
         num_attention_layer=num_attention_layer,
+        num_attention_head=num_attention_head,
     ).to(device)
     
     num_model_params = __get_num_params(model)
@@ -111,7 +113,7 @@ def train_and_dump(
         loss_list = []
         auc_list = []
     
-        for idx, obj in tqdm(enumerate(dataset), desc=f"Epoch {epoch + 1}, data loop"):
+        for idx, obj in enumerate(dataset):
             data: Data = obj
             data = data.to(device)
             
@@ -142,11 +144,11 @@ def train_and_dump(
         log.info(f"Epoch: {epoch + 1}/{num_epoch}, Loss (epoch): {epoch_loss:.4f}, AUC (epoch): {epoch_auc:.4f}, Time: {time.time() - start_time:.2f}s")
         
         if (epoch + 1) % save_model_epoch_interval == 0:
-            torch.save(model, os.path.join(model_dump_path, f"gnn_model_{num_model_params}_params_{input_size}_{hidden_size}_{output_size}_epoch_{epoch + 1}_{time.strftime('%Y%m%d-%H%M%S')}.pth"))
+            torch.save(model, os.path.join(model_dump_path, f"gnn_model_v1_attn_{num_attention_layer}x{num_attention_head}_sizes_{input_size}_{hidden_size}_{output_size}_epoch_{epoch + 1}_{time.strftime('%Y%m%d-%H%M%S')}.pth"))
             log.info(f"Model salved on epoch {epoch + 1}")
     
     log.info(f"Training finished after {num_epoch} epochs and {time.time() - start_time:.2f}s, saving final model")
-    torch.save(model, os.path.join(model_dump_path, f"gnn_model_{num_model_params}_params_{input_size}_{hidden_size}_{output_size}_final_{time.strftime('%Y%m%d-%H%M%S')}.pth"))
+    torch.save(model, os.path.join(model_dump_path, f"gnn_model_v1_attn_{num_attention_layer}x{num_attention_head}_sizes_{input_size}_{hidden_size}_{output_size}_final_{time.strftime('%Y%m%d-%H%M%S')}.pth"))
     log.info("Final model saved successfully")
 
 
