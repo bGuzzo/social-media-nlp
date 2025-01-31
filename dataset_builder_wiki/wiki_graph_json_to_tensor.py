@@ -32,6 +32,11 @@ def __to_data_tensor(
     embedding_model: SentenceTransformer
 ) -> None:
     
+    # First operation in thread: check if tensor file exists
+    if os.path.exists(tensor_file_path):
+        log.warning(f"File {json_file_name} already present as tensor file {tensor_file_path}. Skipped")
+        return
+    
     # Key: node_id, Value: node_label
     nodes_idx_map: dict[int, str] = {}
     node_embed_ord: list[torch.Tensor] = []
@@ -112,9 +117,10 @@ def convert_jsons_to_tensors(
                         
                         tensor_file_name = filename.replace(".json", ".pt")
                         tensor_file_path = os.path.join(tensor_folder, tensor_file_name)
-                        if os.path.exists(tensor_file_path):
-                            log.warning(f"File {filename} already present as tensor file {tensor_file_name}. Skipped")
-                            continue
+                        
+                        # if os.path.exists(tensor_file_path):
+                        #     log.warning(f"File {filename} already present as tensor file {tensor_file_name}. Skipped")
+                        #     continue
                         
                         log.info(f"Start concurrent parsing JSON file {filename} to tensor")
                         future = executor.submit(__to_data_tensor, filename, json_dict, tensor_file_path, embedding_model)

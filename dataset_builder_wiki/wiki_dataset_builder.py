@@ -60,10 +60,11 @@ def __build_wiki_json_graph(
 def create_dataset(
     # wiki_articles: list[str] = DEF_WIKIPEDIA_ARTICLES, 
     max_nodes: int = DEF_MAX_NODES, 
-    folder_path:str = FOLDER_PATH
+    folder_path: str = FOLDER_PATH,
+    wiki_file_path: str = WIKI_ARTICLES_FILE
 ) -> None:
     # Load wikipedia articles title
-    wiki_articles: list[str] = __get_wiki_articles()
+    wiki_articles: list[str] = __get_wiki_articles(file_name=wiki_file_path)
     
     # Thread list
     future_list: list[futures.Future] = []
