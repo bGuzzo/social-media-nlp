@@ -84,9 +84,9 @@ class GatModelV1(torch.nn.Module):
         logits = (z[edge_index[0]] * z[edge_index[1]]).sum(dim=-1)
         return logits
 
-    def decode_all(self, z):
+    def get_adj_prob_matrix(self, z):
         adj_score = z @ z.t()
-        return adj_score
+        return torch.sigmoid(adj_score)
     
     def get_name(self) -> str:
         return self.model_name
