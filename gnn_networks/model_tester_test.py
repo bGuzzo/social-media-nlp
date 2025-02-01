@@ -5,7 +5,7 @@ import sys
 import logging
 import os
 from tqdm import tqdm
-from gnn_model_v1.gat_net_module import GatModule
+from gnn_networks.gnn_model_v1.gat_net_module_v1 import GatModelV1
 import matplotlib.pyplot as plt
 import networkx as nx
 
@@ -112,7 +112,7 @@ def convert_to_tensor(node_list:list[str] = NODE_SAMPLE, embedding_model_name:st
     
     return Data(x=x, edge_index=edge_index).to(device)
 
-def load_model(model_path:str = MODEL_PATH) -> GatModule:
+def load_model(model_path:str = MODEL_PATH) -> GatModelV1:
     return torch.load(model_path)
 
 def extract_edges(adj_matrix, threshold):

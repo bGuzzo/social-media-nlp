@@ -1,6 +1,6 @@
 import torch
 from torch.nn import Linear
-from gnn_model_v1.attention_block import DeepAttnBlock
+from gnn_model_v1.gat_block_v1 import DeepGATBlockV1
 
 
 # Default model values
@@ -11,7 +11,17 @@ NUM_ATTENTION_HEAD = 1
 DROPOUT_PROB = 0.5
 
 
-class GatModule(torch.nn.Module):
+class GatModelV1(torch.nn.Module):
+    
+    """
+    This GNN model uses a DeepGATBlock to perform graph attention network operations.
+    It consists of an input dropout layer, an input linear layer, a DeepGATBlock for multiple attention layers, and an output linear layer.  
+    The DeepGATBlock itself contains multiple levels of GATConv layers,
+    dropout layers, and normalization layers (LayerNorm by default). 
+    The model uses a simple dot-product decoder to predict link probabilities between nodes. 
+    The model is designed for link prediction tasks.
+    """
+    
     def __init__(
         self,
         in_channels: int,
@@ -20,6 +30,8 @@ class GatModule(torch.nn.Module):
         num_attention_layer: int = NUM_ATTENTION_LAYER,
         num_attention_head=NUM_ATTENTION_HEAD,
         dropout_prob: float = DROPOUT_PROB,
+        activation_func: torch.nn.Module = torch.nn.ReLU(),
+        norm_func: torch.nn.Module = torch.nn.LayerNorm
     ):
         super().__init__()
         
@@ -38,16 +50,22 @@ class GatModule(torch.nn.Module):
         if out_channels <= 0:
             raise ValueError(f"Output channels must be greater than 0, got {out_channels}")
         
+        self.in_dropout = torch.nn.Dropout(dropout_prob)
+        
         self.in_lin_layer = Linear(in_channels, hidden_channels)
         
-        self.deep_layers = DeepAttnBlock(
+        self.deep_layers = DeepGATBlockV1(
             num_levels=num_attention_layer, 
             num_heads=num_attention_head,
             hidden_channels=hidden_channels, 
-            dropout_prob=dropout_prob
+            dropout_prob=dropout_prob,
+            activation_func=activation_func,
+            norm_func=norm_func
         )
         
         self.out_lin_level = Linear(hidden_channels, out_channels)
+        
+        self.model_name = f"gat_model_v1_ReLU_StdNorm_{hidden_channels}_{out_channels}_{num_attention_layer}x{num_attention_head}_dropout_{dropout_prob}"
         
     
     def forward(self, x, pos_edge_index, neg_edge_index):
@@ -56,7 +74,7 @@ class GatModule(torch.nn.Module):
 
     def encode(self, x, edge_index):
         x = self.in_lin_layer(x)
-        print(f"X shape {x.shape}")
+        x = self.in_dropout(x)
         x = self.deep_layers(x, edge_index)
         x = self.out_lin_level(x)
         return x
@@ -68,8 +86,8 @@ class GatModule(torch.nn.Module):
 
     def decode_all(self, z):
         adj_score = z @ z.t()
-        # Only for debug
-        # print(f"Link prediction score matrix \n{torch.sigmoid(adj_score)}")
-        # return (adj_score > 0).nonzero(as_tuple=False).t()
         return adj_score
+    
+    def get_name(self) -> str:
+        return self.model_name
 

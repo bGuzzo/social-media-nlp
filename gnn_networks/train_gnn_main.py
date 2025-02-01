@@ -4,7 +4,9 @@ import torch.version
 from torch_geometric.utils import negative_sampling
 from torch_geometric.data import Data
 from tqdm import tqdm
-from gnn_model_v1.gat_net_module import GatModule
+# from gnn_model_v1.gat_net_module_v1 import GatModelV1
+from gnn_model_v3_swiglu_rms_pre_norm.gat_net_module_v3 import GatModelV3
+# from gnn_model_v2_llama_like.gat_net_module_v2 import GatModelV2
 from sklearn.metrics import roc_auc_score
 import sys
 import logging
@@ -12,7 +14,7 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from custom_logger.logger_config import get_logger
-from dataset_builder_wiki.wiki_torch_loader import WikiDataset
+from dataset_builder_wiki.wiki_torch_loader import WikiGraphDataset
 
 log: logging.Logger = get_logger(name=__name__)
 
@@ -21,23 +23,23 @@ device = torch.device('cpu')
 log.info(f"Using torch device: {device}")
 
 # In/out folder configuration
-MODEL_DUMP_PATH = "/home/bruno/Documents/GitHub/social-media-nlp/gat_network/model_dumps"
+MODEL_DUMP_PATH = "/home/bruno/Documents/GitHub/social-media-nlp/gnn_networks/model_dumps"
 TENSOR_FOLDER_PATH = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/final_dataset/tensor"
 
 # Traininer parameters
-NUM_EPOCH = 20
+NUM_EPOCH = 5
 INITIAL_LR = 0.001
 SAVE_MODEL_EPOCH_INTERVAL = 5
 
 # Model parameters
 INPUT_SIZE = 384 # Embedding model output size
-HIDDEN_SIZE = 512
-OUTPUT_SIZE = 256
-NUM_ATTENTION_LAYER = 1
-NUM_ATTENTION_HEAD = 4
+HIDDEN_SIZE = 128
+OUTPUT_SIZE = 64
+NUM_ATTENTION_LAYER = 2
+NUM_ATTENTION_HEAD = 2
 
 @torch.no_grad()
-def __get_auc(model: GatModule, data: Data, training: bool = False):
+def __get_auc(model: GatModelV3, data: Data, training: bool = False):
     model.eval()    
     z = model.encode(data.x, data.edge_index)
     
@@ -85,9 +87,9 @@ def train_and_dump(
     if save_model_epoch_interval > num_epoch:
         raise ValueError(f"Save model epoch interval must be less than or equal to number of epochs, got {save_model_epoch_interval}")
     
-    dataset: WikiDataset = WikiDataset(tensor_folder=tensor_folder_path, shuffle=True, size_limit=20)
+    dataset: WikiGraphDataset = WikiGraphDataset(tensor_folder=tensor_folder_path, shuffle=True, size_limit=10)
     
-    model: GatModule = GatModule(
+    model: GatModelV3 = GatModelV3(
         in_channels=input_size,
         hidden_channels=hidden_size,
         out_channels=output_size,
