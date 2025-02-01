@@ -39,18 +39,18 @@ HIDDEN_SIZE = 128
 OUTPUT_SIZE = 64
 NUM_ATTENTION_LAYER = 3
 NUM_ATTENTION_HEAD = 2
-DROPOUT_PROB = 0.75
+DROPOUT_PROB = 0.8
 
 # Dataset split params
 LEN_LIMIT = 100
 TRAIN_PERC = 0.9
 
-# Agnostic AUC params
+# A-AUC params
 COSIN_SIM_THRESHOLD = 0.7
 NODE_SAMPLING_RATE = 0.1
 
 # Optimizations
-LOSS_NEG_EDGE_SAMLING_RATE = 0.5
+LOSS_NEG_EDGE_SAMLING_RATE = 0.3
 
 # Edge agnostic measure
 @torch.no_grad()
@@ -120,15 +120,11 @@ def __train_and_dump(
     # Model params
     torch_model: torch.nn.Module,
     torch_train_set: torch_geometric.data.Dataset,
-    num_epoch: int = NUM_EPOCH,
-    # input_size: int = INPUT_SIZE,
-    # hidden_size: int = HIDDEN_SIZE,
-    # output_size: int = OUTPUT_SIZE,
-    # num_attention_layer: int = NUM_ATTENTION_LAYER,
-    # num_attention_head: int = NUM_ATTENTION_HEAD,
     # Trainer params
-    
+    num_epoch: int = NUM_EPOCH,
     initial_lr: float = INITIAL_LR,
+    loss_neg_edge_sampl_rate: float = LOSS_NEG_EDGE_SAMLING_RATE,
+    # Dump parmas
     dump_model: bool = True,
     save_model_epoch_interval: int = SAVE_MODEL_EPOCH_INTERVAL,
     model_dump_path: str = MODEL_DUMP_PATH
@@ -167,15 +163,17 @@ def __train_and_dump(
             z = model.encode(data.x, data.edge_index)
             
             # Use a under-sampled negative edges set for training efficiency
-            num_neg_edges = int(data.num_edges * LOSS_NEG_EDGE_SAMLING_RATE)
+            num_neg_edges = int(data.num_edges * loss_neg_edge_sampl_rate)
             neg_edge_index = negative_sampling(
                 edge_index=data.edge_index,
                 num_nodes=data.num_nodes,
-                num_neg_samples=data.num_edges,
+                # num_neg_samples=data.num_edges,
+                num_neg_samples=num_neg_edges
             )
             
             logits = model.decode(z, data.edge_index, neg_edge_index)
-            labels = torch.cat([torch.ones(data.num_edges), torch.zeros(data.num_edges)]).to(device)
+            # labels = torch.cat([torch.ones(data.num_edges), torch.zeros(data.num_edges)]).to(device)
+            labels = torch.cat([torch.ones(data.num_edges), torch.zeros(num_neg_edges)]).to(device)
             
             loss = criterion(logits, labels)
             loss_list.append(loss.item())
@@ -188,12 +186,12 @@ def __train_and_dump(
             loss.backward()
             optimizer.step()
             
-            log.info(f"Epoch: {epoch + 1}/{num_epoch}, Data index: {idx}, Loss (single item): {loss.item():.4f}, AUC (single item): {auc:.4f},  Agnostic AUC (single item): {agn_auc:.4f}, Time: {time.time() - start_time:.2f}s")
+            log.info(f"Epoch: {epoch + 1}/{num_epoch}, Data index: {idx}, Loss (single item): {loss.item():.4f}, AUC (single item): {auc:.4f},  A-AUC (single item): {agn_auc:.4f}, Time: {time.time() - start_time:.2f}s")
         
         epoch_loss = sum(loss_list) / len(loss_list)
         epoch_auc = sum(auc_list) / len(auc_list)
         epoch_agn_auc = sum(agnostic_auc_list) / len(agnostic_auc_list)
-        log.info(f"Epoch: {epoch + 1}/{num_epoch}, Loss (epoch): {epoch_loss:.4f}, AUC (epoch): {epoch_auc:.4f}, Agnostic AUC (epoch): {epoch_agn_auc:.4f}, Time: {time.time() - start_time:.2f}s")
+        log.info(f"Epoch: {epoch + 1}/{num_epoch}, Loss (epoch): {epoch_loss:.4f}, AUC (epoch): {epoch_auc:.4f}, A-AUC (epoch): {epoch_agn_auc:.4f}, Time: {time.time() - start_time:.2f}s")
         
         if dump_model and (epoch + 1) % save_model_epoch_interval == 0:
             torch.save(model, os.path.join(model_dump_path, f"{model.get_name()}_epoch_{epoch + 1}_{time.strftime('%Y%m%d-%H%M%S')}.pth"))
@@ -228,13 +226,13 @@ def __test_model(model: torch.nn.Module, torch_est_set: torch_geometric.data.Dat
         
         auc = __get_auc(model, data, training=False)
         auc_list.append(auc)
-        log.info(f"Data index: {idx}, AUC (single item): {auc:.4f}, Agnostic AUC (single item): {agn_auc:.4f}")
+        log.info(f"Data index: {idx}, AUC (single item): {auc:.4f}, A-AUC (single item): {agn_auc:.4f}")
     
     avg_test_auc = sum(auc_list) / len(auc_list)
     avg_test_agnostic_auc = sum(agnostic_auc_list) / len(agnostic_auc_list)
     
     log.info(f"Evaluation of model {model.get_name()} completed")
-    log.info(f"Evaluation completed successfully on {len(torch_est_set)} samples, average AUC: {avg_test_auc:.4f}, average agnostic AUC: {avg_test_agnostic_auc:.4f}")
+    log.info(f"Evaluation completed successfully on {len(torch_est_set)} samples, average AUC: {avg_test_auc:.4f}, average A-AUC: {avg_test_agnostic_auc:.4f}")
     return avg_test_auc
 
 def __get_splitted_dataset(
@@ -282,5 +280,5 @@ def __test_and_train_v2():
     __train_and_test(torch_model=model)
 
 if __name__ == "__main__":
-    # __test_and_train_v1()
-    __test_and_train_v2()
+    __test_and_train_v1()
+    # __test_and_train_v2()

@@ -38,6 +38,9 @@ class DeepGATBlockV1(torch.nn.Module):
         self.lin_dropout_levels: list[Dropout] = []
         self.lin_norm_levels: list[torch.nn.Module] = []
         
+        # Overall level output dropout (helps on neep archietcture)
+        self.out_dropout = Dropout(dropout_prob)
+        
         # Create layers
         for _ in range(num_levels):
             
@@ -75,5 +78,6 @@ class DeepGATBlockV1(torch.nn.Module):
             
             # Add & Norm Feed-Forward sub-layer
             x = self.lin_norm_levels[i](x + x_ff2)
-            
+        
+        x = self.out_dropout(x)
         return x
