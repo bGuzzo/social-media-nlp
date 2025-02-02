@@ -1,0 +1,26 @@
+{
+    "mode": "TRAINING",
+    "model_name": "gat_model_v2_SwiGLU_RMSNorm_128_64_4x2_d_0.75",
+    "train_total_epochs": 2,
+    "train_dataset_size": 40,
+    "train_num_steps": 80,
+    "train_auc_epoch_list": [
+        0.8794107546903648,
+        0.9040747366920542
+    ],
+    "train_a_auc_epoch_list": [
+        0.8216079637829454,
+        0.8231251885734338
+    ],
+    "train_loss_epoch_list": [
+        2.2053048372268678,
+        0.8971530213952065
+    ],
+    "train_auc_epoch_final": 0.9040747366920542,
+    "train_auc_epoch_max": 0.9040747366920542,
+    "train_a_auc_epoch_final": 0.8231251885734338,
+    "train_a_auc_epoch_max": 0.8231251885734338,
+    "train_loss_epoch_final": 0.8971530213952065,
+    "train_loss_epoch_min": 0.8971530213952065,
+    "train_a_auc_cos_tresh": 0.7
+}
