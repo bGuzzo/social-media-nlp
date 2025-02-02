@@ -31,7 +31,7 @@ class GatModelV1(torch.nn.Module):
         num_attention_head=NUM_ATTENTION_HEAD,
         dropout_prob: float = DROPOUT_PROB,
         activation_func: torch.nn.Module = torch.nn.ReLU(),
-        norm_func: torch.nn.Module = torch.nn.LayerNorm
+        norm_func_class: torch.nn.Module = torch.nn.LayerNorm
     ):
         super().__init__()
         
@@ -60,13 +60,12 @@ class GatModelV1(torch.nn.Module):
             hidden_channels=hidden_channels, 
             dropout_prob=dropout_prob,
             activation_func=activation_func,
-            norm_func=norm_func
+            norm_func_class=norm_func_class
         )
         
         self.out_lin_level = Linear(hidden_channels, out_channels)
         
-        self.model_name = f"gat_model_v1_ReLU_StdNorm_{hidden_channels}_{out_channels}_{num_attention_layer}x{num_attention_head}_dropout_{dropout_prob}"
-        
+        self.model_name = f"gat_model_v1_{type(activation_func).__name__}_{norm_func_class.__name__}_{hidden_channels}_{out_channels}_{num_attention_layer}x{num_attention_head}_d_{dropout_prob}"
     
     def forward(self, x, pos_edge_index, neg_edge_index):
         z = self.encode(x, pos_edge_index)

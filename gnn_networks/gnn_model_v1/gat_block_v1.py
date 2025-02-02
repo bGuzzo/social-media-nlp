@@ -13,7 +13,7 @@ class DeepGATBlockV1(torch.nn.Module):
         num_heads: int = 4, 
         dropout_prob: float = 0.5,
         activation_func: torch.nn.Module = torch.nn.ReLU(),
-        norm_func: torch.nn.Module = torch.nn.LayerNorm
+        norm_func_class: torch.nn.Module = torch.nn.LayerNorm
     ):
         super().__init__()
         
@@ -53,13 +53,13 @@ class DeepGATBlockV1(torch.nn.Module):
                 concat=False
             ))
             self.att_dropout_levels.append(Dropout(dropout_prob))
-            self.att_norm_levels.append(norm_func(hidden_channels))
+            self.att_norm_levels.append(norm_func_class(hidden_channels))
             
             # Build Feed-Forward submodule instances
             self.lin_layer_1.append(torch.nn.Linear(hidden_channels, hidden_channels))
             self.lin_layer_2.append(torch.nn.Linear(hidden_channels, hidden_channels))
             self.lin_dropout_levels.append(Dropout(dropout_prob))
-            self.lin_norm_levels.append(norm_func(hidden_channels))
+            self.lin_norm_levels.append(norm_func_class(hidden_channels))
         
     def forward(self, x, edge_index):
         for i in range(self.num_levels):

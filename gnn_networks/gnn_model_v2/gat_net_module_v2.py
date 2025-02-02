@@ -56,8 +56,7 @@ class GatModelV2(torch.nn.Module):
         
         self.out_lin_level = Linear(hidden_channels, out_channels)
         
-        self.model_name = f"gat_model_v2_SwiGLU_RMSNorm_{hidden_channels}_{out_channels}_{num_attention_layer}x{num_attention_head}_dropout_{dropout_prob}"
-        
+        self.model_name = f"gat_model_v2_{type(activation_func).__name__}_{norm_func.__name__}_{hidden_channels}_{out_channels}_{num_attention_layer}x{num_attention_head}_d_{dropout_prob}"
     
     def forward(self, x, pos_edge_index, neg_edge_index):
         z = self.encode(x, pos_edge_index)
