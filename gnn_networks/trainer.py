@@ -35,6 +35,7 @@ TENSOR_FOLDER_PATH = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_buil
 # Traininer parameters
 NUM_EPOCH = 2
 INITIAL_LR = 0.001
+WEIGHT_DECAY = 0.01
 SAVE_MODEL_EPOCH_INTERVAL = 2
 SAVE_MODEL = True
 
@@ -47,11 +48,11 @@ NUM_ATTENTION_HEAD = 2
 DROPOUT_PROB = 0.75
 
 # Dataset split params
-LEN_LIMIT = 10
-TRAIN_PERC = 0.8
+LEN_LIMIT = 200
+TRAIN_PERC = 0.9
 
 # A-AUC params
-COSIN_SIM_THRESHOLD = 0.85
+COSIN_SIM_THRESHOLD = 0.7
 NODE_SAMPLING_RATE = 0.1
 
 # Optimizations
@@ -130,6 +131,7 @@ def __train_and_dump(
     num_epoch: int = NUM_EPOCH,
     initial_lr: float = INITIAL_LR,
     loss_neg_edge_sampl_rate: float = LOSS_NEG_EDGE_SAMLING_RATE,
+    weight_decay: float = WEIGHT_DECAY,
     # Eval parmas,
     a_auc_cos_thresh: float = COSIN_SIM_THRESHOLD,
     # Dump parmas
@@ -149,7 +151,7 @@ def __train_and_dump(
     
     # BCEWithLogitsLoss(x, y) = - [y * log(sigmoid(x)) + (1 - y) * log(1 - sigmoid(x))]
     criterion = torch.nn.BCEWithLogitsLoss()
-    optimizer = torch.optim.AdamW(params=model.parameters(), lr=initial_lr)
+    optimizer = torch.optim.AdamW(params=model.parameters(), lr=initial_lr, weight_decay=weight_decay)
     
     log.info(f"Start trainign for {num_epoch} epochs, using {initial_lr} learning rate, saving model every {save_model_epoch_interval} epochs")
 
@@ -187,12 +189,10 @@ def __train_and_dump(
             neg_edge_index = negative_sampling(
                 edge_index=data.edge_index,
                 num_nodes=data.num_nodes,
-                # num_neg_samples=data.num_edges,
                 num_neg_samples=num_neg_edges
             )
             
             logits = model.decode(z, data.edge_index, neg_edge_index)
-            # labels = torch.cat([torch.ones(data.num_edges), torch.zeros(data.num_edges)]).to(device)
             labels = torch.cat([torch.ones(data.num_edges), torch.zeros(num_neg_edges)]).to(device)
             
             loss = criterion(logits, labels)
@@ -358,4 +358,4 @@ def __test_and_train_v2():
 
 if __name__ == "__main__":
     __test_and_train_v1()
-    # __test_and_train_v2()
+    __test_and_train_v2()
