@@ -1,4 +1,0 @@
-temp=0.6
-top-p=1
-top-k=100
-new_token=16384
