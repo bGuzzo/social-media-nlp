@@ -1,6 +1,5 @@
 import json
 import time
-# from typing import Any
 from sentence_transformers import SentenceTransformer
 import torch
 from tqdm import tqdm
@@ -28,7 +27,15 @@ TENSOR_GRAPH_OUTDIR = "/home/bruno/Documents/GitHub/social-media-nlp/llm_dataset
 
 ROOT_DOMAIN_TOPICS: list[str] = [
     "Sustainable Development Goals 1: End poverty in all its forms everywhere",
-    "Sustainable Development Goals 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture"
+    "Sustainable Development Goals 2: End hunger, achieve food security and improved nutrition and promote sustainable agriculture",
+    "Sustainable Development Goals 3: Ensure healthy lives and promote well-being for all at all ages",
+    "Sustainable Development Goals 4: Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all",
+    "Sustainable Development Goals 5: Achieve gender equality and empower all women and girls",
+    "Sustainable Development Goals 6: Ensure availability and sustainable management of water and sanitation for all",
+    "Sustainable Development Goals 7: Ensure access to affordable, reliable, sustainable and modern energy for all",
+    "Sustainable Development Goals 8: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all",
+    "Sustainable Development Goals 9: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation",
+    "Sustainable Development Goals 10: Reduce inequality within and among countries"
 ]
 
 # Generated with gemini 
@@ -36,14 +43,14 @@ ROOT_DOMAIN_TOPICS: list[str] = [
 ROOT_NON_DOMAIN_TOPICS: list[str] = [
     "Genetic Engineering and CRISPR Technology: Explore the revolutionary potential of gene editing tools like CRISPR-Cas9 in treating genetic diseases, developing new therapies, and even enhancing human capabilities",
     "Immunotherapy and Cancer Treatment: Investigate the latest advancements in harnessing the immune system to fight cancer, including checkpoint inhibitors, CAR T-cell therapy, and personalized cancer vaccines",
-    # "Neurodegenerative Diseases: Delve into the complexities of Alzheimer's disease, Parkinson's disease, and other neurological disorders, examining the underlying causes, potential treatments, and the challenges of developing effective therapies",
-    # "Microbiome and Human Health: Discover the intricate world of the human microbiome the trillions of bacteria, fungi, and other microorganisms living in our bodies and its profound impact on digestion, immunity, mental health, and overall well-being",
-    # "Stem Cell Research and Regenerative Medicine: Explore the therapeutic potential of stem cells in repairing damaged tissues and organs, treating diseases like diabetes and spinal cord injuries, and even growing new organs for transplantation",
-    # "Artificial Intelligence in Healthcare: Examine the growing role of AI in medicine, from diagnosing diseases and analyzing medical images to developing new drugs and personalizing treatment plans",
-    # "Epidemiology and Global Health: Study the patterns, causes, and control of diseases in populations, including infectious diseases like COVID-19, as well as chronic conditions like heart disease and cancer, with a focus on improving global health outcomes",
-    # "Mental Health and Neuroscience: Investigate the biological basis of mental health disorders, such as depression, anxiety, and schizophrenia, and explore new approaches to diagnosis, treatment, and prevention",
-    # "Aging and Longevity: Explore the biological processes of aging and the factors that contribute to healthy aging and longevity, including genetics, lifestyle, and environmental influences",
-    # "Biotechnology and Drug Development: Learn about the cutting-edge technologies used to develop new drugs and therapies, including monoclonal antibodies, gene therapy, and personalized medicine approaches",
+    "Neurodegenerative Diseases: Delve into the complexities of Alzheimer's disease, Parkinson's disease, and other neurological disorders, examining the underlying causes, potential treatments, and the challenges of developing effective therapies",
+    "Microbiome and Human Health: Discover the intricate world of the human microbiome the trillions of bacteria, fungi, and other microorganisms living in our bodies and its profound impact on digestion, immunity, mental health, and overall well-being",
+    "Stem Cell Research and Regenerative Medicine: Explore the therapeutic potential of stem cells in repairing damaged tissues and organs, treating diseases like diabetes and spinal cord injuries, and even growing new organs for transplantation",
+    "Artificial Intelligence in Healthcare: Examine the growing role of AI in medicine, from diagnosing diseases and analyzing medical images to developing new drugs and personalizing treatment plans",
+    "Epidemiology and Global Health: Study the patterns, causes, and control of diseases in populations, including infectious diseases like COVID-19, as well as chronic conditions like heart disease and cancer, with a focus on improving global health outcomes",
+    "Mental Health and Neuroscience: Investigate the biological basis of mental health disorders, such as depression, anxiety, and schizophrenia, and explore new approaches to diagnosis, treatment, and prevention",
+    "Aging and Longevity: Explore the biological processes of aging and the factors that contribute to healthy aging and longevity, including genetics, lifestyle, and environmental influences",
+    "Biotechnology and Drug Development: Learn about the cutting-edge technologies used to develop new drugs and therapies, including monoclonal antibodies, gene therapy, and personalized medicine approaches",
 ]
 
 HF_MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
@@ -122,7 +129,7 @@ def __generate_llm(
 def __generate_nodes(root_topic_list: list[str] = ROOT_DOMAIN_TOPICS) -> list[str]:
     all_nodes:list[str] = []
     model, tokenizer = __initialize_llm()
-    for root_topic in root_topic_list:
+    for root_topic in tqdm(root_topic_list, desc="Generating nodes LLM"):
         prompt = __get_prompt(root_topic)
         llm_response = __generate_llm(model, tokenizer, prompt)
         nodes = __get_gen_nodes(llm_response)
@@ -137,6 +144,7 @@ def __generate_nodes(root_topic_list: list[str] = ROOT_DOMAIN_TOPICS) -> list[st
 
 def __save_graph_tensor(
     node_list: list[str], 
+    description: str,
     save_path: str = TENSOR_GRAPH_OUTDIR,
     hf_embedding_model: str = HF_EMBEDDING_MODEL_NAME
 ) -> None:
@@ -161,11 +169,14 @@ def __save_graph_tensor(
         "nodes_idx_map": nodes_idx_map
     }
     
-    tesor_file_name = f"llm_gen_graph_{len(node_list)}_{time.strftime('%Y%m%d-%H%M%S')}.pt"
+    tesor_file_name = f"llm_gen_graph_{description}_{len(node_list)}_{time.strftime('%Y%m%d-%H%M%S')}.pt"
     tensor_file_path = os.path.join(save_path, tesor_file_name)
     torch.save(obj=tensor_to_save, f=tensor_file_path)
     log.info(f"Graph of {len(node_list)} nodes saved to {tensor_file_path}")
 
 if __name__ == "__main__":
-    list_nodes = __generate_nodes(root_topic_list=ROOT_NON_DOMAIN_TOPICS)
-    __save_graph_tensor(list_nodes)
+    # list_nodes = __generate_nodes(root_topic_list=ROOT_NON_DOMAIN_TOPICS)
+    # __save_graph_tensor(list_nodes, description="no-domain-related")
+    
+    list_nodes = __generate_nodes(root_topic_list=ROOT_DOMAIN_TOPICS)
+    __save_graph_tensor(list_nodes, description="domain-related")
