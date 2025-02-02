@@ -185,3 +185,9 @@ cython_debug/
 dataset_builder_wiki/final_dataset/**
 dataset_builder_wiki/final_dataset/tensor/**
 gat_network/model_dumps/**
+
+old/training/dataset_pdf/**
+old/training/old_dataset_pdf/**
+old/training/dataset_txt/**
+old/training/old_dataset_txt/**
+old/training/outputs/**

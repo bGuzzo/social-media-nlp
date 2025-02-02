@@ -13,7 +13,7 @@ from custom_logger.logger_config import get_logger
 log: logging.Logger = get_logger(name=__name__)
 
 # Default  graph size
-DEF_MAX_NODES = 20
+DEF_MAX_NODES = 20000
 
 def json_dump(graph: nx.Graph):
     node_ids_counter = 0
@@ -158,10 +158,10 @@ def extract_graph(
 # Test only
 if __name__ == "__main__":
     # SGD as root article
-    graph = extract_graph(root_article_title="Carbon dioxide in Earth's atmosphere")
+    graph = extract_graph(root_article_title="Sustainability")
     
     # Draw the graph (adjust layout as needed)
     plt.figure(figsize=(12, 12))
-    nx.draw(graph, with_labels=True, node_size=300, font_size=8, node_color="skyblue")
-    plt.title("Environmental sustainability")
+    nx.draw(graph, with_labels=False, node_size=30, font_size=8, node_color="skyblue")
+    plt.title("Wikipedia graph from root word 'Sustainability'")
     plt.show()

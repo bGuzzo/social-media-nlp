@@ -33,21 +33,21 @@ MODEL_DUMP_PATH = "/home/bruno/Documents/GitHub/social-media-nlp/gnn_networks/mo
 TENSOR_FOLDER_PATH = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/final_dataset/tensor"
 
 # Traininer parameters
-NUM_EPOCH = 3
+NUM_EPOCH = 2
 INITIAL_LR = 0.001
-SAVE_MODEL_EPOCH_INTERVAL = 1
+SAVE_MODEL_EPOCH_INTERVAL = 2
 SAVE_MODEL = True
 
 # Model parameters
 INPUT_SIZE = 384 # Embedding model output size
 HIDDEN_SIZE = 128
 OUTPUT_SIZE = 64
-NUM_ATTENTION_LAYER = 3
+NUM_ATTENTION_LAYER = 4
 NUM_ATTENTION_HEAD = 2
-DROPOUT_PROB = 0.7
+DROPOUT_PROB = 0.75
 
 # Dataset split params
-LEN_LIMIT = 100
+LEN_LIMIT = 10
 TRAIN_PERC = 0.8
 
 # A-AUC params
@@ -358,4 +358,4 @@ def __test_and_train_v2():
 
 if __name__ == "__main__":
     __test_and_train_v1()
-    __test_and_train_v2()
+    # __test_and_train_v2()

@@ -5,9 +5,9 @@ import os
 import numpy as np
 
 PLOT_FOLDER = "/home/bruno/Documents/GitHub/social-media-nlp/gnn_networks/plots"
-DEF_X_SIZE = 15
+DEF_X_SIZE = 20
 DEF_Y_SIZE = 8
-DEF_DPI = 500
+DEF_DPI = 650
 
 def plot_train_multiple_auc(
     model_name: str, 
