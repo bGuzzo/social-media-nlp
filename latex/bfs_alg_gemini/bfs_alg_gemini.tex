@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\begin{document}
+	
+	\begin{algorithm}
+		\caption{Wikipedia Graph Extraction using BFS}
+		\begin{algorithmic}[1]
+			\Require $rootArticleTitle$, $maxNodes$
+			\State $graph \gets$ new Graph
+			\State $visited \gets$ new Set, initialized with $rootArticleTitle$
+			\State $queue \gets$ new Queue, enqueue $rootArticleTitle$
+			\State $graph$.addNode($rootArticleTitle$)
+			\While {$queue$ is not empty and $|graph.nodes| < maxNodes$}
+			\State $pageTitle \gets queue$.dequeue()
+			\State $page \gets$ getWikipediaPage($pageTitle$) \Comment{Handles Page/Disambiguation Errors}
+			\If {$page$ is not valid}
+			\State \textbf{continue} \Comment{Skip to the next page in queue}
+			\EndIf
+			\For {$linkTitle$ in $page.links$}
+			\If {$|graph.nodes| \geq maxNodes$}
+			\State \textbf{break} \Comment{Exit loop}
+			\EndIf
+			\If {$linkTitle \in visited$}
+			\State $graph$.addEdge($pageTitle$, $linkTitle$)
+			\Else
+			\State $visited$.add($linkTitle$)
+			\State $queue$.enqueue($linkTitle$)
+			\State $graph$.addNode($linkTitle$)
+			\State $graph$.addEdge($pageTitle$, $linkTitle$)
+			\EndIf
+			\EndFor
+			\EndWhile
+			\If {not isConnected($graph$)}
+			\State \textbf{Error:} Graph is not connected
+			\EndIf
+			\State \textbf{return} $graph$
+		\end{algorithmic}
+	\end{algorithm}
+	
+\end{document}
