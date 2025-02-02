@@ -48,7 +48,7 @@ NUM_ATTENTION_HEAD = 2
 DROPOUT_PROB = 0.75
 
 # Dataset split params
-LEN_LIMIT = 350
+LEN_LIMIT = 200
 TRAIN_PERC = 0.9
 
 # A-AUC params
