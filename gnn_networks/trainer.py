@@ -48,7 +48,7 @@ NUM_ATTENTION_HEAD = 2
 DROPOUT_PROB = 0.75
 
 # Dataset split params
-LEN_LIMIT = 200
+LEN_LIMIT = 350
 TRAIN_PERC = 0.9
 
 # A-AUC params
@@ -243,7 +243,7 @@ def __train_and_dump(
     plot_train_loss(model_name=model.get_name(), total_epochs=num_epoch, dataset_size=len(torch_train_set), loss_list=loss_train_step)
     
     if dump_model:
-        torch.save(model, os.path.join(model_dump_path, f"{model.get_name()}_final_{time.strftime('%Y%m%d-%H%M%S')}.pth"))
+        torch.save(model, os.path.join(model_dump_path, f"{model.get_name()}_{len(torch_train_set)}_final_{num_epoch}_{time.strftime('%Y%m%d-%H%M%S')}.pth"))
     
     log.info("Final model saved successfully")
     
