@@ -162,13 +162,13 @@ def evaluate_non_domain_graph(cos_sim_thres: float = COSIN_SIM_THRESHOLD, prob_t
 if __name__ == "__main__":
     # evaluate_domain_graph()
     # evaluate_non_domain_graph()
-    compute_llm_gramph(
-        llm_graph_path=LLM_GRAPH_DOMAIN, 
-        domain_related_info="domain-related", 
-        cos_sim_thresh=COSIN_SIM_THRESHOLD, 
-        prob_thresh=EDGE_PROB_THRESHOLD,
-        show_graph=True
-    )
+    # compute_llm_gramph(
+    #     llm_graph_path=LLM_GRAPH_DOMAIN, 
+    #     domain_related_info="domain-related", 
+    #     cos_sim_thresh=COSIN_SIM_THRESHOLD, 
+    #     prob_thresh=EDGE_PROB_THRESHOLD,
+    #     show_graph=True
+    # )
     compute_llm_gramph(
         llm_graph_path=LLM_GRAPH_NON_DOMAIN, 
         domain_related_info="non-domain-related", 
