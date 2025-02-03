@@ -52,7 +52,7 @@
 	Thus, we adopt a deep neural network architecture that extend the encoder stack of the transformer \cite{vaswani2023attentionneed} with the application of graph attention network \cite{veličković2018graphattentionnetworks}.
 	
 	
-	\section{Graph Attention}
+	\section{Literature Review: Graph Attention}
 	\label{graph_attention}
 	Graph Attention Networks (GATs) are a class of neural network architectures designed to operate on graph-structured data. They leverage a self-attention mechanism \cite{vaswani2023attentionneed} to dynamically learn the importance of neighboring nodes, enabling effective feature aggregation while being independent of the underlying graph structure and allowing inductive learning.
 	
@@ -358,8 +358,8 @@
 	\end{itemize}
 	
 	\section{Training Results}
-	We have run mainly three training and testing experiment to evaluate how well the network adapt itself to the given graph. To do so we have used the already mentioned training parameters while limiting the dataset size in an incremental way. \\
-	Below we report a series of figure to better understand the network behavior during training.
+	We have run mainly \textbf{three training experiment} to evaluate how well the network adapt itself to the given graph. To do so we have used the already mentioned training parameters while limiting the dataset size in an incremental way. \\
+	Below we show a \textbf{series of figure} to better understand the network behavior during training.
 	
 	\begin{figure}[h!] % h! means "here" and try hard
 		\centering
