@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -18,6 +18,12 @@ Thomas~N. Kipf and Max Welling.
 \newblock Semi-supervised classification with graph convolutional networks,
   2017.
 \newblock URL \url{https://arxiv.org/abs/1609.02907}.
+
+\bibitem[Loshchilov and
+  Hutter(2019)]{loshchilov2019decoupledweightdecayregularization}
+Ilya Loshchilov and Frank Hutter.
+\newblock Decoupled weight decay regularization, 2019.
+\newblock URL \url{https://arxiv.org/abs/1711.05101}.
 
 \bibitem[Reimers and Gurevych(2019)]{reimers-2019-sentence-bert}
 Nils Reimers and Iryna Gurevych.

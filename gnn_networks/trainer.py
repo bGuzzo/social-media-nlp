@@ -52,11 +52,11 @@ LEN_LIMIT = 50
 TRAIN_PERC = 0.8
 
 # A-AUC params
-COSIN_SIM_THRESHOLD = 0.7
-NODE_SAMPLING_RATE = 0.1
+COSIN_SIM_THRESHOLD = 0.7 # T_cos
+NODE_SAMPLING_RATE = 0.1 # R_cos
 
 # Optimizations
-LOSS_NEG_EDGE_SAMLING_RATE = 0.3
+LOSS_NEG_EDGE_SAMLING_RATE = 0.3 # R_neg
 
 # Edge agnostic measure
 @torch.no_grad()

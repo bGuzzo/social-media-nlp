@@ -164,6 +164,7 @@
 	\end{algorithm}
 	
 	\subsection{Node Embedding}
+	\label{node_embedding}
 	To efficiently use our dataset with GNN it is needed to \textbf{embed each node} in way that it can be processed in a numerical way. To do so, we relay on state-of-the-art sentence embedding model to transform node labels in numeral representation.
 	We chose to use a freely and open-source available \textbf{sentence-transformers} model: \textbf{\href{https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2}{all-MiniLM-L6-v2}} \cite{reimers-2019-sentence-bert}. \\\\
 	It maps sentences and paragraphs to a \textbf{384 dimensional dense vector space} and can be used for tasks like \textbf{clustering} or \textbf{semantic search}.
@@ -189,6 +190,9 @@
 	\end{itemize}
 	
 	\subsection{Network Architecture In Detail}
+	Our network architecture for link prediction on graph structured data is composed by the \texttt{GatModel} class and it is built around a custom \texttt{DeepGATBlock} module.
+	The complete architecture is designed to process graph data, and performs node embeddings, multi-layered graph attention, and link prediction through a dot product decoder.
+	
 	\begin{figure}[h] % h! means "here" and try hard
 		\centering
 		\label{figure_2}
@@ -196,11 +200,213 @@
 		\caption{Figure 2: Graphical representation of the our final \textbf{graph neural network}.}
 	\end{figure}
 	
+	The \texttt{GatModel} model consists of the following components:
+	\begin{enumerate}
+		\item An input dropout layer to regularize input features.
+		
+		\item An input linear layer, $L_{in}$, that projects the input features into the hidden feature space.
+		
+		\item A \texttt{DeepGATBlock}, which applies multiple levels of GAT layers, dropout, normalization, and Feed-Forward layers, as we will discuss in next section.
+		
+		\item An output linear layer, $L_{out}$, which transforms the processed hidden features into the final embedding space.
+	\end{enumerate}
 	
+	\subsubsection{Mathematical Representation Of \texttt{GatModel}}
+	The \textbf{encoding} process can be mathematically expressed as follows:
+	\begin{enumerate}
+		\item Given an input node feature matrix $X \in \mathbb{R}^{N \times F_{in}}$, where $N$ is the number of nodes and $F_{in}$ is the number of input features.
+	
+		\item The input features undergo a linear transformation and dropout:\\ 
+		$X' = Dropout(L_{in}(X))$, where $L_{in} : \mathbb{R}^{F_{in}} \to \mathbb{R}^{H}$, and $H$ is the number of hidden channels.
+		
+		\item The transformed features, $X'$, are processed by the \texttt{DeepGATBlock}:\\ 
+		$Z = \text{DeepGATBlock}(X', E)$, where $E$ represents the edge index of the graph.
+		
+		\item Finally, a linear projection is applied to the GAT block output: $Z_{out} = L_{out}(Z)$, where $L_{out}: \mathbb{R}^H \to \mathbb{R}^{F_{out}}$ and $F_{out}$ is the number of output channels.
+	\end{enumerate}
+	The \textbf{decoder} then computes the logits of edge existence based on the \textbf{dot product of node embeddings} extracted by the encoder: $\text{logits}_{ij} = (z_i \cdot z_j)$, where $z_i$ and $z_j$ are the embeddings of node $i$ and $j$, respectively.
+	
+	
+	\subsubsection{\texttt{DeepGATBlock} Architecture}
+	The \texttt{DeepGATBlock} is a modular block composed of a series of \textit{levels}, each of them processing node embeddings using a combination of graph attention mechanism, feed-forward network and normalization technique.
+	Each level consists of the following operations:
+	\begin{enumerate}
+		\item A \textbf{multi-head graph attention layer}, $GAT$, which attends to the features of neighboring nodes.
+		The output of the multi-head attention is not concatenated but rather averaged to match the input dimension.
+		Given a node feature matrix $X \in \mathbb{R}^{N \times H}$ and an edge index $E$, the GAT layer calculates node representation according to the Graph Attention mechanism: $X_{att} = GAT(X, E)$, where the result $X_{att}$ is in $\mathbb{R}^{N \times H}$.
+		
+		\item An attention \textbf{dropout layer} to regularize attention output.
+		
+		\item A \textbf{residual connection} between input features and the output of the graph attention layer, followed by a layer normalization. The norm operation can be expressed as: $X_1 = LayerNorm(X + Dropout(X_{att}))$.
+		
+		\item A \textbf{two-layer feed-forward network}, $FFN$, each of which apply a linear transformation, non-linear ReLU activation (in between linear transformation), and dropout layer on the output. Given an input features $X_1$, the network can be formalized as: $X_{ff1} =  ReLU(L_1(X_1))$, and $X_{ff2} = Dropout(L_2(X_{ff1}))$. Where $L_1 : \mathbb{R}^{H} \to \mathbb{R}^{H}$ and $L_2 : \mathbb{R}^{H} \to \mathbb{R}^{H}$ represent the linear transformation in the two layer FFN block.
+		
+		\item A \textbf{residual connection} between the input features of feed-forward networks, $X_1$ and it's output, $X_{ff2}$, followed by a layer normalization. The norm operation can be expressed as: $X_{out} = LayerNorm(X_1 + X_{ff2})$.
+	\end{enumerate}
+	The final output of the \texttt{DeepGATBlock} is further processed by a \textbf{dropout} to regularize it.
+	
+	\subsubsection{Mathematical Representation Of \texttt{DeepGATBlock}}
+	Given a number of levels $L$:
+	\begin{enumerate}
+		\item for each level $l=1, \dots, L$:
+		\begin{enumerate}
+			\item $X_{att}^l = GAT(X^{l-1}, E)$
+			\item $X_1^l = LayerNorm(X^{l-1} + Dropout(X_{att}^l))$
+			\item $X_{ff1}^l = ReLU(L_1^l(X_1^l))$
+			\item $X_{ff2}^l = Dropout(L_2^l(X_{ff1}^l))$
+			\item $X^l = LayerNorm(X_1^l + X_{ff2}^l)$
+		\end{enumerate}
+		\item Final output: $X_{out} = Dropout(X^L)$
+	\end{enumerate}
 	
 	\subsection{Chosen Architecture Parameters}
+	Our final network architecture is composed of $L=4$ levels of \texttt{DeepGATBlock} to address the necessity of a deep network. Other architectural parameter choice include:
+	\begin{enumerate}
+		\item The number of \textbf{input features} $F_{in}=384$ driven by the output size of the chosen embedding model \ref{node_embedding}.
+		
+		\item The number of \textbf{hidden channels} $H=128$ to avoid long training time while maintaining a dense space for embeddings representations. 
+		
+		\item A low number of \textbf{output channels} $F_{out}=64$ to allow fast decoder computation when decoding edges logits using \textbf{dot product}.
+		
+		\item A higher \textbf{dropout probability} $Dropout_p=0.75$ to avoid over-fitting and facilitate the network training. We also choose such higher probability to deal with he choice of a $L=4$ deep network.  
+		
+		\item $K=2$ graph attention heads for each network layer. This allows each level to learn \textbf{two different aspects} of nodes relationships providing the network with an enhanced data adaptation capability. 
+	\end{enumerate}
 	
 	\section{Network Training}
+	The training of the Graph Neural Network (GNN) is performed using a \textbf{supervised learning approach}, aiming to predict the existence of edges in a given graph. The process involves feeding the GNN with a set of training graphs (form our aforementioned dataset), and comparing the network's predictions with the actual edge structures.
+	
+	\subsection{Training Procedure}
+	The training loop iterates over a fixed number of epochs. Within each epoch, the training dataset is traversed, with the following steps being performed for each graph in the dataset:
+	\begin{enumerate}
+		\item \textbf{Forward Pass:}
+		The node features $\mathbf{X}$ and the edge indices $\mathbf{E}$ of the graph are passed through the encoder to generate node embeddings $\mathbf{Z}$.
+		The encoder consist of a stack of attention based blocks defined by:
+		\begin{equation}
+			\mathbf{Z} = \text{Encoder}(\mathbf{X}, \mathbf{E})
+		\end{equation}
+		The final node embedding is used by the decoder to predict edge logit existence.
+		
+		\item \textbf{Negative Sampling:} 
+		To enrich training, we create a set of negative edges $\mathbf{E}_{neg}$ using an under-sampling approach by sampling $n_{neg}$ non-existing edges based on a given rate $r$. 
+		The $n_{neg}$ is computed by scaling of a constant rate $R_{neg}$ the number of positive edges $n_{pos}$ in the graph: $n_{neg} = n_{pos} \times R_{neg}$.
+		
+		\item \textbf{Edge Logit Prediction:} The node embeddings are used to predict logits for both positive edges (existing edges) and negative edges (non-existing edges). This is done with the decoder based on a dot product:
+		\begin{equation}
+			\text{logits} = \text{Decoder}(\mathbf{Z}, \mathbf{E}, \mathbf{E}_{neg})
+		\end{equation}
+		More specifically the decoder takes two vectors $z_i$, $z_j$ extracted from the nodes embedding matrix $\mathbf{Z}$ according to the corresponding edge and compute the logit by a dot product: $logit_{ij} = z_i \cdot z_j$. The same operation is performed also for the negative sampled edges $\mathbf{E}_{neg}$.\\
+		We choose this \textbf{imbalanced approach} to reduce the number of operation needed to compute the loss.
+		
+		\item \textbf{Loss Computation:} A \textbf{binary cross-entropy loss} function is used to evaluate the prediction against a binary label: $1$ for positive edges (existing edges) and $0$ for negative edges (non-existing edges). 
+		The loss is given by:
+		\begin{equation}
+			\mathcal{L} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\sigma(\text{logit}_i)) + (1 - y_i) \log(1 - \sigma(\text{logit}_i)) \right]
+		\end{equation}
+		where $\sigma$ represents the sigmoid function, $y_i$ is the true label for the $i$-th edge, and $\text{logit}_i$ is the predicted logit.
+		
+		\item \textbf{Backpropagation and Optimization:} The calculated loss is backpropagated through the network, and the model's parameters are updated using the \textbf{AdamW optimizer} \cite{loshchilov2019decoupledweightdecayregularization} to minimize the loss.
+	\end{enumerate}
+	
+	\subsection{Loss Function}
+	The loss function used is the \href{https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html#bcewithlogitsloss}{\textbf{Binary Cross-Entropy with Logits Loss}}. This loss function is chosen because it naturally handles the classification between binary labels representing existing or non-existing edges, by combining the \textbf{sigmoid activation} and the \textbf{binary cross-entropy} into a single efficient computation.
+	
+	\subsection{Metrics}
+	Several metrics are computed during training and evaluation to measure model performance:
+	\begin{itemize}
+		\item \textbf{Area Under the Receiver Operating Characteristic Curve (AUC):}
+		The Area Under the Curve (AUC) is used to quantify how well the model discriminates between positive and negative edges. This metric is computed by:
+		
+		\begin{enumerate}
+			\item Predicting the existence of edges using the trained model for a given graph data point with edges $\mathbf{E}$ and the negative sampled edges $\mathbf{E}_{neg}$. The final prediction is obtained using the sigmoid function: $\hat{y} = \sigma(\text{logits})$
+			
+			\item Computing the AUC score using a combination of labels and predicted values (obtained by the application of the sigmoid function) where $y=1$ if the edge is in $\mathbf{E}$ and $y=0$ if the edge is in $\mathbf{E}_{neg}$.
+		\end{enumerate}
+	\end{itemize}
+	
+	\subsection{Agnostic Area Under the Receiver Operating Characteristic Curve (A-AUC)}
+	In addition to standard link prediction AUC, an additional metric is introduced to better evaluate the model's capability in capturing semantic similarity between nodes: the \textit{agnostic} area under the receiver operating characteristic curve (A-AUC). This metric is calculated using the following steps:
+	\begin{enumerate}
+		\item \textbf{Node Sampling:} A subset of node features is sampled randomly from the whole set according to a sampling rate $R_{cos}$.
+		
+		\item \textbf{Node Embedding Extraction:} The sampled node features are used by the model to get the corresponding node embeddings through the encoder.
+		
+		\item \textbf{Adjacency Prediction Matrix Computation:}  A prediction matrix is computed using the dot product between the sampled node embeddings with the application of the sigmoid function. Each cell of this matrix indicates the predicted probability of a connection between the two nodes involved in the dot product.
+		
+		\item \textbf{Node Similarity Matrix Computation:} The cosine similarity between the sampled node features is computed.
+		
+		\item \textbf{Ground-Truth Adjacency Matrix Generation:} A ground-truth matrix is generated from the cosine similarity matrix where cells with similarity value above a predefined threshold ($T_{cos}$) are assigned a value of 1, and all the remaining are set to zero.
+		
+		\item \textbf{A-AUC Calculation:} A-AUC score is obtained by considering the ground-truth matrix as the true labels and the predicted adjacency matrix as the probability scores to be used in AUC computation.
+	\end{enumerate}
+	The \textbf{A-AUC metric} provides a measure of how well the GNN captures the \textbf{semantic similarity between node}, independently from the explicit graph structure. It evaluate if the model is able to predict a potential link between node when such link is not explicitly in the training data but implied by feature similarity.
+	
+	\subsubsection{Training Parameters Used}
+	The final network training have been executed using the following fix parameters:
+	\begin{itemize}
+		\item{\textbf{Number of epochs}}: $N_{epochs}=2$
+		
+		\item{\textbf{Learning rate}}: $lr=0.001$
+		
+		\item{\textbf{Dataset splits and usage}}: In all the training experiments the used dataset size has been limited to a fixed series of values, while the split percentage of \textbf{training set} and \textbf{test set} has been maintained constant to $90\%$ and $10\%$ respectively.    
+				
+		\item{\textbf{Negative edge sampling rate}}: $R_{neg}=0.3$
+		
+		\item{\textbf{A-AUC cosine similarity threshold}}: $T_{cos}=0.7$
+		
+		\item{\textbf{A-AUC nodes sampling rate}}: $R_{cos}=0.1$
+	\end{itemize}
+	
+	\section{Training Results}
+	We have run mainly three training and testing experiment to evaluate how well the network adapt itself to the given graph. To do so we have used the already mentioned training parameters while limiting the dataset size in an incremental way. \\
+	Below we report a series of figure to better understand the network behavior during training.
+	
+	\begin{figure}[h!] % h! means "here" and try hard
+		\centering
+		\label{figure_3}
+		\includegraphics[width=1\textwidth]{images/train_auc_gat_model_v1_ReLU_LayerNorm_128_64_4x2_d_0.75_40_2_20250202-144005.jpg}
+		\caption{Figure 3: \textbf{AUC vs A-AUC} during training with 2 epochs and a train-set of 40 graphs.}
+	\end{figure}
+	
+	\begin{figure}[h!] % h! means "here" and try hard
+		\centering
+		\label{figure_4}
+		\includegraphics[width=1\textwidth]{images/train_loss_gat_model_v1_ReLU_LayerNorm_128_64_4x2_d_0.75_40_2_20250202-144007.jpg}
+		\caption{Figure 4: \textbf{Loss} during training with 2 epochs and a train-set of 40 graphs.}
+	\end{figure}
+	
+	\begin{figure}[h!] % h! means "here" and try hard
+		\centering
+		\label{figure_5}
+		\includegraphics[width=1\textwidth]{images/train_auc_gat_model_v1_ReLU_LayerNorm_128_64_4x2_d_0.75_180_2_20250202-112034.jpg}
+		\caption{Figure 5: \textbf{AUC vs A-AUC} during training with 2 epochs and a train-set of 180 graphs.}
+	\end{figure}
+	
+	\begin{figure}[h!] % h! means "here" and try hard
+		\centering
+		\label{figure_6}
+		\includegraphics[width=1\textwidth]{images/train_loss_gat_model_v1_ReLU_LayerNorm_128_64_4x2_d_0.75_180_2_20250202-112037.jpg}
+		\caption{Figure 6: \textbf{Loss} during training with 2 epochs and a train-set of 180 graphs.}
+	\end{figure}
+	
+	\begin{figure}[h!] % h! means "here" and try hard
+		\centering
+		\label{figure_7}
+		\includegraphics[width=1\textwidth]{images/train_auc_gat_model_v1_ReLU_LayerNorm_128_64_4x2_d_0.75_315_2_20250202-134018.jpg}
+		\caption{Figure 7: \textbf{AUC vs A-AUC} during training with 2 epochs and a train-set of 315 graphs.}
+	\end{figure}
+	
+	\begin{figure}[h!] % h! means "here" and try hard
+		\centering
+		\label{figure_8}
+		\includegraphics[width=1\textwidth]{images/train_loss_gat_model_v1_ReLU_LayerNorm_128_64_4x2_d_0.75_315_2_20250202-134022.jpg}
+		\caption{Figure 8: \textbf{Loss} during training with 2 epochs and a train-set of 315 graphs.}
+	\end{figure}
+	
+	
+	
+	
+	   
 	
 	\section{Link Prediction Task Results}
 	
