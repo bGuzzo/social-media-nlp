@@ -21,9 +21,7 @@ The project is organized into the following directories:
     * `trainer.py`: Implements the training loop and evaluation logic for GNN models.
     * `plot_utils.py`: Provides utility functions for plotting training metrics and visualizations.
     * `metric_exporter.py`: Exports training and evaluation metrics to JSON files.
-    * `train_gnn_main.py`: Main script for training and evaluating GNN models.
     * `llm_graph_tester.py`: Tests the trained GNN models using a Large Language Model (LLM).
-    * `model_tester_test.py`: Unit tests for the model testing module.
     * `gnn_model_v1`: Contains the implementation of the first version of the GNN model.
         * `gat_net_module_v1.py`: Defines the GAT network architecture for version 1.
         * `gat_block_v1.py`: Implements the GAT block for version 1.

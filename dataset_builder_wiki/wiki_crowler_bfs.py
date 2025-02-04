@@ -1,3 +1,5 @@
+# Main script that implement the BFS Wikipedia crowler used to build dataset
+
 import wikipedia
 from wikipedia.wikipedia import WikipediaPage
 import networkx as nx
@@ -15,6 +17,7 @@ log: logging.Logger = get_logger(name=__name__)
 # Default  graph size
 DEF_MAX_NODES = 20000
 
+# Dump graph as json (only for staging)
 def json_dump(graph: nx.Graph):
     node_ids_counter = 0
     node_id_map = {str : int}
@@ -43,7 +46,7 @@ def json_dump(graph: nx.Graph):
     
     return json.dumps(json_graph, indent=4)
 
-
+# Add a node to a graph but perform consistency check
 def __add_edge(graph: nx.Graph, page_src: str, page_dst: str) -> None:
     # No node self-link allowed
     if page_src == page_dst:
@@ -57,6 +60,7 @@ def __add_edge(graph: nx.Graph, page_src: str, page_dst: str) -> None:
     
     graph.add_edge(page_src, page_dst)
 
+# Halt explartion of chiild nodes that do not represent Wiki article
 def __check_title(page_title: str) -> WikipediaPage:
     # Check if the page exists
     try:
@@ -72,7 +76,8 @@ def __check_title(page_title: str) -> WikipediaPage:
     return page
 
 
-# Breadth first wikipedia crowler
+# Breadth First Qikipedia Crowler
+# Recursive version
 def __crawl(
     graph: nx.Graph, 
     queue: list, 
@@ -113,6 +118,8 @@ def __crawl(
         
         if link_title in visited:
             log.info(f"Already visited {link_title}, just adding edge ({page_title} -> {link_title})")
+            # If the node has been already visisted add the edge to the graph
+            # This enforce the creation of long-path between nodes
             __add_edge(graph, page_title, link_title)
         else:
             visited.add(link_title)
@@ -127,7 +134,7 @@ def __crawl(
         max_nodes=max_nodes
     )
 
-
+# Build ad get Networkx graph
 def extract_graph(
     root_article_title: str, 
     max_nodes: int = DEF_MAX_NODES, 

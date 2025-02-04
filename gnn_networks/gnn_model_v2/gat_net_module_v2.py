@@ -10,7 +10,7 @@ NUM_ATTENTION_LAYER = 1
 NUM_ATTENTION_HEAD = 1
 DROPOUT_PROB = 0.5
 
-
+# Similar to GatModelV1, see it for details 
 class GatModelV2(torch.nn.Module):
     def __init__(
         self,
@@ -20,7 +20,7 @@ class GatModelV2(torch.nn.Module):
         num_attention_layer: int = NUM_ATTENTION_LAYER,
         num_attention_head=NUM_ATTENTION_HEAD,
         dropout_prob: float = DROPOUT_PROB,
-        norm_func: torch.nn.Module = torch.nn.RMSNorm
+        norm_func: torch.nn.Module = torch.nn.RMSNorm # Difference form GatModelV1, here we use Root Main Square Normalization
     ):
         super().__init__()
         
@@ -43,7 +43,7 @@ class GatModelV2(torch.nn.Module):
         
         self.in_lin_layer = Linear(in_channels, hidden_channels)
         
-        activation_func = SwiGLU(hidden_channels)
+        activation_func = SwiGLU(hidden_channels) # Difference form GatModelV1, here we use SwiGLU activation function
         
         self.deep_layers = DeepGATBlockV2(
             num_levels=num_attention_layer, 

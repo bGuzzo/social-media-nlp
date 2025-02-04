@@ -1,3 +1,5 @@
+# Utils script to plot high resolution charts 
+
 import time
 import matplotlib.pyplot as plt
 import os
@@ -95,8 +97,6 @@ def plot_test_res(
             f"\n#Train data points: {train_dataset_size}, #Epochs: {train_total_epochs}, #Train steps: {train_num_steps}" + \
             f"\n#Test data points: {len(auc_list)}"
 
-
-    # n_items = len(item_names)
     x = np.arange(len(auc_list))  # the label locations
     width = 0.35  # the width of the bars
 

@@ -10,7 +10,7 @@ NUM_ATTENTION_LAYER = 1
 NUM_ATTENTION_HEAD = 1
 DROPOUT_PROB = 0.5
 
-
+# Main class discussed in project report 
 class GatModelV1(torch.nn.Module):
     
     """
@@ -66,11 +66,8 @@ class GatModelV1(torch.nn.Module):
         self.out_lin_level = Linear(hidden_channels, out_channels)
         
         self.model_name = f"gat_model_v1_{type(activation_func).__name__}_{norm_func_class.__name__}_{hidden_channels}_{out_channels}_{num_attention_layer}x{num_attention_head}_d_{dropout_prob}"
-    
-    def forward(self, x, pos_edge_index, neg_edge_index):
-        z = self.encode(x, pos_edge_index)
-        return self.decode(z, pos_edge_index, neg_edge_index)
 
+    # Encode input node feature and get processed node representation
     def encode(self, x, edge_index):
         x = self.in_lin_layer(x)
         x = self.in_dropout(x)
@@ -78,14 +75,21 @@ class GatModelV1(torch.nn.Module):
         x = self.out_lin_level(x)
         return x
 
+    # Decode the logits of the positive and negative edges
     def decode(self, z, pos_edge_index, neg_edge_index):
         edge_index = torch.cat([pos_edge_index, neg_edge_index], dim=-1)
+        # Compute logits by feature vectors multiplication
         logits = (z[edge_index[0]] * z[edge_index[1]]).sum(dim=-1)
         return logits
 
+    # Get probability adjacence matrix 
     def get_adj_prob_matrix(self, z):
-        adj_score = z @ z.t()
+        adj_score = z @ z.t() # Perferom a logit matrix self product
         return torch.sigmoid(adj_score)
+    
+    def forward(self, x, pos_edge_index, neg_edge_index):
+        z = self.encode(x, pos_edge_index)
+        return self.decode(z, pos_edge_index, neg_edge_index)
     
     def get_name(self) -> str:
         return self.model_name

@@ -4,7 +4,7 @@ import torch
 from torch_geometric.nn import GATConv
 from torch.nn import Dropout
 
-
+# Similar to DeepGATBlockV1, see it for details 
 class DeepGATBlockV2(torch.nn.Module):
     def __init__(
         self, 

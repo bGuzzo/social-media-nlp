@@ -16,10 +16,11 @@ TESNOR_FOLDER_PATH = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_buil
 WIKI_ARTICLES_FILE = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/wikipedia_articles.txt" 
 HF_PHARESE_EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
+# Main method to strat the creation of the dataset
 def main():
     log.info("Start creating wiki dataset")
     create_dataset(
-        wiki_file_path=WIKI_ARTICLES_FILE,
+        wiki_file_path=WIKI_ARTICLES_FILE, # Use a file with articles title
         folder_path=JSON_FOLDER_PATH,
         max_nodes=MAX_NODES,
     )

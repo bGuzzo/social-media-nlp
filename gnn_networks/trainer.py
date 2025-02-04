@@ -48,11 +48,13 @@ NUM_ATTENTION_HEAD = 2
 DROPOUT_PROB = 0.75
 
 # Dataset split params
-LEN_LIMIT = 50
-TRAIN_PERC = 0.8
+LEN_LIMIT = 200 # Maximum dataset size used
+TRAIN_PERC = 0.8 # Train set percentage
 
 # A-AUC params
+# Threshold use to build groud-truth matrix
 COSIN_SIM_THRESHOLD = 0.7 # T_cos
+# During training A-AUC is computer ony for small section of the graph
 NODE_SAMPLING_RATE = 0.1 # R_cos
 
 # Optimizations
@@ -84,12 +86,15 @@ def __get_agnostic_auc(
     normalized_features = torch.nn.functional.normalize(sampled_x, p=2, dim=1)  # L2 normalization
     cos_similarity_matrix = torch.matmul(normalized_features, normalized_features.transpose(0, 1))
     
+    # Compute ground truth matrix
     treshold_matrix = torch.zeros_like(cos_similarity_matrix)
     treshold_matrix[cos_similarity_matrix > thresh] = 1
     
+    # Flat predicted and ground truth adjacence matrix
     fake_true_labels = treshold_matrix.flatten()
     pred_labels = sampled_prob_adj_matrix.flatten()
 
+    # Compute AUC  
     auc = roc_auc_score(fake_true_labels.cpu().numpy(), pred_labels.cpu().numpy())
     
     if training:
@@ -109,7 +114,7 @@ def __get_auc(model: torch.nn.Module, data: Data, training: bool = False) -> flo
         num_neg_samples=data.num_edges,
     )
     
-    # Edges predicted prob
+    # Edges with predicted prob
     y_pred = model.decode(z, data.edge_index, neg_edge_index)
     y_pred = torch.sigmoid(y_pred)
     
@@ -123,6 +128,7 @@ def __get_auc(model: torch.nn.Module, data: Data, training: bool = False) -> flo
     
     return auc
 
+# Function to train and dump the finalized model
 def __train_and_dump(
     # Model params
     torch_model: torch.nn.Module,
@@ -175,13 +181,12 @@ def __train_and_dump(
         auc_list = []
         agnostic_auc_list = []
 
-        # Shuffle dataset every epoch
-        # torch_train_set.shuffle()
         for idx, obj in tqdm(enumerate(torch_train_set), total=len(torch_train_set), desc="Data loop"):
             data: Data = obj
             data = data.to(device)
             
             optimizer.zero_grad()
+            # Encode phase -> get processed node representation
             z = model.encode(data.x, data.edge_index)
             
             # Use a under-sampled negative edges set for training efficiency
@@ -192,17 +197,21 @@ def __train_and_dump(
                 num_neg_samples=num_neg_edges
             )
             
+            # Compute logts an true labels
             logits = model.decode(z, data.edge_index, neg_edge_index)
             labels = torch.cat([torch.ones(data.num_edges), torch.zeros(num_neg_edges)]).to(device)
             
+            # Compute BCEWithLogitsLoss with all positive labels and sampled negative labels.
             loss = criterion(logits, labels)
             loss_list.append(loss.item())
             loss_train_step.append(loss.item())
             
+            # Compute AUC for evaluation (Do not affect loss)
             auc = __get_auc(model, data, training=True)
             auc_list.append(auc)
             auc_train_seps.append(auc)
             
+            # Compute A-AUC for evaluation (Do not affect loss)
             agn_auc = __get_agnostic_auc(model, data, thresh=a_auc_cos_thresh, training=True)
             agnostic_auc_list.append(agn_auc)
             a_auc_train_step.append(agn_auc)
@@ -229,6 +238,7 @@ def __train_and_dump(
     log.info(f"Training of model {model.get_name()} completed")
     log.info(f"Training finished after {num_epoch} epochs and {time.time() - start_time:.2f}s")
     
+    # Save trainign metrix and plot
     dump_train_metric(
         model_name=model.get_name(),
         total_epochs=num_epoch,
@@ -252,6 +262,7 @@ def __train_and_dump(
     return model
 
 
+# Test model
 def __test_model(
     # Test params
     model: torch.nn.Module, 
@@ -273,9 +284,11 @@ def __test_model(
         data: Data = obj
         data = data.to(device)
         
+        # Compute A-AUC using sampling (same configuration as training)
         agn_auc = __get_agnostic_auc(model, data, thresh=a_auc_cos_thresh, training=False)
         agnostic_auc_list.append(agn_auc)
         
+        # Compute AUC to evaluate the predicted edges
         auc = __get_auc(model, data, training=False)
         auc_list.append(auc)
         log.info(f"Data index: {idx}, AUC (single item): {auc:.4f}, A-AUC (single item): {agn_auc:.4f}")
@@ -283,6 +296,7 @@ def __test_model(
     avg_test_auc = sum(auc_list) / len(auc_list)
     avg_test_agnostic_auc = sum(agnostic_auc_list) / len(agnostic_auc_list)
     
+    # Save metrics and plots
     dump_test_metric(
         model_name=model.get_name(),
         total_epochs=train_epochs,
@@ -306,6 +320,7 @@ def __test_model(
     log.info(f"Evaluation completed successfully on {len(torch_test_set)} samples, average AUC: {avg_test_auc:.4f}, average A-AUC: {avg_test_agnostic_auc:.4f}")
     return avg_test_auc
 
+# Load and split dataset
 def __get_splitted_dataset(
     torch_tensor_path: str = TENSOR_FOLDER_PATH,
     len_limit: int = LEN_LIMIT,
@@ -319,6 +334,7 @@ def __get_splitted_dataset(
     log.info(f"Splitted orignal dataset of {len(dataset)} into train set of {len(train_set)} and test set of {len(test_set)}")
     return train_set, test_set
 
+# Train and test main model
 def __train_and_test(
     torch_model: torch.nn.Module,
 ) -> float:

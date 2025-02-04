@@ -1,3 +1,5 @@
+# Main file to create Wikipedia Graph JSON dataset
+
 import multiprocessing
 import os, sys, os.path
 import logging
@@ -57,6 +59,7 @@ def __build_wiki_json_graph(
         log.info(f"File {file_name}.json created")
 
 
+# Multi thread process, could take hours!
 def create_dataset(
     # wiki_articles: list[str] = DEF_WIKIPEDIA_ARTICLES, 
     max_nodes: int = DEF_MAX_NODES, 

@@ -1,3 +1,6 @@
+# Main file to create Wikipedia Graph tensor dataset
+# This perform the node embedding calculation
+
 import multiprocessing
 import concurrent
 from sentence_transformers import SentenceTransformer
@@ -84,7 +87,8 @@ def __to_data_tensor(
     torch.save(obj=tensor_to_save, f=tensor_file_path)
     log.info(f"Graph JSON file {json_file_name} parsed SUCCESSFULLY to tensor file {tensor_file_path}")
     
-    
+
+# Multi thread process, could take hours!
 def convert_jsons_to_tensors(
     hf_embedding_model: str = DEF_EMBED_MODEL_NAME,  
     json_folder: str = DEF_JSON_FOLDER, 
@@ -113,10 +117,6 @@ def convert_jsons_to_tensors(
                         
                         tensor_file_name = filename.replace(".json", ".pt")
                         tensor_file_path = os.path.join(tensor_folder, tensor_file_name)
-                        
-                        # if os.path.exists(tensor_file_path):
-                        #     log.warning(f"File {filename} already present as tensor file {tensor_file_name}. Skipped")
-                        #     continue
                         
                         log.info(f"Start concurrent parsing JSON file {filename} to tensor")
                         future = executor.submit(__to_data_tensor, filename, json_dict, tensor_file_path, embedding_model)

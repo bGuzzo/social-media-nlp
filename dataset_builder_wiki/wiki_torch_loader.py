@@ -5,7 +5,6 @@ from torch_geometric.data import Data
 import sys
 import logging
 import os
-import numpy as np
 from tqdm import tqdm
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -38,9 +37,10 @@ class WikiBaseDataset(torch.utils.data.Dataset):
     def shuffle(self) -> None:
         random.shuffle(self.__obj_list)
 
-
+# Main dataset class
 class WikiGraphDataset(torch.utils.data.Dataset):
     
+    # Load and shuffle the tensor file 
     def __init__(self, tensor_folder: str = TENSOR_FOLDER, shuffle: bool = False, size_limit: int = -1) -> None:
         
         self.__obj_list: list[Tuple[Data, dict[int, str]]] = []
@@ -93,6 +93,7 @@ class WikiGraphDataset(torch.utils.data.Dataset):
     def shuffle(self) -> None:
         random.shuffle(self.__obj_list)
     
+    # Perform dataset split to get train set and test set
     def split_dataset(
         self,
         train_percentage: float = 0.2, 
@@ -117,7 +118,6 @@ class WikiGraphDataset(torch.utils.data.Dataset):
         return WikiBaseDataset(train_set), WikiBaseDataset(test_set)
         
         
-
 # Test only
 if __name__ == "__main__":
     dataset = WikiGraphDataset(tensor_folder="/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/final_dataset/tensor")

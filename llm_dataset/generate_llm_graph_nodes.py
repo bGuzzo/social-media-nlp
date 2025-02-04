@@ -17,12 +17,12 @@ from transformers import (
     BitsAndBytesConfig,
 )
 
-
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from custom_logger.logger_config import get_logger
 
 log: logging.Logger = get_logger(name=__name__)
 
+# Folder to save LLM generated graph
 TENSOR_GRAPH_OUTDIR = "/home/bruno/Documents/GitHub/social-media-nlp/llm_dataset/only_node_datasets"
 
 ROOT_DOMAIN_TOPICS: list[str] = [
@@ -53,20 +53,25 @@ ROOT_NON_DOMAIN_TOPICS: list[str] = [
     "Biotechnology and Drug Development: Learn about the cutting-edge technologies used to develop new drugs and therapies, including monoclonal antibodies, gene therapy, and personalized medicine approaches",
 ]
 
+# LMM and Ebedding model used
 HF_MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
 HF_EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 
+# System prompt use in chat template prior to the actual prompt
 SYSTEM_PROMPT = """You are a large language model, trained to be informative and concise.
 Do not provide explanations or elaborations unless explicitly requested.
 Focus on delivering the most direct and accurate answer to the user's query."""
 
+# Number of nodes requested to be generated
 NUM_GEN_NODES = 10
 
+# Prompt temeplate
 def __get_prompt(root_topic: str, num_gen_nodes: int = NUM_GEN_NODES) -> str:
     return f"Generate a JSON list of {num_gen_nodes} arguments related to {root_topic}." + \
         "\n\nExample of response structure: [\"apple\", \"banana\", \"cherry\"]." + \
         "\nAvoid creating nested JSON object, the generated JSON object list must have only one level."
 
+# Function to generate parse LLM output
 def __get_gen_nodes(llm_out: str) -> list[str]:
     start_idx = llm_out.index("[")
     end_idx = llm_out.index("]")
@@ -79,7 +84,8 @@ def __get_gen_nodes(llm_out: str) -> list[str]:
     
     log.info(f"Nodes generated from LLM: {nodes}")
     return nodes
-    
+
+# Initialize HF LLM
 def __initialize_llm(model_name: str = HF_MODEL_NAME) -> tuple[AutoModelForCausalLM, AutoTokenizer]:
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
@@ -126,6 +132,7 @@ def __generate_llm(
     torch.cuda.empty_cache()
     return llm_response
 
+# Generate and extract node lists
 def __generate_nodes(root_topic_list: list[str] = ROOT_DOMAIN_TOPICS) -> list[str]:
     all_nodes:list[str] = []
     model, tokenizer = __initialize_llm()
@@ -142,6 +149,7 @@ def __generate_nodes(root_topic_list: list[str] = ROOT_DOMAIN_TOPICS) -> list[st
     
     return all_nodes
 
+# Save nodes in tensor format to be used with the GNN
 def __save_graph_tensor(
     node_list: list[str], 
     description: str,
@@ -175,8 +183,6 @@ def __save_graph_tensor(
     log.info(f"Graph of {len(node_list)} nodes saved to {tensor_file_path}")
 
 if __name__ == "__main__":
-    # list_nodes = __generate_nodes(root_topic_list=ROOT_NON_DOMAIN_TOPICS)
-    # __save_graph_tensor(list_nodes, description="no-domain-related")
-    
+    # Choose the nodes you want to generate
     list_nodes = __generate_nodes(root_topic_list=ROOT_DOMAIN_TOPICS)
     __save_graph_tensor(list_nodes, description="domain-related")

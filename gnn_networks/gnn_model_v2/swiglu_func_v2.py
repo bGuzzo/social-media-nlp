@@ -1,6 +1,7 @@
 import torch
 from torch import nn
 
+# SwiGLU activation function torch class
 class SwiGLU(nn.Module):
     def __init__(self, dimension:int):
         super().__init__()

@@ -31,10 +31,11 @@ EDGE_PR_TRESH_LIST: list[float] = [
     0.9
 ]
 
+# Compute avg degree of a rebuilded graph
 def __get_avg_degree(graph: nx.Graph) -> float:
     return sum(dict(graph.degree()).values()) / graph.number_of_nodes()
 
-
+# Load tensor dataset builder previously 
 def __load_datset(torch_grap_path: str) -> tuple[Data, dict[int, str]]:
     grap_dict = torch.load(torch_grap_path)
     data: Data = grap_dict["data"]
@@ -43,6 +44,7 @@ def __load_datset(torch_grap_path: str) -> tuple[Data, dict[int, str]]:
     log.info(f"Loaded tensor graph from {torch_grap_path} with {data.num_nodes} nodes")
     return (data, nodes_idx_map)
 
+# Compute A-AUC with no sampling
 @torch.no_grad()
 def __get_a_auc(
     model: torch.nn.Module, 
@@ -72,6 +74,7 @@ def __get_a_auc(
 
     return auc
 
+# Rebuild a graph by adding edges with predicted probability over a threshold
 def __build_graph(
     model: torch.nn.Module, 
     data: Data,
@@ -93,24 +96,30 @@ def __build_graph(
         row = row_index[i].item()
         col = col_index[i].item()
         
+        # Void present edges
         if graph.has_edge(nodes_idx[row], nodes_idx[col]):
             continue
         if graph.has_edge(nodes_idx[col], nodes_idx[row]):
             continue
         
+        # Avoid self edges
         if row != col:
             graph.add_edge(nodes_idx[row], nodes_idx[col])
     
     log.info(f"Built graph with {graph.number_of_nodes()} nodes and {graph.number_of_edges()} edges usign prob threshold {edge_prob_tresh}")
     return graph
 
+# Plot graph function for visualization
 def __plot_graph(graph: nx.Graph, title: str) -> None:
     plt.figure(figsize=(15, 15))
     nx.draw(graph, with_labels=True, node_size=30, font_size=10, font_color="red", node_color="skyblue", edge_color="gray")
     plt.title(title)
     plt.show()
 
-def compute_llm_gramph(
+# Evaulate a LLM graph builded by a LLM (nodes only)
+# Use A-AUC and print it
+# Rebuild graph (with a defined threshold over edges probability) and show graph properties
+def evaluate_llm_graph(
     llm_graph_path: str, 
     domain_related_info: str, 
     cos_sim_thresh: float = COSIN_SIM_THRESHOLD, 
@@ -126,7 +135,7 @@ def compute_llm_gramph(
     a_auc = __get_a_auc(model=model, data=data)
     log.info(f"LLM {domain_related_info} graph, A-AUC({cos_sim_thresh})={a_auc}")
     
-    # Evaute edge probability threshold graph
+    # Evaute edge probability threshold reconstructed graph
     pred_graph: nx.Graph = __build_graph(model=model, data=data, nodes_idx=nodes_idx, edge_prob_tresh=prob_thresh)
     avg_degree = __get_avg_degree(pred_graph)
     log.info(f"LLM Reconstrcuted {domain_related_info} graph (edge_prob_thres={prob_thresh:.4f}) of {pred_graph.number_of_nodes()} nodes, {pred_graph.number_of_edges()} edges, avg-degree {avg_degree:.4f} and connected {nx.is_connected(pred_graph)}")
@@ -137,10 +146,12 @@ def compute_llm_gramph(
                 f"\n{domain_related_info}"
         __plot_graph(pred_graph, title=title)
 
+
+# Evaluate LLM domain related graph on all probability treshold
 def evaluate_domain_graph(cos_sim_thres: float = COSIN_SIM_THRESHOLD, prob_to_test: list[float] = EDGE_PR_TRESH_LIST):
     for edge_prob in prob_to_test:
         log.info(f"Evaluating LMM domain graph with edge prob {edge_prob:.4f}")
-        compute_llm_gramph(
+        evaluate_llm_graph(
             llm_graph_path=LLM_GRAPH_DOMAIN, 
             domain_related_info="domain-related", 
             cos_sim_thresh=cos_sim_thres, 
@@ -148,10 +159,11 @@ def evaluate_domain_graph(cos_sim_thres: float = COSIN_SIM_THRESHOLD, prob_to_te
             show_graph=False
         )
 
+# Evaluate LLM not domain related graph on all probability treshold
 def evaluate_non_domain_graph(cos_sim_thres: float = COSIN_SIM_THRESHOLD, prob_to_test: list[float] = EDGE_PR_TRESH_LIST):
     for edge_prob in prob_to_test:
         log.info(f"Evaluating LMM non-domain graph with edge prob {edge_prob:.4f}")
-        compute_llm_gramph(
+        evaluate_llm_graph(
             llm_graph_path=LLM_GRAPH_NON_DOMAIN, 
             domain_related_info="non-domain-related", 
             cos_sim_thresh=cos_sim_thres, 
@@ -159,6 +171,7 @@ def evaluate_non_domain_graph(cos_sim_thres: float = COSIN_SIM_THRESHOLD, prob_t
             show_graph=False
         )
 
+# Main method
 if __name__ == "__main__":
     # evaluate_domain_graph()
     # evaluate_non_domain_graph()
@@ -169,7 +182,7 @@ if __name__ == "__main__":
     #     prob_thresh=EDGE_PROB_THRESHOLD,
     #     show_graph=True
     # )
-    compute_llm_gramph(
+    evaluate_llm_graph(
         llm_graph_path=LLM_GRAPH_NON_DOMAIN, 
         domain_related_info="non-domain-related", 
         cos_sim_thresh=COSIN_SIM_THRESHOLD, 
