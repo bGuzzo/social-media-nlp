@@ -30,6 +30,9 @@ The project is organized into the following directories:
         * `gat_block_v2.py`: Implements the GAT block for version 2.
         * `swiglu_func_v2.py`: Implements the SwiGLU activation function for version 2.
     * `metric outputs`: Stores the training and evaluation metrics in JSON format.
+    * `model_dumps`: Stores the trained GNN models in PyTorch format.
+    * `plots`: Stores plots generated during training and evaluation.
+
 * **llm_dataset:** Contains scripts for generating additional graph nodes using an LLM.
     * `generate_llm_graph_nodes.py`: Generates new nodes for the graph based on LLM outputs.
 * **latex:** Contains the LaTeX source code for the project report.
