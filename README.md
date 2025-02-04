@@ -7,6 +7,7 @@ This repository contains the project for the 'Social Media' module of the "IR-NL
 The project is organized into the following directories:
 
 * **custom_logger:** Contains a custom logger configuration for consistent logging throughout the project.
+
 * **dataset_builder_wiki:** Contains scripts for building the dataset from Wikipedia articles.
     * `wiki_crowler_bfs.py`: Crawls Wikipedia pages using Breadth-First Search (BFS) to collect article content.
     * `wiki_dataset_builder.py`: Processes the crawled articles, extracts relevant information, and builds the dataset.
@@ -15,6 +16,7 @@ The project is organized into the following directories:
     * `wikipedia_articles.txt`: List of seed Wikipedia articles for crawling.
     * `wiki_torch_loader.py`: Creates a PyTorch DataLoader for the generated dataset.
     * `final_dataset/json`: Stores the final dataset in JSON format.
+
 * **gnn_networks:** Contains code for training and evaluating Graph Neural Networks (GNNs).
     * `trainer.py`: Implements the training loop and evaluation logic for GNN models.
     * `plot_utils.py`: Provides utility functions for plotting training metrics and visualizations.
@@ -37,6 +39,7 @@ The project is organized into the following directories:
     * `generate_llm_graph_nodes.py`: Generates new nodes for the graph based on LLM outputs.
 * **latex:** Contains the LaTeX source code for the project report.
     * `assignment`: Contains the LaTeX files, bibliography, and compiled PDF for the assignment report.
+
 
 ## Dependencies
 
@@ -79,5 +82,4 @@ To run the project, you can follow these steps:
 You can modify the configuration parameters in the respective scripts to customize the dataset creation, model training, and evaluation process.
 
 ## Project Report
-
-The project report is available in the `latex/assignment` directory. You can compile the LaTeX source code to generate a PDF report.
+The project report is available in the `latex/assignment` directory as LaTeX and PDF compiled format.
