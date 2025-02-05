@@ -1,0 +1,10 @@
+{
+    "num_edges": 41361,
+    "num_nodes": 20000,
+    "average_degree": 4.1361,
+    "average_clustering": 0.22934606653697856,
+    "average_path_length": 3.561133221661083,
+    "modularity": 0.7335983903468907,
+    "is_connected": true,
+    "filename": "Poverty_in_the_Philippines.json"
+}

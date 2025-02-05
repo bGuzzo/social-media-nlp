@@ -1,0 +1,10 @@
+{
+    "num_edges": 50776,
+    "num_nodes": 20000,
+    "average_degree": 5.0776,
+    "average_clustering": 0.17471987693308796,
+    "average_path_length": 3.448803470173509,
+    "modularity": 0.5373910624222512,
+    "is_connected": true,
+    "filename": "Individual_action_on_climate_change.json"
+}

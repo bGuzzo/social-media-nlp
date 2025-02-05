@@ -1,0 +1,10 @@
+{
+    "num_edges": 32945,
+    "num_nodes": 20000,
+    "average_degree": 3.2945,
+    "average_clustering": 0.14707052542544033,
+    "average_path_length": 3.464040677033852,
+    "modularity": 0.7089934693189927,
+    "is_connected": true,
+    "filename": "Subsistence_agriculture.json"
+}

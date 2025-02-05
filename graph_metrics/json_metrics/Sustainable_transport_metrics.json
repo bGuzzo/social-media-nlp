@@ -1,0 +1,10 @@
+{
+    "num_edges": 36519,
+    "num_nodes": 20000,
+    "average_degree": 3.6519,
+    "average_clustering": 0.20687182204165477,
+    "average_path_length": 3.651414410720536,
+    "modularity": 0.7108665569245401,
+    "is_connected": true,
+    "filename": "Sustainable_transport.json"
+}

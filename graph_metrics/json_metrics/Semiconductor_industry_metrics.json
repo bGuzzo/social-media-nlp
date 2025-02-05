@@ -1,0 +1,10 @@
+{
+    "num_edges": 29089,
+    "num_nodes": 20000,
+    "average_degree": 2.9089,
+    "average_clustering": 0.11255386251051143,
+    "average_path_length": 3.7347215710785537,
+    "modularity": 0.8285121606207511,
+    "is_connected": true,
+    "filename": "Semiconductor_industry.json"
+}

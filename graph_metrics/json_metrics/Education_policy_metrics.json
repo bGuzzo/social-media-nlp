@@ -1,0 +1,10 @@
+{
+    "num_edges": 38787,
+    "num_nodes": 20000,
+    "average_degree": 3.8787,
+    "average_clustering": 0.08366977291991864,
+    "average_path_length": 3.4871617230861545,
+    "modularity": 0.6430375256287282,
+    "is_connected": true,
+    "filename": "Education_policy.json"
+}

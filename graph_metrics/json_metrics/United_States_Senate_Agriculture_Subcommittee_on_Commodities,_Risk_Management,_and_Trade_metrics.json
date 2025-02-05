@@ -1,0 +1,10 @@
+{
+    "num_edges": 34123,
+    "num_nodes": 20000,
+    "average_degree": 3.4123,
+    "average_clustering": 0.1808950849078334,
+    "average_path_length": 3.704906020301015,
+    "modularity": 0.7901965885374437,
+    "is_connected": true,
+    "filename": "United_States_Senate_Agriculture_Subcommittee_on_Commodities,_Risk_Management,_and_Trade.json"
+}

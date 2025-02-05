@@ -1,0 +1,10 @@
+{
+    "num_edges": 38296,
+    "num_nodes": 20000,
+    "average_degree": 3.8296,
+    "average_clustering": 0.11443367658457343,
+    "average_path_length": 3.6676443572178608,
+    "modularity": 0.717132563411918,
+    "is_connected": true,
+    "filename": "United_Nations_Development_Programme.json"
+}

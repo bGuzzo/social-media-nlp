@@ -1,0 +1,10 @@
+{
+    "num_edges": 30359,
+    "num_nodes": 20000,
+    "average_degree": 3.0359,
+    "average_clustering": 0.10531360581824652,
+    "average_path_length": 3.6947609580479024,
+    "modularity": 0.7772327912631347,
+    "is_connected": true,
+    "filename": "Diseases_of_poverty.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 43214,
+    "num_nodes": 20000,
+    "average_degree": 4.3214,
+    "average_clustering": 0.17768459737234485,
+    "average_path_length": 3.642599079953998,
+    "modularity": 0.6803443044205937,
+    "is_connected": true,
+    "filename": "Ceres_Power.json"
+}

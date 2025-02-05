@@ -1,0 +1,10 @@
+{
+    "num_edges": 41451,
+    "num_nodes": 20000,
+    "average_degree": 4.1451,
+    "average_clustering": 0.20322046003876448,
+    "average_path_length": 3.5990097004850243,
+    "modularity": 0.7372498775526496,
+    "is_connected": true,
+    "filename": "Green-collar_worker.json"
+}

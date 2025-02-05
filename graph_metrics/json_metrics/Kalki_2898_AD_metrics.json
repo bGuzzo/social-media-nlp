@@ -1,0 +1,10 @@
+{
+    "num_edges": 25974,
+    "num_nodes": 20000,
+    "average_degree": 2.5974,
+    "average_clustering": 0.14880485857697337,
+    "average_path_length": 3.622860378018901,
+    "modularity": 0.818072474065005,
+    "is_connected": true,
+    "filename": "Kalki_2898_AD.json"
+}

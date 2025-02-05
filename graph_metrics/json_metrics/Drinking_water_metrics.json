@@ -1,0 +1,10 @@
+{
+    "num_edges": 30050,
+    "num_nodes": 20000,
+    "average_degree": 3.005,
+    "average_clustering": 0.13980594266599697,
+    "average_path_length": 3.703953472673634,
+    "modularity": 0.7916499433833238,
+    "is_connected": true,
+    "filename": "Drinking_water.json"
+}

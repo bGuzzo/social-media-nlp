@@ -1,0 +1,10 @@
+{
+    "num_edges": 43703,
+    "num_nodes": 20000,
+    "average_degree": 4.3703,
+    "average_clustering": 0.2058128464343295,
+    "average_path_length": 3.6520128756437824,
+    "modularity": 0.6852503252870659,
+    "is_connected": true,
+    "filename": "Diarrhea.json"
+}

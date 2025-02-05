@@ -1,0 +1,10 @@
+{
+    "num_edges": 30186,
+    "num_nodes": 20000,
+    "average_degree": 3.0186,
+    "average_clustering": 0.10583132590766206,
+    "average_path_length": 3.692451497574879,
+    "modularity": 0.777560303375636,
+    "is_connected": true,
+    "filename": "Renewable_and_Sustainable_Energy_Reviews.json"
+}
