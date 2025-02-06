@@ -1,0 +1,10 @@
+{
+    "num_edges": 34038,
+    "num_nodes": 20000,
+    "average_degree": 3.4038,
+    "average_clustering": 0.1373318606015258,
+    "average_path_length": 3.532386774338717,
+    "modularity": 0.727390229494373,
+    "is_connected": true,
+    "filename": "Economy_of_the_United_Kingdom.json"
+}

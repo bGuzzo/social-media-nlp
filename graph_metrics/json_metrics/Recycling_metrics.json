@@ -1,0 +1,10 @@
+{
+    "num_edges": 35236,
+    "num_nodes": 20000,
+    "average_degree": 3.5236,
+    "average_clustering": 0.16143943103551917,
+    "average_path_length": 3.643526446322316,
+    "modularity": 0.7232046852985433,
+    "is_connected": true,
+    "filename": "Recycling.json"
+}

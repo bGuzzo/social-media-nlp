@@ -1,0 +1,10 @@
+{
+    "num_edges": 56896,
+    "num_nodes": 20000,
+    "average_degree": 5.6896,
+    "average_clustering": 0.23390987421531198,
+    "average_path_length": 3.3411231261563077,
+    "modularity": 0.5106504657514657,
+    "is_connected": true,
+    "filename": "Deforestation_and_climate_change.json"
+}

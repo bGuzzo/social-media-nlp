@@ -1,0 +1,10 @@
+{
+    "num_edges": 52716,
+    "num_nodes": 20000,
+    "average_degree": 5.2716,
+    "average_clustering": 0.27326646215757155,
+    "average_path_length": 3.4739309165458274,
+    "modularity": 0.6262687199053607,
+    "is_connected": true,
+    "filename": "Gender_sensitization.json"
+}

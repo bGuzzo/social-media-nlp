@@ -1,0 +1,10 @@
+{
+    "num_edges": 45443,
+    "num_nodes": 20000,
+    "average_degree": 4.5443,
+    "average_clustering": 0.2909653792109544,
+    "average_path_length": 3.4239401420071003,
+    "modularity": 0.625922653632019,
+    "is_connected": true,
+    "filename": "Eco-capitalism.json"
+}

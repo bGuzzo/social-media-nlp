@@ -1,0 +1,10 @@
+{
+    "num_edges": 35923,
+    "num_nodes": 20000,
+    "average_degree": 3.5923,
+    "average_clustering": 0.14729239581172512,
+    "average_path_length": 3.6015804890244514,
+    "modularity": 0.7669031001688699,
+    "is_connected": true,
+    "filename": "Poverty_in_Canada.json"
+}

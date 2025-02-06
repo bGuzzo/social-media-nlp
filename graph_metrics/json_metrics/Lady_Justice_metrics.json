@@ -1,0 +1,10 @@
+{
+    "num_edges": 27560,
+    "num_nodes": 20000,
+    "average_degree": 2.756,
+    "average_clustering": 0.08906192678716641,
+    "average_path_length": 3.751988749437472,
+    "modularity": 0.8284509737035017,
+    "is_connected": true,
+    "filename": "Lady_Justice.json"
+}

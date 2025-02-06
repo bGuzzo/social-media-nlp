@@ -1,0 +1,10 @@
+{
+    "num_edges": 33628,
+    "num_nodes": 20000,
+    "average_degree": 3.3628,
+    "average_clustering": 0.1656588774769874,
+    "average_path_length": 3.5943864843242164,
+    "modularity": 0.7121638407744718,
+    "is_connected": true,
+    "filename": "IT_infrastructure.json"
+}

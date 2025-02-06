@@ -1,0 +1,10 @@
+{
+    "num_edges": 26448,
+    "num_nodes": 20000,
+    "average_degree": 2.6448,
+    "average_clustering": 0.07164382440101043,
+    "average_path_length": 3.6928794139706986,
+    "modularity": 0.7980499369157856,
+    "is_connected": true,
+    "filename": "Justice_of_the_peace.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 28860,
+    "num_nodes": 20000,
+    "average_degree": 2.886,
+    "average_clustering": 0.11715936411811609,
+    "average_path_length": 3.664962703135157,
+    "modularity": 0.7761969077665543,
+    "is_connected": true,
+    "filename": "List_of_highest-grossing_Indian_films.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 30361,
+    "num_nodes": 20000,
+    "average_degree": 3.0361,
+    "average_clustering": 0.1419352826230012,
+    "average_path_length": 3.508709310465523,
+    "modularity": 0.7326113451347466,
+    "is_connected": true,
+    "filename": "Agricultural_technology.json"
+}

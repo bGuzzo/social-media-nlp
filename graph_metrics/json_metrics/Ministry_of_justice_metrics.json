@@ -1,0 +1,10 @@
+{
+    "num_edges": 32536,
+    "num_nodes": 20000,
+    "average_degree": 3.2536,
+    "average_clustering": 0.1685701354796486,
+    "average_path_length": 3.424837116855843,
+    "modularity": 0.7291262491166374,
+    "is_connected": true,
+    "filename": "Ministry_of_justice.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 54713,
+    "num_nodes": 20000,
+    "average_degree": 5.4713,
+    "average_clustering": 0.2622108518968423,
+    "average_path_length": 3.303912840642032,
+    "modularity": 0.5635461075657913,
+    "is_connected": true,
+    "filename": "European_Commissioner_for_Climate_Action.json"
+}

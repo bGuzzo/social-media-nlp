@@ -1,0 +1,10 @@
+{
+    "num_edges": 27696,
+    "num_nodes": 20000,
+    "average_degree": 2.7696,
+    "average_clustering": 0.12508567350916147,
+    "average_path_length": 3.578270498524926,
+    "modularity": 0.7624381232507947,
+    "is_connected": true,
+    "filename": "World_War_II.json"
+}

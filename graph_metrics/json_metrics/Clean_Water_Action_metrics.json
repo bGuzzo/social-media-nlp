@@ -1,0 +1,10 @@
+{
+    "num_edges": 29078,
+    "num_nodes": 20000,
+    "average_degree": 2.9078,
+    "average_clustering": 0.10544508967643205,
+    "average_path_length": 3.7360705035251764,
+    "modularity": 0.8246227268478834,
+    "is_connected": true,
+    "filename": "Clean_Water_Action.json"
+}

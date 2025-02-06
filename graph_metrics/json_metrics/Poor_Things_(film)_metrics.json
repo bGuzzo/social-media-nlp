@@ -1,0 +1,10 @@
+{
+    "num_edges": 31062,
+    "num_nodes": 20000,
+    "average_degree": 3.1062,
+    "average_clustering": 0.11324246722597896,
+    "average_path_length": 3.6895326066303316,
+    "modularity": 0.7388545866927387,
+    "is_connected": true,
+    "filename": "Poor_Things_(film).json"
+}

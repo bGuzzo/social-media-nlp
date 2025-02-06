@@ -1,0 +1,10 @@
+{
+    "num_edges": 25092,
+    "num_nodes": 20000,
+    "average_degree": 2.5092,
+    "average_clustering": 0.0766142177180374,
+    "average_path_length": 3.439905965298265,
+    "modularity": 0.7964772452614296,
+    "is_connected": true,
+    "filename": "2019_UN_Climate_Action_Summit.json"
+}

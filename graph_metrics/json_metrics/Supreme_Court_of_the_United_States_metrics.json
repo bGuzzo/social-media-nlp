@@ -1,0 +1,10 @@
+{
+    "num_edges": 33365,
+    "num_nodes": 20000,
+    "average_degree": 3.3365,
+    "average_clustering": 0.1768428164166971,
+    "average_path_length": 3.3872194909745486,
+    "modularity": 0.6682127180736819,
+    "is_connected": true,
+    "filename": "Supreme_Court_of_the_United_States.json"
+}

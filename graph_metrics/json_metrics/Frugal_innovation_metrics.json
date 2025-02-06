@@ -1,0 +1,10 @@
+{
+    "num_edges": 27852,
+    "num_nodes": 20000,
+    "average_degree": 2.7852,
+    "average_clustering": 0.1470131184758953,
+    "average_path_length": 3.7496039251962596,
+    "modularity": 0.8397448585668623,
+    "is_connected": true,
+    "filename": "Frugal_innovation.json"
+}

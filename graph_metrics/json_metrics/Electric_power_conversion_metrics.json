@@ -1,0 +1,10 @@
+{
+    "num_edges": 39195,
+    "num_nodes": 20000,
+    "average_degree": 3.9195,
+    "average_clustering": 0.13585066213946445,
+    "average_path_length": 3.6061785839291964,
+    "modularity": 0.7165239174188685,
+    "is_connected": true,
+    "filename": "Electric_power_conversion.json"
+}

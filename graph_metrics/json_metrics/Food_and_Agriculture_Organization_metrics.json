@@ -1,0 +1,10 @@
+{
+    "num_edges": 27506,
+    "num_nodes": 20000,
+    "average_degree": 2.7506,
+    "average_clustering": 0.09924495736519305,
+    "average_path_length": 3.532404360218011,
+    "modularity": 0.7664338647709178,
+    "is_connected": true,
+    "filename": "Food_and_Agriculture_Organization.json"
+}

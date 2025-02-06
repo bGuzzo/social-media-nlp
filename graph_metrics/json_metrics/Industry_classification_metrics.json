@@ -1,0 +1,10 @@
+{
+    "num_edges": 38276,
+    "num_nodes": 20000,
+    "average_degree": 3.8276,
+    "average_clustering": 0.1348424670154562,
+    "average_path_length": 3.6410767788389418,
+    "modularity": 0.7077803347121201,
+    "is_connected": true,
+    "filename": "Industry_classification.json"
+}

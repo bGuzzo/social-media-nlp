@@ -1,0 +1,10 @@
+{
+    "num_edges": 39968,
+    "num_nodes": 20000,
+    "average_degree": 3.9968,
+    "average_clustering": 0.2665480011867221,
+    "average_path_length": 3.4518472273613683,
+    "modularity": 0.6942611369294595,
+    "is_connected": true,
+    "filename": "Action_for_Climate_Empowerment.json"
+}

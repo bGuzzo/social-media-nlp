@@ -1,0 +1,10 @@
+{
+    "num_edges": 44526,
+    "num_nodes": 20000,
+    "average_degree": 4.4526,
+    "average_clustering": 0.30433723710511007,
+    "average_path_length": 3.4519374818740935,
+    "modularity": 0.6470962998233103,
+    "is_connected": true,
+    "filename": "Corporate_poverty.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 40553,
+    "num_nodes": 20000,
+    "average_degree": 4.0553,
+    "average_clustering": 0.1763686610328951,
+    "average_path_length": 3.552944282214111,
+    "modularity": 0.6808267421755959,
+    "is_connected": true,
+    "filename": "Three-phase_electric_power.json"
+}

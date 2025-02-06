@@ -1,0 +1,10 @@
+{
+    "num_edges": 43780,
+    "num_nodes": 20000,
+    "average_degree": 4.378,
+    "average_clustering": 0.14146001851850684,
+    "average_path_length": 3.6113949397469876,
+    "modularity": 0.6190667528430807,
+    "is_connected": true,
+    "filename": "Paris_Agreement.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 35982,
+    "num_nodes": 20000,
+    "average_degree": 3.5982,
+    "average_clustering": 0.13560391632378477,
+    "average_path_length": 3.6841739386969348,
+    "modularity": 0.7111043548194718,
+    "is_connected": true,
+    "filename": "Anti-gender_movement.json"
+}

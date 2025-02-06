@@ -1,0 +1,10 @@
+{
+    "num_edges": 37615,
+    "num_nodes": 20000,
+    "average_degree": 3.7615,
+    "average_clustering": 0.09889863527600222,
+    "average_path_length": 3.6266618130906547,
+    "modularity": 0.6575019701644631,
+    "is_connected": true,
+    "filename": "Gifted_education.json"
+}

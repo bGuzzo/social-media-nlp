@@ -1,0 +1,10 @@
+{
+    "num_edges": 30303,
+    "num_nodes": 20000,
+    "average_degree": 3.0303,
+    "average_clustering": 0.11442133469402052,
+    "average_path_length": 3.770537986899345,
+    "modularity": 0.7639747078416518,
+    "is_connected": true,
+    "filename": "David_Lynch_Foundation.json"
+}

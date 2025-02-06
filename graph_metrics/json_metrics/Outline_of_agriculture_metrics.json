@@ -1,0 +1,10 @@
+{
+    "num_edges": 35830,
+    "num_nodes": 20000,
+    "average_degree": 3.583,
+    "average_clustering": 0.17735637624344944,
+    "average_path_length": 3.4882903045152256,
+    "modularity": 0.6713038319617813,
+    "is_connected": true,
+    "filename": "Outline_of_agriculture.json"
+}

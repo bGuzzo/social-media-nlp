@@ -1,0 +1,10 @@
+{
+    "num_edges": 28250,
+    "num_nodes": 20000,
+    "average_degree": 2.825,
+    "average_clustering": 0.13711096197081415,
+    "average_path_length": 3.5709277413870693,
+    "modularity": 0.770430364789725,
+    "is_connected": true,
+    "filename": "Tertiary_education.json"
+}

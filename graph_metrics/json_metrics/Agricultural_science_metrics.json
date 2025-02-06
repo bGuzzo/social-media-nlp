@@ -1,0 +1,10 @@
+{
+    "num_edges": 34113,
+    "num_nodes": 20000,
+    "average_degree": 3.4113,
+    "average_clustering": 0.18126266023782567,
+    "average_path_length": 3.4260690234511726,
+    "modularity": 0.6957502427335519,
+    "is_connected": true,
+    "filename": "Agricultural_science.json"
+}

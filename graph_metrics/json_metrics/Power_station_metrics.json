@@ -1,0 +1,10 @@
+{
+    "num_edges": 39346,
+    "num_nodes": 20000,
+    "average_degree": 3.9346,
+    "average_clustering": 0.14511394764125615,
+    "average_path_length": 3.6062774738736936,
+    "modularity": 0.6785559584408143,
+    "is_connected": true,
+    "filename": "Power_station.json"
+}

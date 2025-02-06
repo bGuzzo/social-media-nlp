@@ -1,0 +1,10 @@
+{
+    "num_edges": 28353,
+    "num_nodes": 20000,
+    "average_degree": 2.8353,
+    "average_clustering": 0.11879475742941947,
+    "average_path_length": 3.7041521776088806,
+    "modularity": 0.788135276909854,
+    "is_connected": true,
+    "filename": "Light_industry.json"
+}

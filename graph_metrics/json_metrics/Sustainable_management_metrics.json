@@ -1,0 +1,10 @@
+{
+    "num_edges": 47718,
+    "num_nodes": 20000,
+    "average_degree": 4.7718,
+    "average_clustering": 0.24142549714387693,
+    "average_path_length": 3.2456365318265914,
+    "modularity": 0.5576361343195984,
+    "is_connected": true,
+    "filename": "Sustainable_management.json"
+}

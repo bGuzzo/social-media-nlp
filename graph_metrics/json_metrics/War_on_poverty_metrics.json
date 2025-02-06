@@ -1,0 +1,10 @@
+{
+    "num_edges": 70483,
+    "num_nodes": 20000,
+    "average_degree": 7.0483,
+    "average_clustering": 0.4346578167355807,
+    "average_path_length": 3.3180009800490025,
+    "modularity": 0.5748619692178675,
+    "is_connected": true,
+    "filename": "War_on_poverty.json"
+}

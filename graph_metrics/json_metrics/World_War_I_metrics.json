@@ -1,0 +1,10 @@
+{
+    "num_edges": 32681,
+    "num_nodes": 20000,
+    "average_degree": 3.2681,
+    "average_clustering": 0.15023080624012283,
+    "average_path_length": 3.5351849592479625,
+    "modularity": 0.6765221864455554,
+    "is_connected": true,
+    "filename": "World_War_I.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 25567,
+    "num_nodes": 20000,
+    "average_degree": 2.5567,
+    "average_clustering": 0.09116983071919178,
+    "average_path_length": 3.7855773588679433,
+    "modularity": 0.8640611943532389,
+    "is_connected": true,
+    "filename": "Civil_War_(film).json"
+}

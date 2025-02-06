@@ -1,0 +1,10 @@
+{
+    "num_edges": 40197,
+    "num_nodes": 20000,
+    "average_degree": 4.0197,
+    "average_clustering": 0.2248224741267205,
+    "average_path_length": 3.363075073753688,
+    "modularity": 0.639017974112147,
+    "is_connected": true,
+    "filename": "Chief_Justice_of_the_United_States.json"
+}

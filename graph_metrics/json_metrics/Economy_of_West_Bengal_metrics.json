@@ -1,0 +1,10 @@
+{
+    "num_edges": 33996,
+    "num_nodes": 20000,
+    "average_degree": 3.3996,
+    "average_clustering": 0.1223844616751855,
+    "average_path_length": 3.592849572478624,
+    "modularity": 0.7046714440813556,
+    "is_connected": true,
+    "filename": "Economy_of_West_Bengal.json"
+}

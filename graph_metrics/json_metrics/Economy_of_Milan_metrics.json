@@ -1,0 +1,10 @@
+{
+    "num_edges": 33587,
+    "num_nodes": 20000,
+    "average_degree": 3.3587,
+    "average_clustering": 0.11534162970798134,
+    "average_path_length": 3.3934286214310716,
+    "modularity": 0.6572751731786641,
+    "is_connected": true,
+    "filename": "Economy_of_Milan.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 32473,
+    "num_nodes": 20000,
+    "average_degree": 3.2473,
+    "average_clustering": 0.09463153700954322,
+    "average_path_length": 3.724275318765938,
+    "modularity": 0.7498816294399615,
+    "is_connected": true,
+    "filename": "Electric_power_transmission.json"
+}

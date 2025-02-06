@@ -1,0 +1,10 @@
+{
+    "num_edges": 30295,
+    "num_nodes": 20000,
+    "average_degree": 3.0295,
+    "average_clustering": 0.1751137860719843,
+    "average_path_length": 3.5324097854892744,
+    "modularity": 0.7516119553989118,
+    "is_connected": true,
+    "filename": "Neolithic_Revolution.json"
+}

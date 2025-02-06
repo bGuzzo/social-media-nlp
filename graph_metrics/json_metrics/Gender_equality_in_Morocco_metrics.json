@@ -1,0 +1,10 @@
+{
+    "num_edges": 50839,
+    "num_nodes": 20000,
+    "average_degree": 5.0839,
+    "average_clustering": 0.15292361199323515,
+    "average_path_length": 2.999143752187609,
+    "modularity": 0.4906845734449383,
+    "is_connected": true,
+    "filename": "Gender_equality_in_Morocco.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 122314,
+    "num_nodes": 20000,
+    "average_degree": 12.2314,
+    "average_clustering": 0.2982632961797674,
+    "average_path_length": 3.3951777088854445,
+    "modularity": 0.4040259558935843,
+    "is_connected": true,
+    "filename": "Climate_Action_Tracker.json"
+}

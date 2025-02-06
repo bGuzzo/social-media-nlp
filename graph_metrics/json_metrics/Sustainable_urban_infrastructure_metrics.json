@@ -1,0 +1,10 @@
+{
+    "num_edges": 43993,
+    "num_nodes": 20000,
+    "average_degree": 4.3993,
+    "average_clustering": 0.25000569323582583,
+    "average_path_length": 3.34425988299415,
+    "modularity": 0.6007117014324426,
+    "is_connected": true,
+    "filename": "Sustainable_urban_infrastructure.json"
+}

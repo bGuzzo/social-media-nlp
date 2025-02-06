@@ -1,0 +1,10 @@
+{
+    "num_edges": 38426,
+    "num_nodes": 20000,
+    "average_degree": 3.8426,
+    "average_clustering": 0.21785948735434554,
+    "average_path_length": 3.4366989199459974,
+    "modularity": 0.6999172970223072,
+    "is_connected": true,
+    "filename": "Sustainable_finance.json"
+}

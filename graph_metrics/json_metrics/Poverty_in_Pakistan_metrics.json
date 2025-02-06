@@ -1,0 +1,10 @@
+{
+    "num_edges": 30872,
+    "num_nodes": 20000,
+    "average_degree": 3.0872,
+    "average_clustering": 0.144859848724199,
+    "average_path_length": 3.6183526926346317,
+    "modularity": 0.7681551758807368,
+    "is_connected": true,
+    "filename": "Poverty_in_Pakistan.json"
+}

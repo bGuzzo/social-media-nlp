@@ -1,0 +1,10 @@
+{
+    "num_edges": 54421,
+    "num_nodes": 20000,
+    "average_degree": 5.4421,
+    "average_clustering": 0.2715882984673828,
+    "average_path_length": 3.2793431671583577,
+    "modularity": 0.5798304122407888,
+    "is_connected": true,
+    "filename": "Presidential_Climate_Action_Plan.json"
+}

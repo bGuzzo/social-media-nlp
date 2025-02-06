@@ -1,0 +1,10 @@
+{
+    "num_edges": 59345,
+    "num_nodes": 20000,
+    "average_degree": 5.9345,
+    "average_clustering": 0.24820726914544353,
+    "average_path_length": 3.399946492324616,
+    "modularity": 0.5547865085528959,
+    "is_connected": true,
+    "filename": "Intergovernmental_Panel_on_Climate_Change.json"
+}

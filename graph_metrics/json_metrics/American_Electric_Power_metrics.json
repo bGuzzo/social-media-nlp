@@ -1,0 +1,10 @@
+{
+    "num_edges": 34014,
+    "num_nodes": 20000,
+    "average_degree": 3.4014,
+    "average_clustering": 0.16290069246323843,
+    "average_path_length": 3.685041217060853,
+    "modularity": 0.7854320421722939,
+    "is_connected": true,
+    "filename": "American_Electric_Power.json"
+}

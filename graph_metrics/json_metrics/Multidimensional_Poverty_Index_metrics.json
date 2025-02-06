@@ -1,0 +1,10 @@
+{
+    "num_edges": 34051,
+    "num_nodes": 20000,
+    "average_degree": 3.4051,
+    "average_clustering": 0.16221196042008612,
+    "average_path_length": 3.517526026301315,
+    "modularity": 0.7028631082126073,
+    "is_connected": true,
+    "filename": "Multidimensional_Poverty_Index.json"
+}

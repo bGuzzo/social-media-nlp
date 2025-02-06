@@ -1,0 +1,10 @@
+{
+    "num_edges": 100507,
+    "num_nodes": 20000,
+    "average_degree": 10.0507,
+    "average_clustering": 0.4157444173571949,
+    "average_path_length": 3.2709818590929545,
+    "modularity": 0.46910374906947605,
+    "is_connected": true,
+    "filename": "2016_United_States_presidential_election.json"
+}

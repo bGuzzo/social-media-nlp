@@ -1,0 +1,10 @@
+{
+    "num_edges": 37838,
+    "num_nodes": 20000,
+    "average_degree": 3.7838,
+    "average_clustering": 0.17153788181355117,
+    "average_path_length": 3.537745572278614,
+    "modularity": 0.6767366285279481,
+    "is_connected": true,
+    "filename": "Green_infrastructure.json"
+}

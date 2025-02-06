@@ -1,0 +1,10 @@
+{
+    "num_edges": 25679,
+    "num_nodes": 20000,
+    "average_degree": 2.5679,
+    "average_clustering": 0.0942170052947502,
+    "average_path_length": 3.7626046052302615,
+    "modularity": 0.8185975885108057,
+    "is_connected": true,
+    "filename": "Smart_city.json"
+}

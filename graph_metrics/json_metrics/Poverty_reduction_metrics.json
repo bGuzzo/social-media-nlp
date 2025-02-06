@@ -1,0 +1,10 @@
+{
+    "num_edges": 29150,
+    "num_nodes": 20000,
+    "average_degree": 2.915,
+    "average_clustering": 0.09000134893957609,
+    "average_path_length": 3.6861222661133057,
+    "modularity": 0.7906731821271064,
+    "is_connected": true,
+    "filename": "Poverty_reduction.json"
+}

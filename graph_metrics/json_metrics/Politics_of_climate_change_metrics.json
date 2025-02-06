@@ -1,0 +1,10 @@
+{
+    "num_edges": 43646,
+    "num_nodes": 20000,
+    "average_degree": 4.3646,
+    "average_clustering": 0.21331556061255855,
+    "average_path_length": 3.615087664383219,
+    "modularity": 0.6109994611074121,
+    "is_connected": true,
+    "filename": "Politics_of_climate_change.json"
+}

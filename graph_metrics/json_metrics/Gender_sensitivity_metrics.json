@@ -1,0 +1,10 @@
+{
+    "num_edges": 31362,
+    "num_nodes": 20000,
+    "average_degree": 3.1362,
+    "average_clustering": 0.20630166741533212,
+    "average_path_length": 3.761114100705035,
+    "modularity": 0.8006819853798567,
+    "is_connected": true,
+    "filename": "Gender_sensitivity.json"
+}

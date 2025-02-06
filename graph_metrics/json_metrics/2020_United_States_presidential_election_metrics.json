@@ -1,0 +1,10 @@
+{
+    "num_edges": 100507,
+    "num_nodes": 20000,
+    "average_degree": 10.0507,
+    "average_clustering": 0.41574001489718765,
+    "average_path_length": 3.2709754537726887,
+    "modularity": 0.4670602141424966,
+    "is_connected": true,
+    "filename": "2020_United_States_presidential_election.json"
+}

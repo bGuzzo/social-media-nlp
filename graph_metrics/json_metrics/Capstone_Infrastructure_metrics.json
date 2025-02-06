@@ -1,0 +1,10 @@
+{
+    "num_edges": 28441,
+    "num_nodes": 20000,
+    "average_degree": 2.8441,
+    "average_clustering": 0.1531698301347603,
+    "average_path_length": 3.6103159707985397,
+    "modularity": 0.8081712714579468,
+    "is_connected": true,
+    "filename": "Capstone_Infrastructure.json"
+}

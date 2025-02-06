@@ -1,0 +1,10 @@
+{
+    "num_edges": 33654,
+    "num_nodes": 20000,
+    "average_degree": 3.3654,
+    "average_clustering": 0.17289075344974905,
+    "average_path_length": 3.340631191559578,
+    "modularity": 0.6956749249259035,
+    "is_connected": true,
+    "filename": "Digital_agriculture.json"
+}

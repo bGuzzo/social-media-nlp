@@ -1,0 +1,10 @@
+{
+    "num_edges": 25257,
+    "num_nodes": 20000,
+    "average_degree": 2.5257,
+    "average_clustering": 0.07129351002557158,
+    "average_path_length": 3.7387378468923447,
+    "modularity": 0.8354516206881012,
+    "is_connected": true,
+    "filename": "Dune:_Part_Two.json"
+}

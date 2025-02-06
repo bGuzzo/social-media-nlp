@@ -1,0 +1,10 @@
+{
+    "num_edges": 34580,
+    "num_nodes": 20000,
+    "average_degree": 3.458,
+    "average_clustering": 0.1366939535682962,
+    "average_path_length": 3.4425633631681585,
+    "modularity": 0.7003924040481148,
+    "is_connected": true,
+    "filename": "Renewable_energy_in_Russia.json"
+}

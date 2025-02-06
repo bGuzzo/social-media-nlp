@@ -1,0 +1,10 @@
+{
+    "num_edges": 30514,
+    "num_nodes": 20000,
+    "average_degree": 3.0514,
+    "average_clustering": 0.1535690890599665,
+    "average_path_length": 3.593976753837692,
+    "modularity": 0.7546914319780383,
+    "is_connected": true,
+    "filename": "Malaysian_Green_Transition.json"
+}

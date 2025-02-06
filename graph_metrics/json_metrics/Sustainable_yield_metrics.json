@@ -1,0 +1,10 @@
+{
+    "num_edges": 57934,
+    "num_nodes": 20000,
+    "average_degree": 5.7934,
+    "average_clustering": 0.29022391546550086,
+    "average_path_length": 3.293674763738187,
+    "modularity": 0.5787962985210466,
+    "is_connected": true,
+    "filename": "Sustainable_yield.json"
+}

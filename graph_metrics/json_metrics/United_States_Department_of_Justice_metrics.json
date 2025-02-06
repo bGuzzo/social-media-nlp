@@ -1,0 +1,10 @@
+{
+    "num_edges": 36233,
+    "num_nodes": 20000,
+    "average_degree": 3.6233,
+    "average_clustering": 0.2470567358922277,
+    "average_path_length": 3.2631362468123406,
+    "modularity": 0.6324449184002638,
+    "is_connected": true,
+    "filename": "United_States_Department_of_Justice.json"
+}

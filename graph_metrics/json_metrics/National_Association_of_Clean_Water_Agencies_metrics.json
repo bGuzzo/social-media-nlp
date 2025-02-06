@@ -1,0 +1,10 @@
+{
+    "num_edges": 33099,
+    "num_nodes": 20000,
+    "average_degree": 3.3099,
+    "average_clustering": 0.11981859643100602,
+    "average_path_length": 3.71049597479874,
+    "modularity": 0.8082659836984465,
+    "is_connected": true,
+    "filename": "National_Association_of_Clean_Water_Agencies.json"
+}

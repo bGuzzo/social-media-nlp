@@ -1,0 +1,10 @@
+{
+    "num_edges": 45942,
+    "num_nodes": 20000,
+    "average_degree": 4.5942,
+    "average_clustering": 0.1734408274962492,
+    "average_path_length": 3.5210764888244412,
+    "modularity": 0.6561495641716855,
+    "is_connected": true,
+    "filename": "Sustainable_gardening.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 34090,
+    "num_nodes": 20000,
+    "average_degree": 3.409,
+    "average_clustering": 0.13563520282987035,
+    "average_path_length": 3.6335091154557726,
+    "modularity": 0.7071887174055942,
+    "is_connected": true,
+    "filename": "Hydroelectricity.json"
+}

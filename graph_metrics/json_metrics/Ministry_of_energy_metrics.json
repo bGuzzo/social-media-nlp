@@ -1,0 +1,10 @@
+{
+    "num_edges": 24693,
+    "num_nodes": 20000,
+    "average_degree": 2.4693,
+    "average_clustering": 0.07703630500634967,
+    "average_path_length": 3.813325706285314,
+    "modularity": 0.8400914249541367,
+    "is_connected": true,
+    "filename": "Ministry_of_energy.json"
+}

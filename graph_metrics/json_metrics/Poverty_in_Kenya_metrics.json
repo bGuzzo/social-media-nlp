@@ -1,0 +1,10 @@
+{
+    "num_edges": 35304,
+    "num_nodes": 20000,
+    "average_degree": 3.5304,
+    "average_clustering": 0.17949755953056573,
+    "average_path_length": 3.3671706135306767,
+    "modularity": 0.6784335862580578,
+    "is_connected": true,
+    "filename": "Poverty_in_Kenya.json"
+}

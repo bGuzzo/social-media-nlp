@@ -1,0 +1,10 @@
+{
+    "num_edges": 34575,
+    "num_nodes": 20000,
+    "average_degree": 3.4575,
+    "average_clustering": 0.14005336840641583,
+    "average_path_length": 3.5912090904545226,
+    "modularity": 0.6926046432012732,
+    "is_connected": true,
+    "filename": "Effects_of_climate_change_on_agriculture.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 24934,
+    "num_nodes": 20000,
+    "average_degree": 2.4934,
+    "average_clustering": 0.10598616300157765,
+    "average_path_length": 3.7937182159107956,
+    "modularity": 0.8629837620117945,
+    "is_connected": true,
+    "filename": "Lyle_and_Erik_Menendez.json"
+}

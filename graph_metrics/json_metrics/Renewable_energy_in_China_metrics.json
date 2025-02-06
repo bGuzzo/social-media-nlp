@@ -1,0 +1,10 @@
+{
+    "num_edges": 40379,
+    "num_nodes": 20000,
+    "average_degree": 4.0379,
+    "average_clustering": 0.18259854951178642,
+    "average_path_length": 3.515319605980299,
+    "modularity": 0.6569125425839534,
+    "is_connected": true,
+    "filename": "Renewable_energy_in_China.json"
+}

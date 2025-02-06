@@ -1,0 +1,10 @@
+{
+    "num_edges": 65380,
+    "num_nodes": 20000,
+    "average_degree": 6.538,
+    "average_clustering": 0.24732099339232486,
+    "average_path_length": 3.4330418670933547,
+    "modularity": 0.5750101423674532,
+    "is_connected": true,
+    "filename": "Minister_for_Agriculture,_Food_and_the_Marine.json"
+}

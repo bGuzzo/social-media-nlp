@@ -1,0 +1,10 @@
+{
+    "num_edges": 26059,
+    "num_nodes": 20000,
+    "average_degree": 2.6059,
+    "average_clustering": 0.10742355492667313,
+    "average_path_length": 3.616127616380819,
+    "modularity": 0.7714485126492892,
+    "is_connected": true,
+    "filename": "United_States.json"
+}

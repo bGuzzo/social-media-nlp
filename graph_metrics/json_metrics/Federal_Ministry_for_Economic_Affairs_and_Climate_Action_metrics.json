@@ -1,0 +1,10 @@
+{
+    "num_edges": 80670,
+    "num_nodes": 20000,
+    "average_degree": 8.067,
+    "average_clustering": 0.40205295125132084,
+    "average_path_length": 3.0636937646882343,
+    "modularity": 0.5627793797388178,
+    "is_connected": true,
+    "filename": "Federal_Ministry_for_Economic_Affairs_and_Climate_Action.json"
+}

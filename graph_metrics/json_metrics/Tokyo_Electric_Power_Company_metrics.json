@@ -1,0 +1,10 @@
+{
+    "num_edges": 42198,
+    "num_nodes": 20000,
+    "average_degree": 4.2198,
+    "average_clustering": 0.167407603573907,
+    "average_path_length": 3.601099594979749,
+    "modularity": 0.6914168661425717,
+    "is_connected": true,
+    "filename": "Tokyo_Electric_Power_Company.json"
+}

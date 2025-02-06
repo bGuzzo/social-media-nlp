@@ -1,0 +1,10 @@
+{
+    "num_edges": 31454,
+    "num_nodes": 20000,
+    "average_degree": 3.1454,
+    "average_clustering": 0.1936581336111697,
+    "average_path_length": 3.680040922046102,
+    "modularity": 0.8022981924906653,
+    "is_connected": true,
+    "filename": "Reliance_Industrial_Infrastructure.json"
+}

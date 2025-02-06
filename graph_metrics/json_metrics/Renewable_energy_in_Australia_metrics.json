@@ -1,0 +1,10 @@
+{
+    "num_edges": 32145,
+    "num_nodes": 20000,
+    "average_degree": 3.2145,
+    "average_clustering": 0.12024662134847838,
+    "average_path_length": 3.672343332166608,
+    "modularity": 0.7482377030449573,
+    "is_connected": true,
+    "filename": "Renewable_energy_in_Australia.json"
+}

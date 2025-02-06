@@ -1,0 +1,10 @@
+{
+    "num_edges": 30533,
+    "num_nodes": 20000,
+    "average_degree": 3.0533,
+    "average_clustering": 0.17245494317395377,
+    "average_path_length": 3.1310681634081705,
+    "modularity": 0.6565710389601846,
+    "is_connected": true,
+    "filename": "Education_Index.json"
+}

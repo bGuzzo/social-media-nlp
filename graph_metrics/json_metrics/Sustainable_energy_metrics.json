@@ -1,0 +1,10 @@
+{
+    "num_edges": 45777,
+    "num_nodes": 20000,
+    "average_degree": 4.5777,
+    "average_clustering": 0.19435474022294266,
+    "average_path_length": 3.568292279613981,
+    "modularity": 0.6192657414869029,
+    "is_connected": true,
+    "filename": "Sustainable_energy.json"
+}

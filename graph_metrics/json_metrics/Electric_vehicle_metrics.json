@@ -1,0 +1,10 @@
+{
+    "num_edges": 34315,
+    "num_nodes": 20000,
+    "average_degree": 3.4315,
+    "average_clustering": 0.1062950319514084,
+    "average_path_length": 3.7195462023101156,
+    "modularity": 0.7679497997155842,
+    "is_connected": true,
+    "filename": "Electric_vehicle.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 35995,
+    "num_nodes": 20000,
+    "average_degree": 3.5995,
+    "average_clustering": 0.1730453522403106,
+    "average_path_length": 3.378073948697435,
+    "modularity": 0.6677691949968896,
+    "is_connected": true,
+    "filename": "Ministry_of_Agriculture,_Forestry_and_Fisheries.json"
+}

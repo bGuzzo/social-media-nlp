@@ -1,0 +1,10 @@
+{
+    "num_edges": 36580,
+    "num_nodes": 20000,
+    "average_degree": 3.658,
+    "average_clustering": 0.13334720050155502,
+    "average_path_length": 3.5763866993349667,
+    "modularity": 0.711443323889071,
+    "is_connected": true,
+    "filename": "Measuring_poverty.json"
+}

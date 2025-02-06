@@ -1,0 +1,10 @@
+{
+    "num_edges": 44984,
+    "num_nodes": 20000,
+    "average_degree": 4.4984,
+    "average_clustering": 0.20327440292762813,
+    "average_path_length": 3.4108530076503825,
+    "modularity": 0.5948328768224236,
+    "is_connected": true,
+    "filename": "Sustainable_business.json"
+}

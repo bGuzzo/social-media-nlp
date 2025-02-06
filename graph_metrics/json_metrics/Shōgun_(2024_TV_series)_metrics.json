@@ -1,0 +1,10 @@
+{
+    "num_edges": 54273,
+    "num_nodes": 20000,
+    "average_degree": 5.4273,
+    "average_clustering": 0.1793404188742409,
+    "average_path_length": 3.665617980899045,
+    "modularity": 0.5952524513560599,
+    "is_connected": true,
+    "filename": "Sh\u014dgun_(2024_TV_series).json"
+}

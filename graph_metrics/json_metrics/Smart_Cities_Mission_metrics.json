@@ -1,0 +1,10 @@
+{
+    "num_edges": 36401,
+    "num_nodes": 20000,
+    "average_degree": 3.6401,
+    "average_clustering": 0.15714427286180122,
+    "average_path_length": 3.486358467923396,
+    "modularity": 0.7462464704675639,
+    "is_connected": true,
+    "filename": "Smart_Cities_Mission.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 62669,
+    "num_nodes": 20000,
+    "average_degree": 6.2669,
+    "average_clustering": 0.26361874110363076,
+    "average_path_length": 3.410513655682784,
+    "modularity": 0.6071928711835275,
+    "is_connected": true,
+    "filename": "2024_Indian_general_election.json"
+}

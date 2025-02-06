@@ -1,0 +1,10 @@
+{
+    "num_edges": 24495,
+    "num_nodes": 20000,
+    "average_degree": 2.4495,
+    "average_clustering": 0.06367463432457912,
+    "average_path_length": 3.87207200860043,
+    "modularity": 0.8484912422191797,
+    "is_connected": true,
+    "filename": "Hell_or_Clean_Water.json"
+}

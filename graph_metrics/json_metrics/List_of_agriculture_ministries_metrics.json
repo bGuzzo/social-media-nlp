@@ -1,0 +1,10 @@
+{
+    "num_edges": 26095,
+    "num_nodes": 20000,
+    "average_degree": 2.6095,
+    "average_clustering": 0.1150332545360774,
+    "average_path_length": 3.3454757637881896,
+    "modularity": 0.7243347025865849,
+    "is_connected": true,
+    "filename": "List_of_agriculture_ministries.json"
+}

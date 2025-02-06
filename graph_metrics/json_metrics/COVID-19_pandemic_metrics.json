@@ -1,0 +1,10 @@
+{
+    "num_edges": 44914,
+    "num_nodes": 20000,
+    "average_degree": 4.4914,
+    "average_clustering": 0.1835657025062329,
+    "average_path_length": 3.4408870393519675,
+    "modularity": 0.6839900626143863,
+    "is_connected": true,
+    "filename": "COVID-19_pandemic.json"
+}

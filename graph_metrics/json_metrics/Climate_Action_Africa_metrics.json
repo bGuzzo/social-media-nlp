@@ -1,0 +1,10 @@
+{
+    "num_edges": 24674,
+    "num_nodes": 20000,
+    "average_degree": 2.4674,
+    "average_clustering": 0.09441941317515207,
+    "average_path_length": 3.6465186109305465,
+    "modularity": 0.8207415687022254,
+    "is_connected": true,
+    "filename": "Climate_Action_Africa.json"
+}

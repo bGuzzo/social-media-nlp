@@ -1,0 +1,10 @@
+{
+    "num_edges": 83429,
+    "num_nodes": 20000,
+    "average_degree": 8.3429,
+    "average_clustering": 0.4588180650317957,
+    "average_path_length": 3.3237373218660933,
+    "modularity": 0.49859087943789626,
+    "is_connected": true,
+    "filename": "Cristiano_Ronaldo.json"
+}

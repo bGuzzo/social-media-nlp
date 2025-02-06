@@ -1,0 +1,10 @@
+{
+    "num_edges": 32461,
+    "num_nodes": 20000,
+    "average_degree": 3.2461,
+    "average_clustering": 0.1104665246889756,
+    "average_path_length": 3.670344872243612,
+    "modularity": 0.7394621627081805,
+    "is_connected": true,
+    "filename": "Undergraduate_education.json"
+}

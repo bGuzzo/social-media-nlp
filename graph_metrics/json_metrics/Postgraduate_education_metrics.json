@@ -1,0 +1,10 @@
+{
+    "num_edges": 26419,
+    "num_nodes": 20000,
+    "average_degree": 2.6419,
+    "average_clustering": 0.06709116534858714,
+    "average_path_length": 3.7281010200510027,
+    "modularity": 0.8017818999006455,
+    "is_connected": true,
+    "filename": "Postgraduate_education.json"
+}

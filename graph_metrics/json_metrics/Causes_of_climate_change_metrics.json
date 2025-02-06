@@ -1,0 +1,10 @@
+{
+    "num_edges": 61154,
+    "num_nodes": 20000,
+    "average_degree": 6.1154,
+    "average_clustering": 0.26934420102813506,
+    "average_path_length": 3.242558067903395,
+    "modularity": 0.4868934423114685,
+    "is_connected": true,
+    "filename": "Causes_of_climate_change.json"
+}

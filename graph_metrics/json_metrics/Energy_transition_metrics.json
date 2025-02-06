@@ -1,0 +1,10 @@
+{
+    "num_edges": 39826,
+    "num_nodes": 20000,
+    "average_degree": 3.9826,
+    "average_clustering": 0.1390304586075275,
+    "average_path_length": 3.6407326766338315,
+    "modularity": 0.6406079002668285,
+    "is_connected": true,
+    "filename": "Energy_transition.json"
+}

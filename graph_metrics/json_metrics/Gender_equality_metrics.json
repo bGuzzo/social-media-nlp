@@ -1,0 +1,10 @@
+{
+    "num_edges": 29775,
+    "num_nodes": 20000,
+    "average_degree": 2.9775,
+    "average_clustering": 0.16787526603613576,
+    "average_path_length": 3.5455259762988147,
+    "modularity": 0.7428244901412145,
+    "is_connected": true,
+    "filename": "Gender_equality.json"
+}

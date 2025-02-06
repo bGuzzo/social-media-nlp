@@ -1,0 +1,10 @@
+{
+    "num_edges": 29951,
+    "num_nodes": 20000,
+    "average_degree": 2.9951,
+    "average_clustering": 0.12497607445619258,
+    "average_path_length": 3.7023425821291065,
+    "modularity": 0.7889058689909355,
+    "is_connected": true,
+    "filename": "Criminal_justice.json"
+}

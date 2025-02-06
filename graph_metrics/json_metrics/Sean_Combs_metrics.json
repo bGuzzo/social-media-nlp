@@ -1,0 +1,10 @@
+{
+    "num_edges": 30992,
+    "num_nodes": 20000,
+    "average_degree": 3.0992,
+    "average_clustering": 0.12325828266798737,
+    "average_path_length": 3.723707625381269,
+    "modularity": 0.7872669599657207,
+    "is_connected": true,
+    "filename": "Sean_Combs.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 29804,
+    "num_nodes": 20000,
+    "average_degree": 2.9804,
+    "average_clustering": 0.10428192183489396,
+    "average_path_length": 3.62726396319816,
+    "modularity": 0.7625665357830785,
+    "is_connected": true,
+    "filename": "American_Innovation_dollars.json"
+}

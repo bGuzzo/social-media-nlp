@@ -1,0 +1,10 @@
+{
+    "num_edges": 31246,
+    "num_nodes": 20000,
+    "average_degree": 3.1246,
+    "average_clustering": 0.1685366835619042,
+    "average_path_length": 3.228638691934597,
+    "modularity": 0.6585111580194062,
+    "is_connected": true,
+    "filename": "List_of_countries_by_access_to_clean_water.json"
+}

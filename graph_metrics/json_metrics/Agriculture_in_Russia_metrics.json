@@ -1,0 +1,10 @@
+{
+    "num_edges": 30372,
+    "num_nodes": 20000,
+    "average_degree": 3.0372,
+    "average_clustering": 0.06465081036379654,
+    "average_path_length": 3.5811086104305216,
+    "modularity": 0.7302879822923263,
+    "is_connected": true,
+    "filename": "Agriculture_in_Russia.json"
+}

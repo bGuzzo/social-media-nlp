@@ -1,0 +1,10 @@
+{
+    "num_edges": 28900,
+    "num_nodes": 20000,
+    "average_degree": 2.89,
+    "average_clustering": 0.12228339804856019,
+    "average_path_length": 3.7279719335966797,
+    "modularity": 0.8334000371164141,
+    "is_connected": true,
+    "filename": "Plastics_industry.json"
+}

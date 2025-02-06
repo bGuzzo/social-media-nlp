@@ -1,0 +1,10 @@
+{
+    "num_edges": 37577,
+    "num_nodes": 20000,
+    "average_degree": 3.7577,
+    "average_clustering": 0.17264102568872583,
+    "average_path_length": 3.552605260263013,
+    "modularity": 0.6579834495254174,
+    "is_connected": true,
+    "filename": "Climate_change_mitigation.json"
+}

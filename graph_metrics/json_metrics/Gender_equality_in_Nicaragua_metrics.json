@@ -1,0 +1,10 @@
+{
+    "num_edges": 54837,
+    "num_nodes": 20000,
+    "average_degree": 5.4837,
+    "average_clustering": 0.06989692493599228,
+    "average_path_length": 3.674075488774439,
+    "modularity": 0.6907024012503538,
+    "is_connected": true,
+    "filename": "Gender_equality_in_Nicaragua.json"
+}

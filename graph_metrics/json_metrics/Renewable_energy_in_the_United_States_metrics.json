@@ -1,0 +1,10 @@
+{
+    "num_edges": 35573,
+    "num_nodes": 20000,
+    "average_degree": 3.5573,
+    "average_clustering": 0.17945967321227987,
+    "average_path_length": 3.5761946147307366,
+    "modularity": 0.7551547033944788,
+    "is_connected": true,
+    "filename": "Renewable_energy_in_the_United_States.json"
+}

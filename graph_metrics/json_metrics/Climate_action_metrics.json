@@ -1,0 +1,10 @@
+{
+    "num_edges": 60854,
+    "num_nodes": 20000,
+    "average_degree": 6.0854,
+    "average_clustering": 0.22956178425549728,
+    "average_path_length": 3.2404629981499076,
+    "modularity": 0.4852325754950655,
+    "is_connected": true,
+    "filename": "Climate_action.json"
+}

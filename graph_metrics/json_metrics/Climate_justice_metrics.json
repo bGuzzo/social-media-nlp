@@ -1,0 +1,10 @@
+{
+    "num_edges": 54033,
+    "num_nodes": 20000,
+    "average_degree": 5.4033,
+    "average_clustering": 0.20762155721393055,
+    "average_path_length": 3.4549936496824842,
+    "modularity": 0.525909528026967,
+    "is_connected": true,
+    "filename": "Climate_justice.json"
+}

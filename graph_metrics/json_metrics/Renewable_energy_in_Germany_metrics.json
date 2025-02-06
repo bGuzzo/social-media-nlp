@@ -1,0 +1,10 @@
+{
+    "num_edges": 30647,
+    "num_nodes": 20000,
+    "average_degree": 3.0647,
+    "average_clustering": 0.11329991311955512,
+    "average_path_length": 3.5482557977898894,
+    "modularity": 0.7209180862155125,
+    "is_connected": true,
+    "filename": "Renewable_energy_in_Germany.json"
+}

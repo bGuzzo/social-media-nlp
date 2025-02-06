@@ -1,0 +1,10 @@
+{
+    "num_edges": 35516,
+    "num_nodes": 20000,
+    "average_degree": 3.5516,
+    "average_clustering": 0.22477938141332862,
+    "average_path_length": 3.488137136856843,
+    "modularity": 0.6947094617780584,
+    "is_connected": true,
+    "filename": "Renewable_fuels.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 29235,
+    "num_nodes": 20000,
+    "average_degree": 2.9235,
+    "average_clustering": 0.10742377457041188,
+    "average_path_length": 3.559588854442722,
+    "modularity": 0.7831135860573699,
+    "is_connected": true,
+    "filename": "World_Peace_Council.json"
+}

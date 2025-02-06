@@ -1,0 +1,10 @@
+{
+    "num_edges": 41345,
+    "num_nodes": 20000,
+    "average_degree": 4.1345,
+    "average_clustering": 0.20441797801628733,
+    "average_path_length": 3.6061770938546927,
+    "modularity": 0.6840168408494274,
+    "is_connected": true,
+    "filename": "Green_economy.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 30216,
+    "num_nodes": 20000,
+    "average_degree": 3.0216,
+    "average_clustering": 0.1276691592836575,
+    "average_path_length": 3.6706954147707385,
+    "modularity": 0.773658805615542,
+    "is_connected": true,
+    "filename": "Smokestack_industry.json"
+}

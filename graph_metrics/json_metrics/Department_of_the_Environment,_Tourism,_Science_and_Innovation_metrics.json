@@ -1,0 +1,10 @@
+{
+    "num_edges": 64108,
+    "num_nodes": 20000,
+    "average_degree": 6.4108,
+    "average_clustering": 0.19311751002879943,
+    "average_path_length": 3.6777998749937497,
+    "modularity": 0.6323396203561681,
+    "is_connected": true,
+    "filename": "Department_of_the_Environment,_Tourism,_Science_and_Innovation.json"
+}
