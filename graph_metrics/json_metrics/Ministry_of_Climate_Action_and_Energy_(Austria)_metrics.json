@@ -1,0 +1,10 @@
+{
+    "num_edges": 27865,
+    "num_nodes": 20000,
+    "average_degree": 2.7865,
+    "average_clustering": 0.08584204159464262,
+    "average_path_length": 3.7481681884094207,
+    "modularity": 0.8349785778880764,
+    "is_connected": true,
+    "filename": "Ministry_of_Climate_Action_and_Energy_(Austria).json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 54085,
+    "num_nodes": 20000,
+    "average_degree": 5.4085,
+    "average_clustering": 0.36143897844178463,
+    "average_path_length": 3.3921127306365317,
+    "modularity": 0.6131986667964475,
+    "is_connected": true,
+    "filename": "2024_United_States_presidential_election.json"
+}

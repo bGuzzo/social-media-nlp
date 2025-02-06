@@ -1,0 +1,10 @@
+{
+    "num_edges": 27474,
+    "num_nodes": 20000,
+    "average_degree": 2.7474,
+    "average_clustering": 0.11877380219755332,
+    "average_path_length": 3.646007185359268,
+    "modularity": 0.7993747908410499,
+    "is_connected": true,
+    "filename": "Precision_agriculture.json"
+}

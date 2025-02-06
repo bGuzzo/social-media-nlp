@@ -1,0 +1,10 @@
+{
+    "num_edges": 30961,
+    "num_nodes": 20000,
+    "average_degree": 3.0961,
+    "average_clustering": 0.14441005028375126,
+    "average_path_length": 3.494277173858693,
+    "modularity": 0.7212287921231645,
+    "is_connected": true,
+    "filename": "Social_equality.json"
+}

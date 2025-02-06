@@ -5,6 +5,7 @@ import logging
 import community as co
 import json
 from tqdm import tqdm
+import csv
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from custom_logger.logger_config import get_logger
@@ -13,6 +14,7 @@ log: logging.Logger = get_logger(name=__name__)
 
 JSON_DATASET_DIR = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/final_dataset/json"
 JOSN_OUT_DIR = "/home/bruno/Documents/GitHub/social-media-nlp/graph_metrics/json_common_nodes"
+CSV_OUT_FILE = "/home/bruno/Documents/GitHub/social-media-nlp/graph_metrics/csv_common_nodes/csv_common_nodes.csv"
 
 
 def __json_to_graph(json_graph: dict) -> nx.Graph:
@@ -48,7 +50,7 @@ def __compue_common_nodes(curr_graph: nx.Graph, remaining_graphs: list[nx.Graph]
     log.info(f"Found {common_nodes} common nodes")
     return common_nodes
 
-def main():
+def __compute_json_common_nodes():
     graphs_map: dict[str, nx.Graph] = {}
     for filename in tqdm(os.listdir(JSON_DATASET_DIR), desc="JSON graphs loop"):
             if filename.endswith(".json"):
@@ -74,29 +76,26 @@ def main():
         log.info(f"Dict {json_dict} exported to {json_out_filename}")
         
 
+def __export_common_labels_csv(
+    json_common_mnetrics_file: str = JOSN_OUT_DIR, 
+    csv_out_file: str  = CSV_OUT_FILE
+) -> None:
+    
+    csv_dicts_list: list[dict[str, int]] = []
+    for filename in tqdm(os.listdir(json_common_mnetrics_file), desc="JSON metrics loop"):
+        if filename.endswith(".json"):
+            log.info(f"Reading {filename}")
+            json_dict = json.load(open(os.path.join(json_common_mnetrics_file, filename)))
+            csv_dicts_list.append(json_dict)
+    
+    with open(csv_out_file, "w", newline="") as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=["filename", "common_nodes_count"])
+        writer.writeheader()
+        writer.writerows(csv_dicts_list)
+        csv_file.flush()
+        csv_file.close()
+
+
 if __name__ == "__main__":
-    main()
-
-
-
-
-
-# def __export_metrics_json(filename: str) -> None:
-#     log.info(f"Processing {filename}")
-    
-#     filepath = os.path.join(JSON_DATASET_DIR, filename)
-#     json_graph = json.load(open(filepath))
-#     graph = __json_to_graph(json_graph)
-#     metrics = export_metrics(graph)
-#     log.info(f"Metrics for {filename}: {metrics}")
-    
-#     graph_name = filename.split(".")[0]
-#     metric_file_name = f"{graph_name}_metrics.json"
-#     metrics["filename"] = filename
-#     metric_json_path = os.path.join(JSON_METRIC_EXPORT_DIR, metric_file_name)
-#     str_metrics = json.dumps(metrics, indent=4)
-#     with open(metric_json_path, "w") as file:    
-#         file.write(str_metrics)
-#         file.close()
-    
-#     log.info(f"Metrics exported to {metric_json_path}")
+    __compute_json_common_nodes()
+    __export_common_labels_csv()

@@ -1,0 +1,10 @@
+{
+    "num_edges": 61860,
+    "num_nodes": 20000,
+    "average_degree": 6.186,
+    "average_clustering": 0.27226456949749883,
+    "average_path_length": 3.324360363018151,
+    "modularity": 0.4915530990788937,
+    "is_connected": true,
+    "filename": "Low-carbon_economy.json"
+}

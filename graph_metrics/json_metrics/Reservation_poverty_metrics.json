@@ -1,0 +1,10 @@
+{
+    "num_edges": 29809,
+    "num_nodes": 20000,
+    "average_degree": 2.9809,
+    "average_clustering": 0.1702672921892019,
+    "average_path_length": 3.442007575378769,
+    "modularity": 0.6982456426280316,
+    "is_connected": true,
+    "filename": "Reservation_poverty.json"
+}

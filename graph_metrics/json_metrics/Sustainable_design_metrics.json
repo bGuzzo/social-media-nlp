@@ -1,0 +1,10 @@
+{
+    "num_edges": 37292,
+    "num_nodes": 20000,
+    "average_degree": 3.7292,
+    "average_clustering": 0.14536897153798328,
+    "average_path_length": 3.6553190209510475,
+    "modularity": 0.7124301757601667,
+    "is_connected": true,
+    "filename": "Sustainable_design.json"
+}

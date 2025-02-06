@@ -1,0 +1,10 @@
+{
+    "num_edges": 35177,
+    "num_nodes": 20000,
+    "average_degree": 3.5177,
+    "average_clustering": 0.2076405209566633,
+    "average_path_length": 3.566901605080254,
+    "modularity": 0.7580935999851348,
+    "is_connected": true,
+    "filename": "United_States_Environmental_Protection_Agency.json"
+}

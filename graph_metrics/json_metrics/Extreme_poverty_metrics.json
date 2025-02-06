@@ -1,0 +1,10 @@
+{
+    "num_edges": 30921,
+    "num_nodes": 20000,
+    "average_degree": 3.0921,
+    "average_clustering": 0.16658234224514046,
+    "average_path_length": 3.5670046352317617,
+    "modularity": 0.7484930312403821,
+    "is_connected": true,
+    "filename": "Extreme_poverty.json"
+}

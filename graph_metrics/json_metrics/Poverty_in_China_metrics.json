@@ -1,0 +1,10 @@
+{
+    "num_edges": 34344,
+    "num_nodes": 20000,
+    "average_degree": 3.4344,
+    "average_clustering": 0.13702106357568458,
+    "average_path_length": 3.5780504225211263,
+    "modularity": 0.7051113920887252,
+    "is_connected": true,
+    "filename": "Poverty_in_China.json"
+}

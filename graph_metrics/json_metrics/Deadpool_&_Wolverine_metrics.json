@@ -1,0 +1,10 @@
+{
+    "num_edges": 50661,
+    "num_nodes": 20000,
+    "average_degree": 5.0661,
+    "average_clustering": 0.19729154619670747,
+    "average_path_length": 3.625620406020301,
+    "modularity": 0.6219106043010243,
+    "is_connected": true,
+    "filename": "Deadpool_&_Wolverine.json"
+}

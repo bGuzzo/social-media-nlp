@@ -1,0 +1,10 @@
+{
+    "num_edges": 28835,
+    "num_nodes": 20000,
+    "average_degree": 2.8835,
+    "average_clustering": 0.13359172838219008,
+    "average_path_length": 3.705768883444172,
+    "modularity": 0.8038350680036488,
+    "is_connected": true,
+    "filename": "Pharmaceutical_industry.json"
+}

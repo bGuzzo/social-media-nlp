@@ -1,0 +1,10 @@
+{
+    "num_edges": 39726,
+    "num_nodes": 20000,
+    "average_degree": 3.9726,
+    "average_clustering": 0.2546991620342341,
+    "average_path_length": 3.478133336666833,
+    "modularity": 0.6692180642201982,
+    "is_connected": true,
+    "filename": "Participation_of_women_in_the_Olympics.json"
+}

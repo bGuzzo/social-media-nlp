@@ -1,0 +1,10 @@
+{
+    "num_edges": 39457,
+    "num_nodes": 20000,
+    "average_degree": 3.9457,
+    "average_clustering": 0.1722850001583318,
+    "average_path_length": 3.579209645482274,
+    "modularity": 0.7239199654508061,
+    "is_connected": true,
+    "filename": "United_States_House_Committee_on_Agriculture.json"
+}

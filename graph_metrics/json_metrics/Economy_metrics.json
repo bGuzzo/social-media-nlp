@@ -1,0 +1,10 @@
+{
+    "num_edges": 29031,
+    "num_nodes": 20000,
+    "average_degree": 2.9031,
+    "average_clustering": 0.15332676329351316,
+    "average_path_length": 3.6828062353117654,
+    "modularity": 0.7569080397810314,
+    "is_connected": true,
+    "filename": "Economy.json"
+}

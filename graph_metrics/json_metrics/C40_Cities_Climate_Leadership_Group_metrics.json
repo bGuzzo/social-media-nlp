@@ -1,0 +1,10 @@
+{
+    "num_edges": 23713,
+    "num_nodes": 20000,
+    "average_degree": 2.3713,
+    "average_clustering": 0.05675653893092044,
+    "average_path_length": 3.533650462523126,
+    "modularity": 0.7956173229828736,
+    "is_connected": true,
+    "filename": "C40_Cities_Climate_Leadership_Group.json"
+}

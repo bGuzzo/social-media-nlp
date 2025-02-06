@@ -1,0 +1,10 @@
+{
+    "num_edges": 52857,
+    "num_nodes": 20000,
+    "average_degree": 5.2857,
+    "average_clustering": 0.08760831923671962,
+    "average_path_length": 3.615390419520976,
+    "modularity": 0.6691633706481017,
+    "is_connected": true,
+    "filename": "Gender_equality_in_Rwanda.json"
+}

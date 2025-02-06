@@ -1,0 +1,10 @@
+{
+    "num_edges": 29199,
+    "num_nodes": 20000,
+    "average_degree": 2.9199,
+    "average_clustering": 0.12114950131332873,
+    "average_path_length": 3.630136296814841,
+    "modularity": 0.7512383615231218,
+    "is_connected": true,
+    "filename": "Education_in_China.json"
+}
