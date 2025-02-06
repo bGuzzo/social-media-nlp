@@ -12,7 +12,7 @@ from custom_logger.logger_config import get_logger
 log: logging.Logger = get_logger(name=__name__)
 
 JSON_DATASET_DIR = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/final_dataset/json"
-JSON_METRIC_EXPORT_DIR = "/home/bruno/Documents/GitHub/social-media-nlp/graph_metrics/json_metrics"
+JSON_METRIC_EXPORT_DIR = "/home/bruno/Documents/GitHub/social-media-nlp/graph_metrics/json_metrics_density"
 
 def export_metrics(graph: nx.Graph) -> dict[str, float]:
     log.info("Computing graph metrics")
@@ -71,6 +71,13 @@ def export_metrics(graph: nx.Graph) -> dict[str, float]:
     log.info(f"Graph metrics computed: {results}")
     return results
 
+def __export_density(graph: nx.Graph) -> dict[str, float]:
+    densitiy = nx.density(graph)
+    return {
+        "density": densitiy
+    }
+
+
 def __json_to_graph(json_graph: dict) -> nx.Graph:
     
     graph = nx.Graph()
@@ -108,10 +115,34 @@ def __export_metrics_json(filename: str) -> None:
     
     log.info(f"Metrics exported to {metric_json_path}")
 
+
+def __export_density_json(filename: str) -> None:
+    log.info(f"Processing density for {filename}")
+    
+    filepath = os.path.join(JSON_DATASET_DIR, filename)
+    json_graph = json.load(open(filepath))
+    graph = __json_to_graph(json_graph)
+    metrics = __export_density(graph)
+    log.info(f"Metrics for {filename}: {metrics}")
+    
+    graph_name = filename.split(".")[0]
+    metric_file_name = f"{graph_name}_density.json"
+    metrics["filename"] = filename
+    metric_json_path = os.path.join(JSON_METRIC_EXPORT_DIR, metric_file_name)
+    str_metrics = json.dumps(metrics, indent=4)
+    with open(metric_json_path, "w") as file:    
+        file.write(str_metrics)
+        file.close()
+    
+    log.info(f"Density exported to {metric_json_path}")
+    
+
 def main_singlethread():
     for filename in tqdm(os.listdir(JSON_DATASET_DIR), desc="JSON graphs loop"):
             if filename.endswith(".json"):
-                __export_metrics_json(filename)
+                __export_density_json(filename)
+                # __export_metrics_json(filename)
+                # __export_density()
 
 if __name__ == "__main__":
     # main_multithread()
