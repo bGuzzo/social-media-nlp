@@ -1,0 +1,10 @@
+{
+    "num_edges": 37664,
+    "num_nodes": 20000,
+    "average_degree": 3.7664,
+    "average_clustering": 0.2188383884047255,
+    "average_path_length": 3.2915960798039903,
+    "modularity": 0.6464845470033651,
+    "is_connected": true,
+    "filename": "Climate_of_Ethiopia.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 41434,
+    "num_nodes": 20000,
+    "average_degree": 4.1434,
+    "average_clustering": 0.2869270490169627,
+    "average_path_length": 3.4908849392469623,
+    "modularity": 0.6715504579094983,
+    "is_connected": true,
+    "filename": "Energy_transformation.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 33308,
+    "num_nodes": 20000,
+    "average_degree": 3.3308,
+    "average_clustering": 0.16401025830503183,
+    "average_path_length": 3.5127014800740035,
+    "modularity": 0.6713470969172312,
+    "is_connected": true,
+    "filename": "Poverty.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 30247,
+    "num_nodes": 20000,
+    "average_degree": 3.0247,
+    "average_clustering": 0.11879008392955702,
+    "average_path_length": 3.7466298364918247,
+    "modularity": 0.7573946744805583,
+    "is_connected": true,
+    "filename": "In_Justice.json"
+}

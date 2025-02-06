@@ -1,0 +1,10 @@
+{
+    "num_edges": 57323,
+    "num_nodes": 20000,
+    "average_degree": 5.7323,
+    "average_clustering": 0.35718742434828243,
+    "average_path_length": 3.4279124956247813,
+    "modularity": 0.5578371364636886,
+    "is_connected": true,
+    "filename": "German_Climate_Action_Plan_2050.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 39804,
+    "num_nodes": 20000,
+    "average_degree": 3.9804,
+    "average_clustering": 0.2141703328273624,
+    "average_path_length": 3.6880950347517376,
+    "modularity": 0.7469632761429404,
+    "is_connected": true,
+    "filename": "Poverty_of_the_stimulus.json"
+}

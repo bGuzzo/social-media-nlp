@@ -1,0 +1,10 @@
+{
+    "num_edges": 56059,
+    "num_nodes": 20000,
+    "average_degree": 5.6059,
+    "average_clustering": 0.2400751216876315,
+    "average_path_length": 3.538473133656683,
+    "modularity": 0.6802133728346805,
+    "is_connected": true,
+    "filename": "Israel\u2013Hamas_war.json"
+}

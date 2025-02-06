@@ -1,0 +1,10 @@
+{
+    "num_edges": 36962,
+    "num_nodes": 20000,
+    "average_degree": 3.6962,
+    "average_clustering": 0.1893109602161975,
+    "average_path_length": 3.5727672833641684,
+    "modularity": 0.6949882530346944,
+    "is_connected": true,
+    "filename": "Open_innovation.json"
+}

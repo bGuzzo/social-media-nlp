@@ -1,0 +1,10 @@
+{
+    "num_edges": 44239,
+    "num_nodes": 20000,
+    "average_degree": 4.4239,
+    "average_clustering": 0.24642309076717311,
+    "average_path_length": 3.43283194659733,
+    "modularity": 0.5983164148915627,
+    "is_connected": true,
+    "filename": "Donald_Trump.json"
+}

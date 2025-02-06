@@ -1,0 +1,10 @@
+{
+    "num_edges": 28962,
+    "num_nodes": 20000,
+    "average_degree": 2.8962,
+    "average_clustering": 0.1857659671344168,
+    "average_path_length": 3.6895190109505474,
+    "modularity": 0.7950538354287118,
+    "is_connected": true,
+    "filename": "Critical_infrastructure.json"
+}

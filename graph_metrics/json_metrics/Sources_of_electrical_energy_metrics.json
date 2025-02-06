@@ -1,0 +1,10 @@
+{
+    "num_edges": 27348,
+    "num_nodes": 20000,
+    "average_degree": 2.7348,
+    "average_clustering": 0.10327807275917562,
+    "average_path_length": 3.7987133456672835,
+    "modularity": 0.8271882818889613,
+    "is_connected": true,
+    "filename": "Sources_of_electrical_energy.json"
+}

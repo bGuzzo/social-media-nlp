@@ -1,0 +1,10 @@
+{
+    "num_edges": 36247,
+    "num_nodes": 20000,
+    "average_degree": 3.6247,
+    "average_clustering": 0.24914055672737237,
+    "average_path_length": 3.528457872893645,
+    "modularity": 0.6710890199834828,
+    "is_connected": true,
+    "filename": "Robert_F._Kennedy_Jr..json"
+}

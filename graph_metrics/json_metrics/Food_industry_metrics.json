@@ -1,0 +1,10 @@
+{
+    "num_edges": 44570,
+    "num_nodes": 20000,
+    "average_degree": 4.457,
+    "average_clustering": 0.2572212564926079,
+    "average_path_length": 3.5340025901295067,
+    "modularity": 0.6624471829612196,
+    "is_connected": true,
+    "filename": "Food_industry.json"
+}

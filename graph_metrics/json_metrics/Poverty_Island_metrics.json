@@ -1,0 +1,10 @@
+{
+    "num_edges": 35804,
+    "num_nodes": 20000,
+    "average_degree": 3.5804,
+    "average_clustering": 0.18471679403390193,
+    "average_path_length": 3.662363193159658,
+    "modularity": 0.7661236614223885,
+    "is_connected": true,
+    "filename": "Poverty_Island.json"
+}

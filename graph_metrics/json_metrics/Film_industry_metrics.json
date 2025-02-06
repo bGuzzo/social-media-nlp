@@ -1,0 +1,10 @@
+{
+    "num_edges": 26185,
+    "num_nodes": 20000,
+    "average_degree": 2.6185,
+    "average_clustering": 0.11057086632325654,
+    "average_path_length": 3.698110310515526,
+    "modularity": 0.8183717273819762,
+    "is_connected": true,
+    "filename": "Film_industry.json"
+}

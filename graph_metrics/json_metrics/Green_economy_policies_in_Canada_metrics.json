@@ -1,0 +1,10 @@
+{
+    "num_edges": 33985,
+    "num_nodes": 20000,
+    "average_degree": 3.3985,
+    "average_clustering": 0.16811591814946275,
+    "average_path_length": 3.6017009450472526,
+    "modularity": 0.7157643391686642,
+    "is_connected": true,
+    "filename": "Green_economy_policies_in_Canada.json"
+}

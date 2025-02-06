@@ -1,0 +1,10 @@
+{
+    "num_edges": 59712,
+    "num_nodes": 20000,
+    "average_degree": 5.9712,
+    "average_clustering": 0.2759860702098561,
+    "average_path_length": 3.3594170458522927,
+    "modularity": 0.5325488721634208,
+    "is_connected": true,
+    "filename": "Premier_League.json"
+}

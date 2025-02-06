@@ -1,0 +1,10 @@
+{
+    "num_edges": 34705,
+    "num_nodes": 20000,
+    "average_degree": 3.4705,
+    "average_clustering": 0.09772183897896607,
+    "average_path_length": 3.6175665533276664,
+    "modularity": 0.7287885557985068,
+    "is_connected": true,
+    "filename": "European_Green_Deal.json"
+}

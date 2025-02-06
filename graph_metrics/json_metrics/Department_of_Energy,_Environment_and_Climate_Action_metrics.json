@@ -1,0 +1,10 @@
+{
+    "num_edges": 33910,
+    "num_nodes": 20000,
+    "average_degree": 3.391,
+    "average_clustering": 0.22621317109049205,
+    "average_path_length": 3.7257277563878195,
+    "modularity": 0.7576670782139584,
+    "is_connected": true,
+    "filename": "Department_of_Energy,_Environment_and_Climate_Action.json"
+}

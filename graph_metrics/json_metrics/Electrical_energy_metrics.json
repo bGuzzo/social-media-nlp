@@ -1,0 +1,10 @@
+{
+    "num_edges": 49861,
+    "num_nodes": 20000,
+    "average_degree": 4.9861,
+    "average_clustering": 0.2606146551208989,
+    "average_path_length": 3.3397725836291814,
+    "modularity": 0.589071386529802,
+    "is_connected": true,
+    "filename": "Electrical_energy.json"
+}

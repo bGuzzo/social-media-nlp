@@ -1,0 +1,10 @@
+{
+    "num_edges": 45899,
+    "num_nodes": 20000,
+    "average_degree": 4.5899,
+    "average_clustering": 0.13754374281408507,
+    "average_path_length": 3.2476605630281514,
+    "modularity": 0.562279429654009,
+    "is_connected": true,
+    "filename": "Women's_empowerment.json"
+}

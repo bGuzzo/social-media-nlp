@@ -1,0 +1,10 @@
+{
+    "num_edges": 30608,
+    "num_nodes": 20000,
+    "average_degree": 3.0608,
+    "average_clustering": 0.10031254862008289,
+    "average_path_length": 3.71044391219561,
+    "modularity": 0.8154396584167426,
+    "is_connected": true,
+    "filename": "Innovation_system.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 36940,
+    "num_nodes": 20000,
+    "average_degree": 3.694,
+    "average_clustering": 0.1735476183436506,
+    "average_path_length": 3.6044483024151206,
+    "modularity": 0.6985179008878736,
+    "is_connected": true,
+    "filename": "Ecological_economics.json"
+}

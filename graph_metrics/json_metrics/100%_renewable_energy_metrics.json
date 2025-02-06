@@ -1,0 +1,10 @@
+{
+    "num_edges": 30647,
+    "num_nodes": 20000,
+    "average_degree": 3.0647,
+    "average_clustering": 0.14775758621735227,
+    "average_path_length": 3.644443227161358,
+    "modularity": 0.7718910222098846,
+    "is_connected": true,
+    "filename": "100%_renewable_energy.json"
+}

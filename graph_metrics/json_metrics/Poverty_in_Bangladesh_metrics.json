@@ -1,0 +1,10 @@
+{
+    "num_edges": 42052,
+    "num_nodes": 20000,
+    "average_degree": 4.2052,
+    "average_clustering": 0.22463020884980933,
+    "average_path_length": 3.215289719485974,
+    "modularity": 0.591910363382722,
+    "is_connected": true,
+    "filename": "Poverty_in_Bangladesh.json"
+}

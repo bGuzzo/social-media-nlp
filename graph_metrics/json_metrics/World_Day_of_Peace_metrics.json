@@ -1,0 +1,10 @@
+{
+    "num_edges": 30277,
+    "num_nodes": 20000,
+    "average_degree": 3.0277,
+    "average_clustering": 0.1347369659192815,
+    "average_path_length": 3.630105895294765,
+    "modularity": 0.7020041286740536,
+    "is_connected": true,
+    "filename": "World_Day_of_Peace.json"
+}

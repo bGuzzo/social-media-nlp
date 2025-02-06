@@ -1,0 +1,10 @@
+{
+    "num_edges": 30069,
+    "num_nodes": 20000,
+    "average_degree": 3.0069,
+    "average_clustering": 0.16742302754309604,
+    "average_path_length": 3.1855414370718536,
+    "modularity": 0.6632671114930013,
+    "is_connected": true,
+    "filename": "Gender_Inequality_Index.json"
+}

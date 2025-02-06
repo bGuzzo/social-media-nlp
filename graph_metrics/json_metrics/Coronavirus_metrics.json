@@ -1,0 +1,10 @@
+{
+    "num_edges": 45987,
+    "num_nodes": 20000,
+    "average_degree": 4.5987,
+    "average_clustering": 0.22259009173347236,
+    "average_path_length": 3.6244726086304313,
+    "modularity": 0.7393108645323461,
+    "is_connected": true,
+    "filename": "Coronavirus.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 24796,
+    "num_nodes": 20000,
+    "average_degree": 2.4796,
+    "average_clustering": 0.08661299512885347,
+    "average_path_length": 3.624753627681384,
+    "modularity": 0.8182936847592959,
+    "is_connected": true,
+    "filename": "Camp_for_Climate_Action.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 38417,
+    "num_nodes": 20000,
+    "average_degree": 3.8417,
+    "average_clustering": 0.20831166805129447,
+    "average_path_length": 3.6526441822091105,
+    "modularity": 0.6857178504787571,
+    "is_connected": true,
+    "filename": "Regenerative_agriculture.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 38653,
+    "num_nodes": 20000,
+    "average_degree": 3.8653,
+    "average_clustering": 0.18634584064354903,
+    "average_path_length": 3.602077688884444,
+    "modularity": 0.6716177693766975,
+    "is_connected": true,
+    "filename": "Electric_power_system.json"
+}

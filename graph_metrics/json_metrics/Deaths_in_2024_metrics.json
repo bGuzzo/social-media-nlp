@@ -1,0 +1,10 @@
+{
+    "num_edges": 36374,
+    "num_nodes": 20000,
+    "average_degree": 3.6374,
+    "average_clustering": 0.07225329239022915,
+    "average_path_length": 3.036635116755838,
+    "modularity": 0.5515277320511408,
+    "is_connected": true,
+    "filename": "Deaths_in_2024.json"
+}

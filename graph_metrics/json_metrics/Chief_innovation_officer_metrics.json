@@ -1,0 +1,10 @@
+{
+    "num_edges": 33303,
+    "num_nodes": 20000,
+    "average_degree": 3.3303,
+    "average_clustering": 0.11914673367817256,
+    "average_path_length": 3.7206105355267765,
+    "modularity": 0.7826260677506597,
+    "is_connected": true,
+    "filename": "Chief_innovation_officer.json"
+}

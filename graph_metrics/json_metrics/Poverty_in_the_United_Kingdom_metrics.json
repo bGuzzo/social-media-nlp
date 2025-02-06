@@ -1,0 +1,10 @@
+{
+    "num_edges": 31815,
+    "num_nodes": 20000,
+    "average_degree": 3.1815,
+    "average_clustering": 0.1240247770977727,
+    "average_path_length": 3.3495501775088754,
+    "modularity": 0.6741945637953032,
+    "is_connected": true,
+    "filename": "Poverty_in_the_United_Kingdom.json"
+}

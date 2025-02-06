@@ -1,0 +1,10 @@
+{
+    "num_edges": 49862,
+    "num_nodes": 20000,
+    "average_degree": 4.9862,
+    "average_clustering": 0.3017164105192123,
+    "average_path_length": 3.3548545877293865,
+    "modularity": 0.5705446790471934,
+    "is_connected": true,
+    "filename": "Environmental_policy_of_the_first_Donald_Trump_administration.json"
+}

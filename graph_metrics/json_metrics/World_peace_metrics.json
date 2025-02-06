@@ -1,0 +1,10 @@
+{
+    "num_edges": 31419,
+    "num_nodes": 20000,
+    "average_degree": 3.1419,
+    "average_clustering": 0.21213595931863616,
+    "average_path_length": 3.5510973798689935,
+    "modularity": 0.7685131994372657,
+    "is_connected": true,
+    "filename": "World_peace.json"
+}

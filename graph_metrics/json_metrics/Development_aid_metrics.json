@@ -1,0 +1,10 @@
+{
+    "num_edges": 30730,
+    "num_nodes": 20000,
+    "average_degree": 3.073,
+    "average_clustering": 0.12423328992995741,
+    "average_path_length": 3.564722741137057,
+    "modularity": 0.7521197408244487,
+    "is_connected": true,
+    "filename": "Development_aid.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 44457,
+    "num_nodes": 20000,
+    "average_degree": 4.4457,
+    "average_clustering": 0.13657380706510647,
+    "average_path_length": 3.59988407420371,
+    "modularity": 0.5876511743351389,
+    "is_connected": true,
+    "filename": "Climate_movement.json"
+}

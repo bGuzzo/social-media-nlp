@@ -1,0 +1,10 @@
+{
+    "num_edges": 29761,
+    "num_nodes": 20000,
+    "average_degree": 2.9761,
+    "average_clustering": 0.12088119613529084,
+    "average_path_length": 3.598072678633932,
+    "modularity": 0.762768027152091,
+    "is_connected": true,
+    "filename": "Free_education.json"
+}

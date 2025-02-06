@@ -1,0 +1,10 @@
+{
+    "num_edges": 28730,
+    "num_nodes": 20000,
+    "average_degree": 2.873,
+    "average_clustering": 0.12976129319624555,
+    "average_path_length": 3.724108645432272,
+    "modularity": 0.8124145279289916,
+    "is_connected": true,
+    "filename": "Sex_industry.json"
+}

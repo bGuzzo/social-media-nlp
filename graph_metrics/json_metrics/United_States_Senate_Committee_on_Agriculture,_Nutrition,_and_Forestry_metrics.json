@@ -1,0 +1,10 @@
+{
+    "num_edges": 30633,
+    "num_nodes": 20000,
+    "average_degree": 3.0633,
+    "average_clustering": 0.20400474079495576,
+    "average_path_length": 3.5885342417120856,
+    "modularity": 0.7515029558541991,
+    "is_connected": true,
+    "filename": "United_States_Senate_Committee_on_Agriculture,_Nutrition,_and_Forestry.json"
+}

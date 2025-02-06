@@ -1,0 +1,10 @@
+{
+    "num_edges": 36999,
+    "num_nodes": 20000,
+    "average_degree": 3.6999,
+    "average_clustering": 0.16293023695582204,
+    "average_path_length": 3.66122396619831,
+    "modularity": 0.7472859845986665,
+    "is_connected": true,
+    "filename": "Climate_change_denial.json"
+}

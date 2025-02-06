@@ -1,0 +1,10 @@
+{
+    "num_edges": 83426,
+    "num_nodes": 20000,
+    "average_degree": 8.3426,
+    "average_clustering": 0.18819493815645488,
+    "average_path_length": 3.126648842442122,
+    "modularity": 0.3645463093743997,
+    "is_connected": true,
+    "filename": "Onto_Innovation.json"
+}

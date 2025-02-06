@@ -1,0 +1,10 @@
+{
+    "num_edges": 34245,
+    "num_nodes": 20000,
+    "average_degree": 3.4245,
+    "average_clustering": 0.18814946524576118,
+    "average_path_length": 3.657152542627131,
+    "modularity": 0.7202874654587739,
+    "is_connected": true,
+    "filename": "Electric_utility.json"
+}

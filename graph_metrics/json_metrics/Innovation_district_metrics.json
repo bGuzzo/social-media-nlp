@@ -1,0 +1,10 @@
+{
+    "num_edges": 24544,
+    "num_nodes": 20000,
+    "average_degree": 2.4544,
+    "average_clustering": 0.11121137776819555,
+    "average_path_length": 3.7277001300065002,
+    "modularity": 0.8283670967442236,
+    "is_connected": true,
+    "filename": "Innovation_district.json"
+}

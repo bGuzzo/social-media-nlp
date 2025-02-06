@@ -1,0 +1,10 @@
+{
+    "num_edges": 40989,
+    "num_nodes": 20000,
+    "average_degree": 4.0989,
+    "average_clustering": 0.21005164496394568,
+    "average_path_length": 3.532162078103905,
+    "modularity": 0.6754782615461301,
+    "is_connected": true,
+    "filename": "2024_Summer_Olympics.json"
+}

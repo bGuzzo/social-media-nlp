@@ -1,0 +1,10 @@
+{
+    "num_edges": 30731,
+    "num_nodes": 20000,
+    "average_degree": 3.0731,
+    "average_clustering": 0.12719954824360574,
+    "average_path_length": 3.6517109605480274,
+    "modularity": 0.7969188954104733,
+    "is_connected": true,
+    "filename": "Petroleum_industry.json"
+}

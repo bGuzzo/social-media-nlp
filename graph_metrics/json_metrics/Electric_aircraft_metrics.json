@@ -1,0 +1,10 @@
+{
+    "num_edges": 34530,
+    "num_nodes": 20000,
+    "average_degree": 3.453,
+    "average_clustering": 0.1728702824035956,
+    "average_path_length": 3.6772371218560926,
+    "modularity": 0.7373662153368276,
+    "is_connected": true,
+    "filename": "Electric_aircraft.json"
+}

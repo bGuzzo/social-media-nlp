@@ -1,0 +1,10 @@
+{
+    "num_edges": 39225,
+    "num_nodes": 20000,
+    "average_degree": 3.9225,
+    "average_clustering": 0.23956436540051268,
+    "average_path_length": 3.350688364418221,
+    "modularity": 0.6370688075731153,
+    "is_connected": true,
+    "filename": "Associate_Justice_of_the_Supreme_Court_of_the_United_States.json"
+}

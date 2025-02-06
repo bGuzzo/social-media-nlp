@@ -1,0 +1,10 @@
+{
+    "num_edges": 33037,
+    "num_nodes": 20000,
+    "average_degree": 3.3037,
+    "average_clustering": 0.20676210953563315,
+    "average_path_length": 3.5363901095054753,
+    "modularity": 0.7412057523801769,
+    "is_connected": true,
+    "filename": "Electricity_generation.json"
+}

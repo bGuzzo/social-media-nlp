@@ -1,0 +1,10 @@
+{
+    "num_edges": 40339,
+    "num_nodes": 20000,
+    "average_degree": 4.0339,
+    "average_clustering": 0.1282878835891202,
+    "average_path_length": 3.5426113155657784,
+    "modularity": 0.6846590754181583,
+    "is_connected": true,
+    "filename": "Health_education.json"
+}

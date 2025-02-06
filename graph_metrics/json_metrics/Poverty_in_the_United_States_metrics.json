@@ -1,0 +1,10 @@
+{
+    "num_edges": 37121,
+    "num_nodes": 20000,
+    "average_degree": 3.7121,
+    "average_clustering": 0.18697545728584547,
+    "average_path_length": 3.2515766638331915,
+    "modularity": 0.596505793414496,
+    "is_connected": true,
+    "filename": "Poverty_in_the_United_States.json"
+}

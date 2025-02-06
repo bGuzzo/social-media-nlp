@@ -1,0 +1,10 @@
+{
+    "num_edges": 32088,
+    "num_nodes": 20000,
+    "average_degree": 3.2088,
+    "average_clustering": 0.17148459597791177,
+    "average_path_length": 3.672827586379319,
+    "modularity": 0.7592869783394842,
+    "is_connected": true,
+    "filename": "Fridays_for_Future.json"
+}

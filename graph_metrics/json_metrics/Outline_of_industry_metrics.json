@@ -1,0 +1,10 @@
+{
+    "num_edges": 28015,
+    "num_nodes": 20000,
+    "average_degree": 2.8015,
+    "average_clustering": 0.11902015910365335,
+    "average_path_length": 3.7157166958347916,
+    "modularity": 0.798261755123471,
+    "is_connected": true,
+    "filename": "Outline_of_industry.json"
+}

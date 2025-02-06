@@ -1,0 +1,10 @@
+{
+    "num_edges": 37251,
+    "num_nodes": 20000,
+    "average_degree": 3.7251,
+    "average_clustering": 0.1392376837823545,
+    "average_path_length": 3.5641216210810542,
+    "modularity": 0.6869521808030831,
+    "is_connected": true,
+    "filename": "United_Nations_Climate_Change_Conference.json"
+}

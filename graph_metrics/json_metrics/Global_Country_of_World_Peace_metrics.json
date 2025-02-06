@@ -1,0 +1,10 @@
+{
+    "num_edges": 30453,
+    "num_nodes": 20000,
+    "average_degree": 3.0453,
+    "average_clustering": 0.10741045785257945,
+    "average_path_length": 3.6740513225661284,
+    "modularity": 0.7789076664042418,
+    "is_connected": true,
+    "filename": "Global_Country_of_World_Peace.json"
+}

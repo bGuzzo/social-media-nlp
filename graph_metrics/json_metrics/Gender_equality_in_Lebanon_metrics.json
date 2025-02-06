@@ -1,0 +1,10 @@
+{
+    "num_edges": 117399,
+    "num_nodes": 20000,
+    "average_degree": 11.7399,
+    "average_clustering": 0.27841462977941517,
+    "average_path_length": 3.464143242162108,
+    "modularity": 0.4046106644953124,
+    "is_connected": true,
+    "filename": "Gender_equality_in_Lebanon.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 29285,
+    "num_nodes": 20000,
+    "average_degree": 2.9285,
+    "average_clustering": 0.1288114806423502,
+    "average_path_length": 3.6340929496474823,
+    "modularity": 0.7878094844199361,
+    "is_connected": true,
+    "filename": "Automotive_industry.json"
+}

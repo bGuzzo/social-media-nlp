@@ -1,0 +1,10 @@
+{
+    "num_edges": 26386,
+    "num_nodes": 20000,
+    "average_degree": 2.6386,
+    "average_clustering": 0.1204002319524047,
+    "average_path_length": 3.6251662233111657,
+    "modularity": 0.8414883411531011,
+    "is_connected": true,
+    "filename": "Montessori_education.json"
+}

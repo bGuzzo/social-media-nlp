@@ -1,0 +1,10 @@
+{
+    "num_edges": 44506,
+    "num_nodes": 20000,
+    "average_degree": 4.4506,
+    "average_clustering": 0.012999388658919196,
+    "average_path_length": 3.8334141257062853,
+    "modularity": 0.6872795747834874,
+    "is_connected": true,
+    "filename": "Causes_of_poverty.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 31647,
+    "num_nodes": 20000,
+    "average_degree": 3.1647,
+    "average_clustering": 0.13360298250157387,
+    "average_path_length": 3.730016320816041,
+    "modularity": 0.8058479606628566,
+    "is_connected": true,
+    "filename": "Hospitality_industry.json"
+}

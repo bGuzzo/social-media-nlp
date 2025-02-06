@@ -1,0 +1,10 @@
+{
+    "num_edges": 44244,
+    "num_nodes": 20000,
+    "average_degree": 4.4244,
+    "average_clustering": 0.23496176473367317,
+    "average_path_length": 3.2859933346667334,
+    "modularity": 0.6071393692224022,
+    "is_connected": true,
+    "filename": "Water_conservation.json"
+}

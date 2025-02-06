@@ -1,0 +1,10 @@
+{
+    "num_edges": 59024,
+    "num_nodes": 20000,
+    "average_degree": 5.9024,
+    "average_clustering": 0.24079902560467495,
+    "average_path_length": 3.707889619480974,
+    "modularity": 0.6635230927641455,
+    "is_connected": true,
+    "filename": "Green_Energy_Act,_2009.json"
+}

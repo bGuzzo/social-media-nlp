@@ -1,0 +1,10 @@
+{
+    "num_edges": 45506,
+    "num_nodes": 20000,
+    "average_degree": 4.5506,
+    "average_clustering": 0.17495642172573017,
+    "average_path_length": 3.592867448372419,
+    "modularity": 0.661467458980591,
+    "is_connected": true,
+    "filename": "Water_pollution.json"
+}

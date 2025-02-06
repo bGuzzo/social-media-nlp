@@ -1,0 +1,10 @@
+{
+    "num_edges": 43943,
+    "num_nodes": 20000,
+    "average_degree": 4.3943,
+    "average_clustering": 0.21223211485949237,
+    "average_path_length": 3.543899619980999,
+    "modularity": 0.6882580921693077,
+    "is_connected": true,
+    "filename": "Gender-equality_paradox.json"
+}

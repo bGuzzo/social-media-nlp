@@ -1,0 +1,10 @@
+{
+    "num_edges": 39482,
+    "num_nodes": 20000,
+    "average_degree": 3.9482,
+    "average_clustering": 0.14729012526235663,
+    "average_path_length": 3.651395519775989,
+    "modularity": 0.7131483585359847,
+    "is_connected": true,
+    "filename": "Mathematics_education.json"
+}

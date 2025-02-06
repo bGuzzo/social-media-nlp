@@ -1,0 +1,10 @@
+{
+    "num_edges": 50791,
+    "num_nodes": 20000,
+    "average_degree": 5.0791,
+    "average_clustering": 0.20303991544009267,
+    "average_path_length": 3.682850012500625,
+    "modularity": 0.6529505448606648,
+    "is_connected": true,
+    "filename": "Florida_Right_to_Clean_Water.json"
+}

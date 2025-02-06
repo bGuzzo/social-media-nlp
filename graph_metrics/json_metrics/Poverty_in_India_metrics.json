@@ -1,0 +1,10 @@
+{
+    "num_edges": 36553,
+    "num_nodes": 20000,
+    "average_degree": 3.6553,
+    "average_clustering": 0.16770099917553738,
+    "average_path_length": 3.4267657932896647,
+    "modularity": 0.6362410217944434,
+    "is_connected": true,
+    "filename": "Poverty_in_India.json"
+}

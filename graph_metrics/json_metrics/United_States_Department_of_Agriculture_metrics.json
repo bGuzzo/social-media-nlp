@@ -1,0 +1,10 @@
+{
+    "num_edges": 34808,
+    "num_nodes": 20000,
+    "average_degree": 3.4808,
+    "average_clustering": 0.1659981035493455,
+    "average_path_length": 3.4731127206360317,
+    "modularity": 0.7142227561097418,
+    "is_connected": true,
+    "filename": "United_States_Department_of_Agriculture.json"
+}

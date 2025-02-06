@@ -1,0 +1,10 @@
+{
+    "num_edges": 35537,
+    "num_nodes": 20000,
+    "average_degree": 3.5537,
+    "average_clustering": 0.25407386693560347,
+    "average_path_length": 3.6224325966298316,
+    "modularity": 0.7726796269166283,
+    "is_connected": true,
+    "filename": "Gender_inequality_in_South_Korea.json"
+}

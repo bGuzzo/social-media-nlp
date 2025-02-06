@@ -1,0 +1,10 @@
+{
+    "num_edges": 25370,
+    "num_nodes": 20000,
+    "average_degree": 2.537,
+    "average_clustering": 0.10137466876191914,
+    "average_path_length": 3.839713240662033,
+    "modularity": 0.8371847069364732,
+    "is_connected": true,
+    "filename": "Poverty_porn.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 40128,
+    "num_nodes": 20000,
+    "average_degree": 4.0128,
+    "average_clustering": 0.24963171882136456,
+    "average_path_length": 3.552315170758538,
+    "modularity": 0.6981711696166766,
+    "is_connected": true,
+    "filename": "United_States_Department_of_Energy.json"
+}

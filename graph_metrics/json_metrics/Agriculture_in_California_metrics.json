@@ -1,0 +1,10 @@
+{
+    "num_edges": 34706,
+    "num_nodes": 20000,
+    "average_degree": 3.4706,
+    "average_clustering": 0.24011511391958879,
+    "average_path_length": 3.6435925896294816,
+    "modularity": 0.7774137460067504,
+    "is_connected": true,
+    "filename": "Agriculture_in_California.json"
+}

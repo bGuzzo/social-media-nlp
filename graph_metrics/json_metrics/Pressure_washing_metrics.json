@@ -1,0 +1,10 @@
+{
+    "num_edges": 34029,
+    "num_nodes": 20000,
+    "average_degree": 3.4029,
+    "average_clustering": 0.13060807071284364,
+    "average_path_length": 3.551871433571679,
+    "modularity": 0.7246074556251184,
+    "is_connected": true,
+    "filename": "Pressure_washing.json"
+}

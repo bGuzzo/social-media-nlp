@@ -1,0 +1,10 @@
+{
+    "num_edges": 36867,
+    "num_nodes": 20000,
+    "average_degree": 3.6867,
+    "average_clustering": 0.14347025375316297,
+    "average_path_length": 3.7579450522526128,
+    "modularity": 0.7639794670429835,
+    "is_connected": true,
+    "filename": "Cholera.json"
+}

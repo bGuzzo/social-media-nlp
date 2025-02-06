@@ -1,0 +1,10 @@
+{
+    "num_edges": 36479,
+    "num_nodes": 20000,
+    "average_degree": 3.6479,
+    "average_clustering": 0.19226619592747743,
+    "average_path_length": 3.7289163458172907,
+    "modularity": 0.7755986888729746,
+    "is_connected": true,
+    "filename": "Thermax.json"
+}

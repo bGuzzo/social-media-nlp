@@ -1,0 +1,10 @@
+{
+    "num_edges": 30482,
+    "num_nodes": 20000,
+    "average_degree": 3.0482,
+    "average_clustering": 0.13320519570393974,
+    "average_path_length": 3.749405595279764,
+    "modularity": 0.7986850819091316,
+    "is_connected": true,
+    "filename": "Infrastructure_and_economics.json"
+}

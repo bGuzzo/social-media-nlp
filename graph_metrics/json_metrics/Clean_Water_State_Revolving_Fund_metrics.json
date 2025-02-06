@@ -1,0 +1,10 @@
+{
+    "num_edges": 36148,
+    "num_nodes": 20000,
+    "average_degree": 3.6148,
+    "average_clustering": 0.18079533167102374,
+    "average_path_length": 3.6437315215760786,
+    "modularity": 0.7285659653275963,
+    "is_connected": true,
+    "filename": "Clean_Water_State_Revolving_Fund.json"
+}

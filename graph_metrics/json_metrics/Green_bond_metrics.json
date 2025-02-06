@@ -1,0 +1,10 @@
+{
+    "num_edges": 38591,
+    "num_nodes": 20000,
+    "average_degree": 3.8591,
+    "average_clustering": 0.2606656986510172,
+    "average_path_length": 3.5159921346067304,
+    "modularity": 0.7309383669839277,
+    "is_connected": true,
+    "filename": "Green_bond.json"
+}

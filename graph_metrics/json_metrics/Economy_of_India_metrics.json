@@ -1,0 +1,10 @@
+{
+    "num_edges": 28791,
+    "num_nodes": 20000,
+    "average_degree": 2.8791,
+    "average_clustering": 0.1408571337653872,
+    "average_path_length": 3.6573598779939,
+    "modularity": 0.7817470852231214,
+    "is_connected": true,
+    "filename": "Economy_of_India.json"
+}

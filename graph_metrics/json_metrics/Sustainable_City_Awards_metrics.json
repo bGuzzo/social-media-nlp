@@ -1,0 +1,10 @@
+{
+    "num_edges": 41128,
+    "num_nodes": 20000,
+    "average_degree": 4.1128,
+    "average_clustering": 0.19691925595165763,
+    "average_path_length": 3.6409842042102105,
+    "modularity": 0.7065018990129959,
+    "is_connected": true,
+    "filename": "Sustainable_City_Awards.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 47396,
+    "num_nodes": 20000,
+    "average_degree": 4.7396,
+    "average_clustering": 0.16704432509344,
+    "average_path_length": 3.5384090854542727,
+    "modularity": 0.6650645110388089,
+    "is_connected": true,
+    "filename": "Women_and_Gender_Equality_Canada.json"
+}

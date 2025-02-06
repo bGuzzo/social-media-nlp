@@ -1,0 +1,10 @@
+{
+    "num_edges": 32671,
+    "num_nodes": 20000,
+    "average_degree": 3.2671,
+    "average_clustering": 0.1873235606421498,
+    "average_path_length": 3.6294574278713934,
+    "modularity": 0.7246747155721258,
+    "is_connected": true,
+    "filename": "History_of_agriculture.json"
+}

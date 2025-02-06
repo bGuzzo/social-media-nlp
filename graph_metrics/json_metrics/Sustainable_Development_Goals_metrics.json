@@ -1,0 +1,10 @@
+{
+    "num_edges": 33440,
+    "num_nodes": 20000,
+    "average_degree": 3.344,
+    "average_clustering": 0.14723601832923364,
+    "average_path_length": 3.610874903745187,
+    "modularity": 0.7472833113760845,
+    "is_connected": true,
+    "filename": "Sustainable_Development_Goals.json"
+}

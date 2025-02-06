@@ -1,0 +1,10 @@
+{
+    "num_edges": 32373,
+    "num_nodes": 20000,
+    "average_degree": 3.2373,
+    "average_clustering": 0.10507386388117254,
+    "average_path_length": 3.468893154657733,
+    "modularity": 0.6991887726413639,
+    "is_connected": true,
+    "filename": "Poverty_in_Italy.json"
+}

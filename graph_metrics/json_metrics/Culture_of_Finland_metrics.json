@@ -1,0 +1,10 @@
+{
+    "num_edges": 24838,
+    "num_nodes": 20000,
+    "average_degree": 2.4838,
+    "average_clustering": 0.060906856649654506,
+    "average_path_length": 3.773708490424521,
+    "modularity": 0.8498950402894515,
+    "is_connected": true,
+    "filename": "Culture_of_Finland.json"
+}

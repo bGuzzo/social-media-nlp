@@ -1,0 +1,10 @@
+{
+    "num_edges": 44605,
+    "num_nodes": 20000,
+    "average_degree": 4.4605,
+    "average_clustering": 0.1330250001244697,
+    "average_path_length": 3.593610550527526,
+    "modularity": 0.694600479258199,
+    "is_connected": true,
+    "filename": "UN_Women.json"
+}

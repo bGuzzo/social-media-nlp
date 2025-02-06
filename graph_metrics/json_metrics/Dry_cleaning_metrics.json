@@ -1,0 +1,10 @@
+{
+    "num_edges": 31946,
+    "num_nodes": 20000,
+    "average_degree": 3.1946,
+    "average_clustering": 0.21629786412139101,
+    "average_path_length": 3.6776426771338566,
+    "modularity": 0.8050624965094698,
+    "is_connected": true,
+    "filename": "Dry_cleaning.json"
+}

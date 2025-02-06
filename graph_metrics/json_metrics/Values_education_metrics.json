@@ -1,0 +1,10 @@
+{
+    "num_edges": 39009,
+    "num_nodes": 20000,
+    "average_degree": 3.9009,
+    "average_clustering": 0.06730400316461942,
+    "average_path_length": 3.4636449122456123,
+    "modularity": 0.5923534907093289,
+    "is_connected": true,
+    "filename": "Values_education.json"
+}

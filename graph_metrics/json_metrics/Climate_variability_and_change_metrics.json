@@ -1,0 +1,10 @@
+{
+    "num_edges": 37566,
+    "num_nodes": 20000,
+    "average_degree": 3.7566,
+    "average_clustering": 0.1720378392579944,
+    "average_path_length": 3.595482784139207,
+    "modularity": 0.7064657576071145,
+    "is_connected": true,
+    "filename": "Climate_variability_and_change.json"
+}

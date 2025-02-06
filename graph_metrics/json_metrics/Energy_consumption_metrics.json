@@ -1,0 +1,10 @@
+{
+    "num_edges": 49552,
+    "num_nodes": 20000,
+    "average_degree": 4.9552,
+    "average_clustering": 0.2627245904976019,
+    "average_path_length": 3.3523114405720285,
+    "modularity": 0.5904186056631512,
+    "is_connected": true,
+    "filename": "Energy_consumption.json"
+}

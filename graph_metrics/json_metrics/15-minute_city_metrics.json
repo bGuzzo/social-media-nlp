@@ -1,0 +1,10 @@
+{
+    "num_edges": 26921,
+    "num_nodes": 20000,
+    "average_degree": 2.6921,
+    "average_clustering": 0.15329462122895285,
+    "average_path_length": 3.6021686034301714,
+    "modularity": 0.8155421502253798,
+    "is_connected": true,
+    "filename": "15-minute_city.json"
+}

@@ -1,0 +1,10 @@
+{
+    "num_edges": 27070,
+    "num_nodes": 20000,
+    "average_degree": 2.707,
+    "average_clustering": 0.10640187004487515,
+    "average_path_length": 3.7354524726236313,
+    "modularity": 0.8236518315265501,
+    "is_connected": true,
+    "filename": "Rainwater_harvesting.json"
+}

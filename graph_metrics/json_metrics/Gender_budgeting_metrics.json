@@ -1,0 +1,10 @@
+{
+    "num_edges": 29115,
+    "num_nodes": 20000,
+    "average_degree": 2.9115,
+    "average_clustering": 0.1491675331187832,
+    "average_path_length": 3.4735413620681035,
+    "modularity": 0.797526216824687,
+    "is_connected": true,
+    "filename": "Gender_budgeting.json"
+}

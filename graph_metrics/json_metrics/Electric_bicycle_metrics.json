@@ -1,0 +1,10 @@
+{
+    "num_edges": 34189,
+    "num_nodes": 20000,
+    "average_degree": 3.4189,
+    "average_clustering": 0.1466988227259795,
+    "average_path_length": 3.7190285214260714,
+    "modularity": 0.7710217446967261,
+    "is_connected": true,
+    "filename": "Electric_bicycle.json"
+}

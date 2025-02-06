@@ -1,0 +1,10 @@
+{
+    "num_edges": 65203,
+    "num_nodes": 20000,
+    "average_degree": 6.5203,
+    "average_clustering": 0.2991379860498066,
+    "average_path_length": 3.2811057652882645,
+    "modularity": 0.5621768790332083,
+    "is_connected": true,
+    "filename": "Minister_for_Women_and_Equalities.json"
+}

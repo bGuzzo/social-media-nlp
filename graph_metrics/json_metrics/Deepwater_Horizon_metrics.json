@@ -1,0 +1,10 @@
+{
+    "num_edges": 31044,
+    "num_nodes": 20000,
+    "average_degree": 3.1044,
+    "average_clustering": 0.1098550296025864,
+    "average_path_length": 3.6619577828891443,
+    "modularity": 0.7960836296985175,
+    "is_connected": true,
+    "filename": "Deepwater_Horizon.json"
+}
