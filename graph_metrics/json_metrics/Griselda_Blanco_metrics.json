@@ -1,0 +1,10 @@
+{
+    "num_edges": 26748,
+    "num_nodes": 20000,
+    "average_degree": 2.6748,
+    "average_clustering": 0.1268393255433275,
+    "average_path_length": 3.6651756837841893,
+    "modularity": 0.8409551832869818,
+    "is_connected": true,
+    "filename": "Griselda_Blanco.json"
+}

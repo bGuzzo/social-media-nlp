@@ -1,0 +1,10 @@
+{
+    "num_edges": 52170,
+    "num_nodes": 20000,
+    "average_degree": 5.217,
+    "average_clustering": 0.20369231113955868,
+    "average_path_length": 3.376105900295015,
+    "modularity": 0.5277946116867971,
+    "is_connected": true,
+    "filename": "Scientific_consensus_on_climate_change.json"
+}

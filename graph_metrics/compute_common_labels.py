@@ -43,6 +43,8 @@ def __compue_common_nodes(curr_graph: nx.Graph, remaining_graphs: list[nx.Graph]
             
             if cur_node in other_graph.nodes:
                 common_nodes += 1
+                break
+                
     log.info(f"Found {common_nodes} common nodes")
     return common_nodes
 

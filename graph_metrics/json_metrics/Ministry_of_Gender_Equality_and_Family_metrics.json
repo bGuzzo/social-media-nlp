@@ -1,0 +1,10 @@
+{
+    "num_edges": 30734,
+    "num_nodes": 20000,
+    "average_degree": 3.0734,
+    "average_clustering": 0.13768566010165312,
+    "average_path_length": 3.786670078503925,
+    "modularity": 0.7833513720268338,
+    "is_connected": true,
+    "filename": "Ministry_of_Gender_Equality_and_Family.json"
+}

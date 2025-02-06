@@ -1,0 +1,10 @@
+{
+    "num_edges": 33949,
+    "num_nodes": 20000,
+    "average_degree": 3.3949,
+    "average_clustering": 0.130252468149078,
+    "average_path_length": 3.516155187759388,
+    "modularity": 0.6981862668607205,
+    "is_connected": true,
+    "filename": "Clean_Water_Act_(Ontario).json"
+}

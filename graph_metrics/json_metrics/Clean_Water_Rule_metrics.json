@@ -1,0 +1,10 @@
+{
+    "num_edges": 35578,
+    "num_nodes": 20000,
+    "average_degree": 3.5578,
+    "average_clustering": 0.24348410342487942,
+    "average_path_length": 3.368193584679234,
+    "modularity": 0.7112849683693103,
+    "is_connected": true,
+    "filename": "Clean_Water_Rule.json"
+}

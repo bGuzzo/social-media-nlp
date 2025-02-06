@@ -1,0 +1,10 @@
+{
+    "num_edges": 32017,
+    "num_nodes": 20000,
+    "average_degree": 3.2017,
+    "average_clustering": 0.1492311856662046,
+    "average_path_length": 3.562665223261163,
+    "modularity": 0.7149769145396997,
+    "is_connected": true,
+    "filename": "Education_in_India.json"
+}

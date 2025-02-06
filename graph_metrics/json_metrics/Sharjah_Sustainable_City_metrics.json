@@ -1,0 +1,10 @@
+{
+    "num_edges": 28936,
+    "num_nodes": 20000,
+    "average_degree": 2.8936,
+    "average_clustering": 0.1961484736926917,
+    "average_path_length": 3.6242317415870793,
+    "modularity": 0.7730081784983193,
+    "is_connected": true,
+    "filename": "Sharjah_Sustainable_City.json"
+}

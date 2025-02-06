@@ -1,0 +1,10 @@
+{
+    "num_edges": 23869,
+    "num_nodes": 20000,
+    "average_degree": 2.3869,
+    "average_clustering": 0.08438014487921111,
+    "average_path_length": 3.7610556477823893,
+    "modularity": 0.8573756803015391,
+    "is_connected": true,
+    "filename": "Mike_Tyson.json"
+}
