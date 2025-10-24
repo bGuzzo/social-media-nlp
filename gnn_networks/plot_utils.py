@@ -1,12 +1,42 @@
-# Utils script to plot high resolution charts 
+"""
+This script provides a suite of utility functions for generating and saving high-resolution
+visualizations of model performance metrics during both the training and testing phases.
+It is designed to produce clear and informative plots that are essential for the analysis
+and interpretation of the GNN model's behavior.
+
+The core functionalities of this script include:
+
+1.  **Training Performance Visualization**:
+    - `plot_train_multiple_auc`: This function generates line plots that track the evolution
+      of both the standard link prediction AUC and the custom Agnostic AUC (A-AUC) over
+      the training steps. This allows for a direct comparison of the model's ability to
+      learn the explicit graph structure versus the underlying semantic similarities.
+    - `plot_train_loss`: This function creates a line plot of the training loss over time,
+      providing a fundamental diagnostic for assessing the convergence and stability of the
+      training process.
+
+2.  **Testing Performance Visualization**:
+    - `plot_test_res`: This function produces a bar chart that summarizes the final AUC and
+      A-AUC scores for each item in the test set. It also includes the average scores,
+      offering a concise and comparative view of the model's generalization performance.
+
+3.  **High-Quality Output**:
+   All plotting functions are configured to generate high-resolution
+   images suitable for academic reports and presentations. They include detailed titles,
+   labels, and legends to ensure that the plots are self-explanatory.
+
+These visualization tools are integral to the research and development process, enabling a
+deep and nuanced understanding of the model's learning dynamics and its final performance.
+"""
 
 import time
 import matplotlib.pyplot as plt
 import os
-
 import numpy as np
 
+# Default folder for saving the plots.
 PLOT_FOLDER = "/home/bruno/Documents/GitHub/social-media-nlp/gnn_networks/plots"
+# Default plot dimensions and resolution.
 DEF_X_SIZE = 20
 DEF_Y_SIZE = 8
 DEF_DPI = 650
@@ -23,11 +53,24 @@ def plot_train_multiple_auc(
     y_size: int = DEF_Y_SIZE,
     dpi: int = DEF_DPI
 ) -> None:
+    """
+    Generates and saves a plot of training AUC and A-AUC scores over training steps.
+
+    Args:
+        model_name (str): The name of the model being trained.
+        total_epochs (int): The total number of epochs.
+        dataset_size (int): The size of the training dataset.
+        auc (list[float]): A list of AUC scores for each training step.
+        a_auc (list[float]): A list of A-AUC scores for each training step.
+        a_auc_cos_tresh (float): The cosine similarity threshold used for A-AUC.
+        plot_folder (str, optional): The folder to save the plot. Defaults to PLOT_FOLDER.
+        x_size (int, optional): The width of the plot. Defaults to DEF_X_SIZE.
+        y_size (int, optional): The height of the plot. Defaults to DEF_Y_SIZE.
+        dpi (int, optional): The resolution of the plot. Defaults to DEF_DPI.
+    """
 
     train_steps = list(range(1, len(auc) + 1))
-    title = "AUC, A-AUC vs. Train steps" + \
-            f"\nModel: {model_name}" + \
-            f"\n#Data points: {dataset_size}, #Epochs: {total_epochs}, #Train steps: {len(train_steps)}"
+    title = f"AUC, A-AUC vs. Train steps\nModel: {model_name}\n#Data points: {dataset_size}, #Epochs: {total_epochs}, #Train steps: {len(train_steps)}"
     
     fig, ax = plt.subplots(figsize=(x_size, y_size), dpi=dpi)
 
@@ -45,7 +88,6 @@ def plot_train_multiple_auc(
     plt.savefig(os.path.join(plot_folder, f"train_auc_{model_name}_{dataset_size}_{total_epochs}_{time.strftime('%Y%m%d-%H%M%S')}.jpg"), dpi=dpi)
     plt.close(fig)
 
-
 def plot_train_loss(
     model_name: str, 
     total_epochs: int,
@@ -56,11 +98,22 @@ def plot_train_loss(
     y_size: int = DEF_Y_SIZE,
     dpi: int = DEF_DPI
 ) -> None:
+    """
+    Generates and saves a plot of the training loss over training steps.
+
+    Args:
+        model_name (str): The name of the model being trained.
+        total_epochs (int): The total number of epochs.
+        dataset_size (int): The size of the training dataset.
+        loss_list (list[float]): A list of loss values for each training step.
+        plot_folder (str, optional): The folder to save the plot. Defaults to PLOT_FOLDER.
+        x_size (int, optional): The width of the plot. Defaults to DEF_X_SIZE.
+        y_size (int, optional): The height of the plot. Defaults to DEF_Y_SIZE.
+        dpi (int, optional): The resolution of the plot. Defaults to DEF_DPI.
+    """
     
     train_steps = list(range(1, len(loss_list) + 1))
-    title = "Loss vs. Train steps" + \
-            f"\nModel: {model_name}" + \
-            f"\n#Train data points: {dataset_size}, #Epochs: {total_epochs}, #Train steps: {len(train_steps)}"
+    title = f"Loss vs. Train steps\nModel: {model_name}\n#Train data points: {dataset_size}, #Epochs: {total_epochs}, #Train steps: {len(train_steps)}"
     
     fig, ax = plt.subplots(figsize=(x_size, y_size), dpi=dpi)
 
@@ -77,7 +130,6 @@ def plot_train_loss(
     plt.savefig(os.path.join(plot_folder, f"train_loss_{model_name}_{dataset_size}_{total_epochs}_{time.strftime('%Y%m%d-%H%M%S')}.jpg"), dpi=dpi)
     plt.close(fig)
 
-
 def plot_test_res(
     model_name: str, 
     train_num_steps: int,
@@ -91,16 +143,29 @@ def plot_test_res(
     y_size: int = DEF_Y_SIZE,
     dpi: int = DEF_DPI
 ) -> None:
+    """
+    Generates and saves a bar chart of test AUC and A-AUC scores.
+
+    Args:
+        model_name (str): The name of the model being tested.
+        train_num_steps (int): The total number of training steps.
+        train_total_epochs (int): The total number of training epochs.
+        train_dataset_size (int): The size of the training dataset.
+        auc_list (list[float]): A list of AUC scores for each test item.
+        a_auc_list (list[float]): A list of A-AUC scores for each test item.
+        a_auc_cos_tresh (float): The cosine similarity threshold used for A-AUC.
+        plot_folder (str, optional): The folder to save the plot. Defaults to PLOT_FOLDER.
+        x_size (int, optional): The width of the plot. Defaults to DEF_X_SIZE.
+        y_size (int, optional): The height of the plot. Defaults to DEF_Y_SIZE.
+        dpi (int, optional): The resolution of the plot. Defaults to DEF_DPI.
+    """
     
-    title = "Test AUC, A-AUC vs. Test items" + \
-            f"\nModel: {model_name}" + \
-            f"\n#Train data points: {train_dataset_size}, #Epochs: {train_total_epochs}, #Train steps: {train_num_steps}" + \
-            f"\n#Test data points: {len(auc_list)}"
+    title = f"Test AUC, A-AUC vs. Test items\nModel: {model_name}\n#Train data points: {train_dataset_size}, #Epochs: {train_total_epochs}, #Train steps: {train_num_steps}\n#Test data points: {len(auc_list)}"
 
-    x = np.arange(len(auc_list))  # the label locations
-    width = 0.35  # the width of the bars
+    x = np.arange(len(auc_list))
+    width = 0.35
 
-    fig, ax = plt.subplots(figsize=(x_size, y_size), dpi=dpi)  # Set figure size and DPI
+    fig, ax = plt.subplots(figsize=(x_size, y_size), dpi=dpi)
 
     ax.bar(x - width/2, auc_list, width, label="AUC", color="skyblue")
     ax.bar(x + width/2, a_auc_list, width, label=f"A-AUC({a_auc_cos_tresh:.2f})", color="lightcoral")
@@ -112,22 +177,19 @@ def plot_test_res(
     ax.axhline(y=avg_auc, color='royalblue', linestyle='--', label=f'Avg. AUC ({avg_auc:.3f})')
     ax.axhline(y=avg_a_auc, color='crimson', linestyle='--', label=f'Avg. A-AUC ({avg_a_auc:.3f})')
 
-
-    # Add some text for labels, title and custom x-axis tick labels, etc.
     ax.set_ylabel('Score')
     ax.set_title(title)
     ax.set_xticks(x)
     ax.grid(True)
     ax.legend()
-    fig.tight_layout()  # Adjust layout to prevent labels from overlapping
+    fig.tight_layout()
     
     plt.savefig(os.path.join(plot_folder, f"test_auc_{len(auc_list)}_{model_name}_{train_dataset_size}_{train_total_epochs}_{time.strftime('%Y%m%d-%H%M%S')}.jpg"), dpi=dpi)
-    plt.close(fig) # Close the figure to free memory
+    plt.close(fig)
 
-
-# Test only
 if __name__ == "__main__":
-    # Test the function:
+    # This block serves as a demonstration of the plotting functions.
+    # It creates and saves example plots for training and testing metrics.
     model_name = "MyModel"
     total_epochs = 10
     dataset_size = 1000
@@ -136,7 +198,6 @@ if __name__ == "__main__":
     a_auc_cos_tresh = 0.8
 
     plot_train_multiple_auc(model_name, total_epochs, dataset_size, auc, a_auc, a_auc_cos_tresh, plot_folder=PLOT_FOLDER)
-    
     plot_test_res(
         model_name=model_name, 
         train_num_steps=len(auc), 
@@ -148,9 +209,4 @@ if __name__ == "__main__":
         plot_folder=PLOT_FOLDER
     )
 
-    print("Plot shown and saved. Continuing with code execution...")
-
-    # Simulate some other work happening while the plot is displayed
-    import time
-    time.sleep(5)  # Wait for 5 seconds
-    print("Continuing with other tasks...")
+    print("Example plots generated and saved.")

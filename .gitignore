@@ -191,3 +191,5 @@ old/training/old_dataset_pdf/**
 old/training/dataset_txt/**
 old/training/old_dataset_txt/**
 old/training/outputs/**
+
+.info

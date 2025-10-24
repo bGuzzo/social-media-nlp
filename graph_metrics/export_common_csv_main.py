@@ -1,23 +1,58 @@
-import networkx as nx
-import numpy as np
+"""
+This script is focused on analyzing the interconnectivity of a graph dataset by identifying
+and quantifying the number of common nodes shared between different graphs.
+
+The script operates in two main phases:
+1.  **Common Node Computation and JSON Export**:
+    - It begins by loading all graphs from a specified JSON dataset directory into memory
+      as NetworkX graph objects.
+    - For each graph in the dataset, it computes the number of its nodes that are also present
+      in at least one other graph within the same dataset.
+    - The result of this computation, which is the count of common nodes for each graph,
+      is then exported to a separate JSON file.
+
+2.  **CSV Aggregation**:
+    - After the common node counts have been calculated and saved for all graphs, the script
+      proceeds to read all the generated JSON files.
+    - It then aggregates this information into a single, consolidated CSV file.
+      This CSV provides a tabular summary of the common node counts for each graph in the dataset,
+      facilitating a high-level analysis of dataset-wide node overlap.
+
+This analysis is valuable for understanding the diversity and redundancy of the information
+contained within the graph dataset, which can inform decisions related to dataset curation
+and model training strategies.
+"""
+
 import sys, os
 import logging
-import community as co
 import json
 from tqdm import tqdm
 import csv
+import networkx as nx
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from custom_logger.logger_config import get_logger
 
 log: logging.Logger = get_logger(name=__name__)
 
+# Directory containing the JSON graph dataset.
 JSON_DATASET_DIR = "/home/bruno/Documents/GitHub/social-media-nlp/dataset_builder_wiki/final_dataset/json"
+# Directory to store the intermediate JSON files with common node counts.
 JOSN_OUT_DIR = "/home/bruno/Documents/GitHub/social-media-nlp/graph_metrics/json_common_nodes"
+# The final CSV file to which the aggregated common node counts will be written.
 CSV_OUT_FILE = "/home/bruno/Documents/GitHub/social-media-nlp/graph_metrics/csv_common_nodes/csv_common_nodes.csv"
 
 
 def __json_to_graph(json_graph: dict) -> nx.Graph:
+    """
+    Constructs a NetworkX graph from a JSON object representing a graph.
+
+    Args:
+        json_graph (dict): A dictionary representing the graph in JSON format.
+
+    Returns:
+        nx.Graph: The constructed NetworkX graph.
+    """
     
     graph = nx.Graph()
     node_idx_map = {}
@@ -35,12 +70,21 @@ def __json_to_graph(json_graph: dict) -> nx.Graph:
     return graph
 
 def __compue_common_nodes(curr_graph: nx.Graph, remaining_graphs: list[nx.Graph]) -> int:
+    """
+    Computes the number of nodes in the current graph that are also present in other graphs.
+
+    Args:
+        curr_graph (nx.Graph): The graph for which to count common nodes.
+        remaining_graphs (list[nx.Graph]): A list of other graphs in the dataset to compare against.
+
+    Returns:
+        int: The total count of common nodes.
+    """
     common_nodes = 0
     for cur_node in curr_graph.nodes:    
         for other_graph in remaining_graphs:
             
             if curr_graph == other_graph:
-                # log.info("Found same graph, skipping")
                 continue
             
             if cur_node in other_graph.nodes:
@@ -51,6 +95,9 @@ def __compue_common_nodes(curr_graph: nx.Graph, remaining_graphs: list[nx.Graph]
     return common_nodes
 
 def __compute_json_common_nodes():
+    """
+    Orchestrates the computation of common nodes for all graphs in the dataset and exports the results to JSON files.
+    """
     graphs_map: dict[str, nx.Graph] = {}
     for filename in tqdm(os.listdir(JSON_DATASET_DIR), desc="JSON graphs loop"):
             if filename.endswith(".json"):
@@ -75,11 +122,18 @@ def __compute_json_common_nodes():
             file.close()
         log.info(f"Dict {json_dict} exported to {json_out_filename}")
         
-
 def __export_common_labels_csv(
     json_common_mnetrics_file: str = JOSN_OUT_DIR, 
     csv_out_file: str  = CSV_OUT_FILE
 ) -> None:
+    """
+    Aggregates common node count data from JSON files into a single CSV file.
+
+    Args:
+        json_common_mnetrics_file (str, optional): The directory containing the JSON files with common node counts.
+                                                    Defaults to JOSN_OUT_DIR.
+        csv_out_file (str, optional): The path to the output CSV file. Defaults to CSV_OUT_FILE.
+    """
     
     csv_dicts_list: list[dict[str, int]] = []
     for filename in tqdm(os.listdir(json_common_mnetrics_file), desc="JSON metrics loop"):
@@ -97,5 +151,8 @@ def __export_common_labels_csv(
 
 
 if __name__ == "__main__":
+    # This script block executes the two main phases of the common node analysis:
+    # 1. Compute common nodes and export to individual JSON files.
+    # 2. Aggregate the JSON data into a single CSV file.
     __compute_json_common_nodes()
     __export_common_labels_csv()
