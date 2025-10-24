@@ -113,14 +113,14 @@ This repository contains all the code and data needed to reproduce the experimen
     pip install -r requirements.txt
     ```
 2.  **Build Dataset (Optional):**
-    The pre-built dataset is included. To generate it from scratch, run the scripts in `dataset_builder_wiki/`.
+    The pre-built dataset is included. To generate it from scratch, run the main script from the `dataset_builder_wiki` directory. This will create the JSON and then the tensor datasets.
     ```bash
-    # (Instructions to run the dataset builder)
+    python dataset_builder_wiki/create_dataset_main.py
     ```
 3.  **Train the Model:**
-    Use the `trainer.py` script in `gnn_networks/`.
+    Use the `trainer.py` script in `gnn_networks/`. The main execution block trains two versions of the model sequentially (V1 and V2). You can modify the `if __name__ == "__main__"` block in the script to train only a specific version.
     ```bash
-    # (Instructions to run the trainer with desired parameters)
+    python gnn_networks/trainer.py
     ```
 4.  **Evaluate:**
     The trainer script handles both training and evaluation, saving metrics and plots to the `gnn_networks/` subdirectories.
