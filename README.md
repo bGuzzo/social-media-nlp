@@ -103,6 +103,13 @@ To test generalization, the trained model was used to predict edges for two grap
 *   **Findings:** The model successfully predicted a dense, coherent graph for the sustainability-related nodes. However, for the medicine-related nodes, it struggled to find connections and the core of the predicted graph still revolved around sustainability-related concepts.
 *   **Conclusion:** This demonstrates that while the model is powerful, it **specializes in the domain of its training data** and does not generalize well to entirely different topics.
 
+## 🎓 Academic Report
+
+A detailed academic report for this project is available, providing in-depth analysis, theoretical background, and comprehensive evaluation of the experiments.
+
+*   **PDF Report:** You can find the full report here: [**`latex/assignment/relazione_bruno_guzzo_242504.pdf`**](./latex/assignment/relazione_bruno_guzzo_242504.pdf).
+*   **LaTeX Source:** The LaTeX source code for the report is located in the [**`latex/`**](./latex/) directory.
+
 ## 📚 Frameworks and Libraries
 
 This project leverages several key open-source frameworks for machine learning and data processing:
