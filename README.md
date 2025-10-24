@@ -45,6 +45,13 @@ The goal is to demonstrate the effectiveness of this architecture in capturing c
 └─── README.md             # This file.
 ```
 
+## 📚 Detailed Documentation
+
+For more detailed information about specific modules, please refer to their respective `README.md` files:
+
+*   [**`dataset_builder_wiki`**](./dataset_builder_wiki/README.md): Detailed explanation of the Wikipedia graph dataset creation process, including the web crawling and tensor conversion pipeline.
+*   [**`gnn_networks`**](./gnn_networks/README.md): In-depth documentation of the GNN models (V1 and V2), training procedures, custom evaluation metrics (A-AUC), and experiment management.
+
 ## 📊 Dataset: Wikipedia Articles Link Graph
 
 The dataset was constructed to train and evaluate the GNN.
@@ -67,6 +74,7 @@ The model consists of a stack of custom `DeepGATBlock` modules. Each block proce
 The final model uses 4 levels of `DeepGATBlock`, with 2 attention heads per layer and a hidden dimension of 128. A high dropout rate of 0.75 is used to prevent overfitting in this deep architecture.
 
 ![GNN Architecture Diagram](./images/custom_gnn_diagram.png)
+
 *Figure 2: A graphical representation of the GNN's core building block.*
 
 ## ⚙️ Training and Evaluation
